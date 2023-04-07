@@ -1,23 +1,39 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
+import HelloWorld from "./components/HelloWorld.vue";
+import Footer from "./views/partials/Footer.vue";
+import Header from "./views/partials/Header.vue";
+import Feature from "./views/partials/Feature.vue";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+  <Header />
+  <section class="banner_part">
+    <div class="container">
+      <div class="single_banner_slider">
+        <div class="row">
+          <div class="col-lg-5 col-md-8">
+            <div class="banner_text">
+              <div class="banner_text_iner">
+                <h1>Cloth $ Wood Sofa</h1>
+                <p>
+                  Incididunt ut labore et dolore magna aliqua quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra
+                </p>
+                <a href="#" class="btn_2">buy now</a>
+              </div>
+            </div>
+          </div>
+          <div class="banner_img d-none d-lg-block">
+            <img src="img/banner_img.png" alt="" />
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
-
+  </section>
+  <Feature />
   <RouterView />
+  <Footer />
 </template>
 
 <style scoped>
