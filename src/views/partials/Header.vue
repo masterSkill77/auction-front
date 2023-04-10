@@ -28,28 +28,12 @@
             >
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <router-link class="nav-link" to="/">Accueil</router-link>
                 </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="blog.html"
-                    id="navbarDropdown_1"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Shop
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                    <a class="dropdown-item" href="category.html">
-                      shop category</a
-                    >
-                    <a class="dropdown-item" href="single-product.html"
-                      >product details</a
-                    >
-                  </div>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/auction" role="button">
+                    Enchère
+                  </router-link>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -101,10 +85,7 @@
                 </li>
               </ul>
             </div>
-            <div class="hearer_icon d-flex" @click="showSearch = !showSearch">
-              <a id="search_1" href="javascript:void(0)"
-                ><i class="ti-search"></i
-              ></a>
+            <div class="hearer_icon d-flex">
               <a href=""><i class="ti-heart"></i></a>
               <div class="dropdown cart">
                 <a
@@ -127,26 +108,6 @@
             </div>
           </nav>
         </div>
-      </div>
-    </div>
-    <div v-if="showSearch" class="search_input" id="search_input_box">
-      <div class="container">
-        <form class="d-flex justify-content-between search-inner">
-          <input
-            type="text"
-            class="form-control"
-            v-model="search"
-            id="search_input"
-            placeholder="Search Here"
-          />
-          <button type="submit" class="btn"></button>
-          <span
-            @click="showSearch = false"
-            class="ti-close"
-            id="close_search"
-            title="Close Search"
-          ></span>
-        </form>
       </div>
     </div>
   </header>
