@@ -11,15 +11,17 @@
 
           <!-- Navbar Toggler -->
           <div class="classy-navbar-toggler">
-            <span class="navbarToggler"
+            <span
+              :class="{ navbarToggler: true, active: menuOn }"
+              @click="menuOn = !menuOn"
               ><span></span><span></span><span></span
             ></span>
           </div>
 
           <!-- Menu -->
-          <div class="classy-menu">
+          <div :class="{ 'classy-menu': true, 'menu-on': menuOn == true }">
             <!-- close btn -->
-            <div class="classycloseIcon">
+            <div class="classycloseIcon" @click="menuOn = false">
               <div class="cross-wrap">
                 <span class="top"></span><span class="bottom"></span>
               </div>
@@ -61,3 +63,9 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const menuOn = ref(false);
+</script>

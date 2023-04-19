@@ -4,6 +4,7 @@ import VueCountdown from "@chenfengyuan/vue-countdown";
 
 import App from "./App.vue";
 import router from "./router";
+import axios from "./src/axios";
 
 // import './assets/main.css'
 
