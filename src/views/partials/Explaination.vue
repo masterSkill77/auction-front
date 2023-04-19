@@ -57,6 +57,14 @@
               </p>
             </div>
           </div>
+          <div class="col-md-4">
+            <div class="single-defination">
+              <h4 class="mb-20">04</h4>
+              <p>
+                Vos NFTs seront ensuite transmit vers leur nouveau propriétaire
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -9,14 +9,16 @@
                 <h1>Mets tout aux enchères</h1>
                 <p>
                   Vous pouvez mettre aux enchères des produits que vous
-                  n'utilisez plus, et récuperer des benefices.
+                  n'utilisez plus, et récuperer des benefices. Vous pouvez créer
+                  des NFTs, les mettre aux enchères et ensuite, toute la magie
+                  va opérer.
                 </p>
                 <a href="#" class="btn_2">commencer</a>
               </div>
             </div>
           </div>
-          <div class="banner_img d-none d-lg-block">
-            <img class="hvr-grow" src="img/banner_img.png" alt="" />
+          <div class="banner_img d-lg-block">
+            <img class="hvr-grow" src="img/nft/nft.jpg" alt="" />
           </div>
         </div>
       </div>
