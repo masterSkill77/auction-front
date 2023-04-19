@@ -2,7 +2,7 @@
   <div class="p-2 single-hero-slide" style="background-color: #eef3f6">
     <div class="container-fluid h-100">
       <div class="row h-100 align-items-center">
-        <div class="col-12 col-md-7">
+        <div class="col-12 col-md-7 pl-5">
           <div class="hero-slides-content">
             <h2 data-animation="fadeInUp" data-delay="100ms">
               Take a step into the
@@ -37,6 +37,7 @@
   <!-- ##### Course Area Start ##### -->
   <Explaination />
   <!-- ##### Course Area End ##### -->
+  <Millestone />
 
   <!-- ##### About Area Start ##### -->
   <section class="cryptos-about-area">
@@ -417,5 +418,6 @@
   </section>
 </template>
 <script setup>
-import Explaination from "../../components/UI/explain/Explaination.vue";
+import Explaination from "../../components/UI/items/Explaination.vue";
+import Millestone from "../../components/UI/items/Millestone.vue";
 </script>
