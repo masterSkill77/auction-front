@@ -1,6 +1,6 @@
 <template>
   <!-- ##### Breadcumb Area Start ##### -->
-  <BreadCumb />
+  <BreadCumb route_name="Crypto Guide" />
   <!-- ##### Breadcumb Area End ##### -->
 
   <!-- ##### About Area Start ##### -->

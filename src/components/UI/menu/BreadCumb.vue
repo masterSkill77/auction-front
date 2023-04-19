@@ -4,7 +4,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12 col-md-6">
           <div class="breadcumb-text">
-            <h2>Crypto Guide</h2>
+            <h2>{{ route_name }}</h2>
           </div>
         </div>
       </div>
@@ -23,3 +23,8 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: ["route_name"],
+};
+</script>

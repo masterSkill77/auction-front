@@ -1,5 +1,5 @@
 <template>
-  <div class="p-5 single-hero-slide" style="background-color: #eef3f6">
+  <div class="p-2 single-hero-slide" style="background-color: #eef3f6">
     <div class="container-fluid h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12 col-md-7">
@@ -35,85 +35,7 @@
     </div>
   </div>
   <!-- ##### Course Area Start ##### -->
-  <div class="cryptos-feature-area section-padding-100-0">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-heading text-center mx-auto">
-            <h3>Let’s change <br /><span>the world</span> together</h3>
-            <p>
-              Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-              Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-              pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia
-              lacus non, fermentum nisi.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- Single Course Area -->
-        <div class="col-12 col-md-6 col-xl-3">
-          <div class="single-feature-area mb-100 text-center">
-            <i class="icon-safebox"></i>
-            <h3>Fast &amp; Easy</h3>
-            <p>
-              Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-              Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-              pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia
-              lacus non, fermentum.
-            </p>
-            <a href="#" class="btn cryptos-btn">Read More</a>
-          </div>
-        </div>
-
-        <!-- Single Course Area -->
-        <div class="col-12 col-md-6 col-xl-3">
-          <div class="single-feature-area mb-100 text-center">
-            <i class="icon-bitcoin"></i>
-            <h3>No strigs attached</h3>
-            <p>
-              Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-              Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-              pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia
-              lacus non, fermentum.
-            </p>
-            <a href="#" class="btn cryptos-btn">Read More</a>
-          </div>
-        </div>
-
-        <!-- Single Course Area -->
-        <div class="col-12 col-md-6 col-xl-3">
-          <div class="single-feature-area mb-100 text-center">
-            <i class="icon-exchange"></i>
-            <h3>Small Commisions</h3>
-            <p>
-              Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-              Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-              pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia
-              lacus non, fermentum.
-            </p>
-            <a href="#" class="btn cryptos-btn">Read More</a>
-          </div>
-        </div>
-
-        <!-- Single Course Area -->
-        <div class="col-12 col-md-6 col-xl-3">
-          <div class="single-feature-area mb-100 text-center">
-            <i class="icon-wallet"></i>
-            <h3>10% Secure</h3>
-            <p>
-              Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-              Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-              pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia
-              lacus non, fermentum.
-            </p>
-            <a href="#" class="btn cryptos-btn">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Explaination />
   <!-- ##### Course Area End ##### -->
 
   <!-- ##### About Area Start ##### -->
@@ -494,4 +416,6 @@
     </div>
   </section>
 </template>
-<script></script>
+<script setup>
+import Explaination from "../../components/UI/explain/Explaination.vue";
+</script>
