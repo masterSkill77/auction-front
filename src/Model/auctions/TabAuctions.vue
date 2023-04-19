@@ -17,10 +17,17 @@
 
       <div class="row">
         <!-- Single Course Area -->
-        <div class="col-12 col-md-6 col-xl-3">
+        <div class="col-12 col-md-4 col-xl-3">
           <div class="single-feature-area mb-100 text-center">
             <i class="icon-safebox"></i>
             <h3>Fast &amp; Easy</h3>
+            <vue-countdown
+              :time="2 * 24 * 60 * 60 * 1000"
+              v-slot="{ days, hours, minutes, seconds }"
+            >
+              Time Remaining：{{ days }} days, {{ hours }} hours,
+              {{ minutes }} minutes, {{ seconds }} seconds.
+            </vue-countdown>
             <p>
               Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
               Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
@@ -32,10 +39,17 @@
         </div>
 
         <!-- Single Course Area -->
-        <div class="col-12 col-md-6 col-xl-3">
+        <div class="col-12 col-md-4 col-xl-3">
           <div class="single-feature-area mb-100 text-center">
             <i class="icon-bitcoin"></i>
             <h3>No strigs attached</h3>
+            <vue-countdown
+              :time="2 * 24 * 60 * 60 * 1000"
+              v-slot="{ days, hours, minutes, seconds }"
+            >
+              Time Remaining：{{ days }} days, {{ hours }} hours,
+              {{ minutes }} minutes, {{ seconds }} seconds.
+            </vue-countdown>
             <p>
               Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
               Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
@@ -47,10 +61,17 @@
         </div>
 
         <!-- Single Course Area -->
-        <div class="col-12 col-md-6 col-xl-3">
+        <div class="col-12 col-md-4 col-xl-3">
           <div class="single-feature-area mb-100 text-center">
             <i class="icon-exchange"></i>
             <h3>Small Commisions</h3>
+            <vue-countdown
+              :time="2 * 24 * 60 * 60 * 1000"
+              v-slot="{ days, hours, minutes, seconds }"
+            >
+              Time Remaining：{{ days }} days, {{ hours }} hours,
+              {{ minutes }} minutes, {{ seconds }} seconds.
+            </vue-countdown>
             <p>
               Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
               Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
@@ -62,10 +83,17 @@
         </div>
 
         <!-- Single Course Area -->
-        <div class="col-12 col-md-6 col-xl-3">
+        <div class="col-12 col-md-4 col-xl-3">
           <div class="single-feature-area mb-100 text-center">
             <i class="icon-wallet"></i>
             <h3>10% Secure</h3>
+            <vue-countdown
+              :time="2 * 24 * 60 * 60 * 1000"
+              v-slot="{ days, hours, minutes, seconds }"
+            >
+              Time Remaining：{{ days }} days, {{ hours }} hours,
+              {{ minutes }} minutes, {{ seconds }} seconds.
+            </vue-countdown>
             <p>
               Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
               Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
@@ -80,8 +108,6 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
+<script setup></script>
 
 <style></style>
