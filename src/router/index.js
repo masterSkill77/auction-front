@@ -30,4 +30,11 @@ const router = createRouter({
   ],
 });
 
+router.beforeEach(() => {
+  const src = "/public/js/active.js";
+  var s = document.createElement("script");
+  s.setAttribute("src", src);
+  document.body.appendChild(s);
+});
+
 export default router;

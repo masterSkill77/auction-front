@@ -33,7 +33,7 @@
                 <li>
                   <router-link to="/auctions">Auctions</router-link>
                 </li>
-                <li><a href="#">Currencies</a></li>
+                <li><router-link to="#">Currencies</router-link></li>
                 <li>
                   <router-link to="/about">About</router-link>
                 </li>
