@@ -1,11 +1,12 @@
 <template>
-  <div class="p-5">
+  <div class="p-5 single-hero-slide" style="background-color: #eef3f6">
     <div class="container-fluid h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12 col-md-7">
           <div class="hero-slides-content">
             <h2 data-animation="fadeInUp" data-delay="100ms">
-              Take a step into the <span>Crypto World</span>
+              Take a step into the
+              <span style="color: #ffaf02">Crypto World</span>
             </h2>
             <h6 data-animation="fadeInUp" data-delay="400ms">
               Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
@@ -68,7 +69,7 @@
 
         <!-- Single Course Area -->
         <div class="col-12 col-md-6 col-xl-3">
-          <div class="single-feature-area active mb-100 text-center">
+          <div class="single-feature-area mb-100 text-center">
             <i class="icon-bitcoin"></i>
             <h3>No strigs attached</h3>
             <p>
