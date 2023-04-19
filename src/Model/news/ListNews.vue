@@ -118,7 +118,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "@/src/axios";
 
 export default {
   methods: {
