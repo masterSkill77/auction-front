@@ -1,4 +1,5 @@
 import axios from "axios";
+const TOKEN_NAME = "auction_usertoken";
 
 const instance = axios.create({
   baseURL: import.meta.env.VITE_APP_BACKEND_URL,
@@ -22,6 +23,13 @@ instance.interceptors.response.use(
     return response;
   },
   (error) => {
+    if (error.response.status && error.response.status === 401) {
+      localStorage.removeItem(TOKEN_NAME);
+      router.push("/");
+    }
+    if (error.response.status && error.response.status === 404) {
+      router.push("/404");
+    }
     return Promise.reject(error);
   }
 );
