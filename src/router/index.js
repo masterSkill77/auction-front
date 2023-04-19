@@ -11,12 +11,6 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomePage,
-      beforeEnter: () => {
-        const src = "/public/js/active.js";
-        var s = document.createElement("script");
-        s.setAttribute("src", src);
-        document.body.appendChild(s);
-      },
     },
     {
       path: "/about",
