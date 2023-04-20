@@ -22,15 +22,15 @@
       >
         <div class="single-feature-area mb-100 text-center">
           <img :src="auction.nft.image_uri" alt="" />
-          <h3>{{ auction.nft.title }}</h3>
+          <h3 class="my-2">{{ auction.nft.title }}</h3>
           <vue-countdown
             :time="new Date(auction.end_date).getTime() - new Date().getTime()"
             v-slot="{ days, hours, minutes, seconds }"
           >
-            <h6>
+            <b>
               Time Remaining：{{ days }} days, {{ hours }} hours,
               {{ minutes }} minutes, {{ seconds }} seconds.
-            </h6>
+            </b>
           </vue-countdown>
           <p>
             {{ auction.nft.description }}
