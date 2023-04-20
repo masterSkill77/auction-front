@@ -52,11 +52,11 @@ router.beforeEach((to, from, next) => {
       return;
     } else {
       next();
+      return;
     }
   } else {
     next();
   }
-  next();
 });
 
 export default router;

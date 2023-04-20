@@ -14,7 +14,8 @@
               </div>
               <!-- Top Login & Faq & Earn Monery btn -->
               <div class="login-faq-earn-money">
-                <router-link to="/login">Login</router-link>
+                <router-link to="/login" v-if="!isLogged">Login</router-link>
+                <a href="/logout" @click.prevent="logout()" v-else>Logout</a>
                 <a href="#">FAQ</a>
                 <a href="#" class="active">Earn Money</a>
               </div>
@@ -29,5 +30,16 @@
   </header>
 </template>
 <script setup>
+import { useAuthStore } from "@/stores/auth";
 import Menu from "@/components/UI/menu/Menu.vue";
+import { storeToRefs } from "pinia";
+import router from "@/router/index";
+
+const { isAuthenticated } = storeToRefs(useAuthStore());
+const isLogged = isAuthenticated;
+
+const logout = () => {
+  useAuthStore().logout();
+  router.push("/login");
+};
 </script>
