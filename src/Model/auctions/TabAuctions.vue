@@ -75,7 +75,7 @@ export default defineComponent({
   },
   async setup() {
     let allAuctions = ref({});
-    let linksOfPage = ref(allAuctions.value.links);
+    let linksOfPage = ref(allAuctions.links);
     return {
       linksOfPage,
       allAuctions,
@@ -83,16 +83,16 @@ export default defineComponent({
   },
   methods: {
     async changePage(pageNumber) {
-      await useAuctionStore().setAuctionPage(pageNumber);
-      const { _auctions } = storeToRefs(useAuctionStore());
-      this.allAuctions = _auctions.value;
-      this.linksOfPage = _auctions.value.links;
+      await useAuctionStore().fetchAuctionPage(pageNumber);
+      const { auctions } = storeToRefs(useAuctionStore());
+      this.allAuctions = auctions.value;
+      this.linksOfPage = this.allAuctions.links;
     },
   },
   async mounted() {
-    await useAuctionStore().setAuctions();
-    const { _auctions } = storeToRefs(useAuctionStore());
-    this.allAuctions = _auctions.value;
+    await useAuctionStore().fetchAuctions();
+    const { auctions } = storeToRefs(useAuctionStore());
+    this.allAuctions = auctions.value;
     this.linksOfPage = this.allAuctions.links;
   },
 });
