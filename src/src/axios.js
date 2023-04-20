@@ -1,12 +1,11 @@
 import axios from "axios";
-const TOKEN_NAME = "auction_usertoken";
-
+const TOKEN_NAME = "auction_token";
 const instance = axios.create({
   baseURL: import.meta.env.VITE_APP_BACKEND_URL,
 });
 instance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem(TOKEN_NAME);
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;

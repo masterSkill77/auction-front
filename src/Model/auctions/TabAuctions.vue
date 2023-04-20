@@ -13,95 +13,36 @@
         </div>
       </div>
     </div>
-    {{ auctions }}
     <div class="row">
       <!-- Single Course Area -->
-      <div class="col-12 col-md-4 col-xl-3">
+      <div
+        v-for="auction in allAuctions.data"
+        :key="auction.id"
+        class="col-12 col-md-4 col-xl-3"
+      >
         <div class="single-feature-area mb-100 text-center">
-          <i class="icon-safebox"></i>
-          <h3>Fast &amp; Easy</h3>
+          <img :src="auction.nft.image_uri" alt="" />
+          <h3>{{ auction.nft.title }}</h3>
           <vue-countdown
-            :time="2 * 24 * 60 * 60 * 1000"
+            :time="new Date(auction.end_date).getTime() - new Date().getTime()"
             v-slot="{ days, hours, minutes, seconds }"
           >
-            Time Remaining：{{ days }} days, {{ hours }} hours,
-            {{ minutes }} minutes, {{ seconds }} seconds.
+            <h6>
+              Time Remaining：{{ days }} days, {{ hours }} hours,
+              {{ minutes }} minutes, {{ seconds }} seconds.
+            </h6>
           </vue-countdown>
           <p>
-            Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec
-            et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar
-            cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non,
-            fermentum.
+            {{ auction.nft.description }}
           </p>
-          <a href="#" class="btn cryptos-btn">Read More</a>
-        </div>
-      </div>
-
-      <!-- Single Course Area -->
-      <div class="col-12 col-md-4 col-xl-3">
-        <div class="single-feature-area mb-100 text-center">
-          <i class="icon-bitcoin"></i>
-          <h3>No strigs attached</h3>
-          <vue-countdown
-            :time="2 * 24 * 60 * 60 * 1000"
-            v-slot="{ days, hours, minutes, seconds }"
+          <router-link :to="'/auction/' + auction.id" class="btn cryptos-btn"
+            >Read More</router-link
           >
-            Time Remaining：{{ days }} days, {{ hours }} hours,
-            {{ minutes }} minutes, {{ seconds }} seconds.
-          </vue-countdown>
-          <p>
-            Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec
-            et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar
-            cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non,
-            fermentum.
-          </p>
-          <a href="#" class="btn cryptos-btn">Read More</a>
         </div>
       </div>
-
-      <!-- Single Course Area -->
-      <div class="col-12 col-md-4 col-xl-3">
-        <div class="single-feature-area mb-100 text-center">
-          <i class="icon-exchange"></i>
-          <h3>Small Commisions</h3>
-          <vue-countdown
-            :time="2 * 24 * 60 * 60 * 1000"
-            v-slot="{ days, hours, minutes, seconds }"
-          >
-            Time Remaining：{{ days }} days, {{ hours }} hours,
-            {{ minutes }} minutes, {{ seconds }} seconds.
-          </vue-countdown>
-          <p>
-            Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec
-            et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar
-            cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non,
-            fermentum.
-          </p>
-          <a href="#" class="btn cryptos-btn">Read More</a>
-        </div>
-      </div>
-
-      <!-- Single Course Area -->
-      <div class="col-12 col-md-4 col-xl-3">
-        <div class="single-feature-area mb-100 text-center">
-          <i class="icon-wallet"></i>
-          <h3>10% Secure</h3>
-          <vue-countdown
-            :time="2 * 24 * 60 * 60 * 1000"
-            v-slot="{ days, hours, minutes, seconds }"
-          >
-            Time Remaining：{{ days }} days, {{ hours }} hours,
-            {{ minutes }} minutes, {{ seconds }} seconds.
-          </vue-countdown>
-          <p>
-            Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec
-            et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar
-            cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non,
-            fermentum.
-          </p>
-          <a href="#" class="btn cryptos-btn">Read More</a>
-        </div>
-      </div>
+    </div>
+    <div class="text-center w-100 m-auto">
+      <Pagination :links="allAuctions.links" />
     </div>
   </section>
 </template>
@@ -111,17 +52,22 @@ import { useAuctionStore } from "../../stores/auction";
 
 import { defineComponent, ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
+import Pagination from "../../components/UI/items/Pagination.vue";
 
 export default defineComponent({
+  components: {
+    Pagination,
+  },
   async setup() {
-    const auctions = ref([]);
-    onMounted(async () => {
-      await useAuctionStore().setAuctions();
-      const { auctions } = storeToRefs(useAuctionStore());
-    });
+    let allAuctions = ref({});
     return {
-      auctions,
+      allAuctions,
     };
+  },
+  async mounted() {
+    await useAuctionStore().setAuctions();
+    const { _auctions } = storeToRefs(useAuctionStore());
+    this.allAuctions = _auctions.value;
   },
 });
 </script>
