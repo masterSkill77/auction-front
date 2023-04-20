@@ -47,14 +47,16 @@ router.beforeEach((to, from, next) => {
   s.setAttribute("src", src);
   document.body.appendChild(s);
   if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (!authStore.isAuthenticated) {
-      next({ name: "Login" });
+    if (!authStore.isAuthenticated && from.name !== "login") {
+      next({ name: "login" });
+      return;
     } else {
       next();
     }
   } else {
     next();
   }
+  next();
 });
 
 export default router;

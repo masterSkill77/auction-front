@@ -52,34 +52,27 @@
   </div>
 </template>
 <script>
-import { defineComponent, ref } from "vue";
 import { useAuthStore } from "@/stores/auth";
-import router from "@/router";
 
-export default defineComponent({
-  setup() {
-    const auth = useAuthStore();
-    const email = ref("");
-    const password = ref("");
-
-    const login = async () => {
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    async login() {
       try {
-        await auth.login(email.value, password.value);
-        router.push({ name: "Home" });
+        await useAuthStore().login(this.email, this.password);
+        this.$router.push({ name: "home" });
       } catch (error) {
         console.error(error);
       }
-    };
-
-    return {
-      email,
-      password,
-      login,
-    };
+    },
   },
-});
+};
 </script>
-
 <style scoped>
 .border-bottom-1 {
   border-bottom: 1px solid black !important;

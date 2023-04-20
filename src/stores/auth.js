@@ -6,7 +6,7 @@ const IS_AUTHENTICATED = "auction_isAuthenticated";
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
-    isAuthenticated: localStorage.getItem(IS_AUTHENTICATED) || false,
+    _isAuthenticated: localStorage.getItem(IS_AUTHENTICATED) || false,
     token: localStorage.getItem(TOKEN_NAME) || "",
     user: JSON.parse(localStorage.getItem(USER_TOKEN)) || {},
   }),
@@ -22,7 +22,7 @@ export const useAuthStore = defineStore("auth", {
           email,
           password,
         });
-        this.isAuthenticated = true;
+        this._isAuthenticated = true;
         this.token = response.data.access_token;
         this.user = response.data.user;
         localStorage.setItem(IS_AUTHENTICATED, true);
@@ -35,7 +35,7 @@ export const useAuthStore = defineStore("auth", {
     },
 
     logout() {
-      this.isAuthenticated = false;
+      this._isAuthenticated = false;
       this.token = "";
       this.user = {};
       localStorage.removeItem(IS_AUTHENTICATED);
