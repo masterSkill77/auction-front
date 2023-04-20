@@ -18,7 +18,7 @@ export const useAuthStore = defineStore("auth", {
   actions: {
     async login(email, password) {
       try {
-        const response = await axios.post("http://127.0.0.1:8000/api/login", {
+        const response = await axios.post(VITE_APP_BACKEND_URL + "/login", {
           email,
           password,
         });

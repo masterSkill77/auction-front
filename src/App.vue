@@ -10,6 +10,8 @@ import LoginPage from "./views/auth/LoginPage.vue";
 <template>
   <Preloader />
   <Header />
-  <RouterView />
+  <Suspense>
+    <RouterView />
+  </Suspense>
   <Footer />
 </template>

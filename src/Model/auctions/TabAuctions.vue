@@ -106,6 +106,27 @@
   </section>
 </template>
 
-<script setup></script>
+<script>
+import { storeToRefs } from "pinia";
+import { useAuctionStore } from "../../stores/auction";
+
+import { defineComponent, ref, onMounted } from "vue";
+const { getAuctions } = storeToRefs(useAuctionStore());
+
+export default defineComponent({
+  async setup() {
+    const auctions = ref([]);
+    onMounted(async () => {
+      const res = await useAuctionStore().setAuctions();
+      auctions.value = await getAuctions();
+      console.log(res);
+    });
+
+    return {
+      auctions,
+    };
+  },
+});
+</script>
 
 <style></style>

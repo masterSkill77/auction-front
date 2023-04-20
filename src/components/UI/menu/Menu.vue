@@ -5,9 +5,9 @@
         <!-- Menu -->
         <nav class="classy-navbar justify-content-between" id="cryptosNav">
           <!-- Logo -->
-          <a class="nav-brand" href="index.html"
+          <router-link class="nav-brand" to="/"
             ><img src="img/core-img/logo.png" alt=""
-          /></a>
+          /></router-link>
 
           <!-- Navbar Toggler -->
           <div class="classy-navbar-toggler">

@@ -1,11 +1,23 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-export const useAuction = defineStore("auction", async () => {
-  const response = await axios
-    .get("http://127.0.0.1:8000/api/auction")
-    .then(({ data }) => data);
-  const auctions = response.data;
+const VITE_APP_BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URL;
 
-  return { auctions };
+export const useAuctionStore = defineStore("auction", {
+  state: () => ({
+    auctions: [],
+  }),
+  actions: {
+    async setAuctions() {
+      const response = await axios
+        .get(VITE_APP_BACKEND_URL + "/auction")
+        .then(({ data }) => data);
+      this.auctions = response;
+    },
+  },
+  getters: {
+    getAuctions() {
+      return this.auctions;
+    },
+  },
 });
