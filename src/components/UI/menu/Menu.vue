@@ -6,7 +6,7 @@
         <nav class="classy-navbar justify-content-between" id="cryptosNav">
           <!-- Logo -->
           <router-link class="nav-brand" to="/"
-            ><img src="img/core-img/logo.png" alt=""
+            ><img src="/img/core-img/logo.png" alt=""
           /></router-link>
 
           <!-- Navbar Toggler -->

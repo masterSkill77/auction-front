@@ -30,7 +30,6 @@ export default defineComponent({
     },
   },
   setup(props, { emit }) {
-    console.log("test");
     let links = props.links;
     links.pop();
     links = links.slice(1);

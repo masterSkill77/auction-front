@@ -70,7 +70,6 @@ export default defineComponent({
   },
   watch: {
     allAuctions: function (newValue) {
-      console.log("test");
       this.linksOfPage = newValue.links;
     },
   },
