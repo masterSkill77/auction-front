@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-
+    {{ auctions }}
     <div class="row">
       <!-- Single Course Area -->
       <div class="col-12 col-md-4 col-xl-3">
@@ -107,21 +107,18 @@
 </template>
 
 <script>
-import { storeToRefs } from "pinia";
 import { useAuctionStore } from "../../stores/auction";
 
 import { defineComponent, ref, onMounted } from "vue";
-const { getAuctions } = storeToRefs(useAuctionStore());
+import { storeToRefs } from "pinia";
 
 export default defineComponent({
   async setup() {
     const auctions = ref([]);
     onMounted(async () => {
-      const res = await useAuctionStore().setAuctions();
-      auctions.value = await getAuctions();
-      console.log(res);
+      await useAuctionStore().setAuctions();
+      const { auctions } = storeToRefs(useAuctionStore());
     });
-
     return {
       auctions,
     };
