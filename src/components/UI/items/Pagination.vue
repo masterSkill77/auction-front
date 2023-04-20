@@ -1,14 +1,18 @@
 <template>
   <nav aria-label="Page navigation example">
     <ul class="pagination pagination-lg mb-4 justify-content-center">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1">Previous</a>
-      </li>
-      <li class="active page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Next</a>
+      <li
+        v-for="link in links"
+        :key="link.label"
+        class="page-item"
+        :class="{ active: isActive(link.url) }"
+      >
+        <a
+          class="page-link"
+          @click.prevent="changePage(link.url)"
+          href="{{link.url}}"
+          v-html="link.label"
+        ></a>
       </li>
     </ul>
   </nav>
@@ -17,14 +21,29 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  props: ["links"],
-  data() {
-    return {
-      myLinks: [],
-    };
+  props: { links: Array, currentPage: Number },
+  emits: ["changePage"],
+  methods: {
+    isActive(link) {
+      const pageNumber = parseInt(link.split("=").pop());
+      return pageNumber === this.currentPage;
+    },
   },
-  setup(props) {
-    console.log(props);
+  setup(props, { emit }) {
+    console.log("test");
+    let links = props.links;
+    links.pop();
+    links = links.slice(1);
+    const changePage = function (link) {
+      const pageNumber = parseInt(link.split("=").pop());
+
+      emit("changePage", pageNumber);
+    };
+    return {
+      links,
+      changePage,
+    };
   },
 });
 </script>
+<style scoped></style>

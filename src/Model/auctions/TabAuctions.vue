@@ -42,7 +42,12 @@
       </div>
     </div>
     <div class="text-center w-100 m-auto">
-      <Pagination :links="allAuctions.links" />
+      <Pagination
+        @changePage="changePage"
+        v-if="linksOfPage"
+        :links="linksOfPage"
+        :currentPage="allAuctions.current_page"
+      />
     </div>
   </section>
 </template>
@@ -58,16 +63,38 @@ export default defineComponent({
   components: {
     Pagination,
   },
+  computed: {
+    linksOfPage() {
+      return this.allAuctions.value.links;
+    },
+  },
+  watch: {
+    allAuctions: function (newValue) {
+      console.log("test");
+      this.linksOfPage = newValue.links;
+    },
+  },
   async setup() {
     let allAuctions = ref({});
+    let linksOfPage = ref(allAuctions.value.links);
     return {
+      linksOfPage,
       allAuctions,
     };
+  },
+  methods: {
+    async changePage(pageNumber) {
+      await useAuctionStore().setAuctionPage(pageNumber);
+      const { _auctions } = storeToRefs(useAuctionStore());
+      this.allAuctions = _auctions.value;
+      this.linksOfPage = _auctions.value.links;
+    },
   },
   async mounted() {
     await useAuctionStore().setAuctions();
     const { _auctions } = storeToRefs(useAuctionStore());
     this.allAuctions = _auctions.value;
+    this.linksOfPage = this.allAuctions.links;
   },
 });
 </script>

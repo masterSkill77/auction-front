@@ -12,6 +12,12 @@ export const useAuctionStore = defineStore("auction", {
         .then(({ data }) => data.data);
       this._auctions = response;
     },
+    async setAuctionPage(pageNumber) {
+      const response = await axios
+        .get("/auction?page=" + pageNumber)
+        .then(({ data }) => data.data);
+      this._auctions = response;
+    },
   },
   getters: {
     getAuctions() {
