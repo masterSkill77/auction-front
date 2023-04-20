@@ -14,7 +14,7 @@
               </div>
               <!-- Top Login & Faq & Earn Monery btn -->
               <div class="login-faq-earn-money">
-                <a href="#">Login | Register</a>
+                <router-link to="/login">Login</router-link>
                 <a href="#">FAQ</a>
                 <a href="#" class="active">Earn Money</a>
               </div>

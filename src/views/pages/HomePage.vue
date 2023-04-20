@@ -2,7 +2,7 @@
   <div class="p-2 single-hero-slide" style="background-color: #eef3f6">
     <div class="container-fluid h-100">
       <div class="row h-100 align-items-center">
-        <div class="col-12 col-md-7 pl-5">
+        <div class="col-12 col-md-9 pl-5">
           <div class="hero-slides-content">
             <h2 data-animation="fadeInUp" data-delay="100ms">
               Take a step into the
@@ -22,13 +22,13 @@
             >
           </div>
         </div>
-        <div class="col-12 col-md-5 mt-5">
+        <div class="col-12 col-md-3 mt-5 text-center">
           <div
             class="hero-slides-thumb"
             data-animation="fadeInUp"
             data-delay="1000ms"
           >
-            <img src="img/bg-img/bg-2.png" alt="" />
+            <img src="img/bg-img/bg-2.png" alt="" class="w-50" />
           </div>
         </div>
       </div>
