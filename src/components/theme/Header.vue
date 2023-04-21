@@ -18,7 +18,7 @@
                 <a href="/logout" @click.prevent="logout()" v-else>Logout</a>
                 <a href="#">FAQ</a>
                 <router-link v-if="isLogged" to="/profile"
-                  >My profile ({{ me.email }})</router-link
+                  >Dashboard ({{ me.email }})</router-link
                 >
               </div>
             </div>
