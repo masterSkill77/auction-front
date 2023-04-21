@@ -4,6 +4,7 @@ import HomePage from "@/views/pages/HomePage.vue";
 import AboutPage from "@/views/pages/AboutPage.vue";
 import NewsPage from "@/views/pages/NewsPage.vue";
 import AuctionsPage from "@/views/pages/AuctionsPage.vue";
+import AdminPage from "@/views/pages/AdminPage.vue";
 import AuctionPage from "@/Model/auctions/AuctionCard.vue";
 import LoginPage from "@/views/auth/LoginPage.vue";
 import NotFound from "@/views/404.vue";
@@ -41,6 +42,11 @@ const router = createRouter({
       meta: {
         requiresAuth: true,
       },
+    },
+    {
+      path: "/profile",
+      name: "Profile",
+      component: AdminPage,
     },
     {
       path: "/login",
