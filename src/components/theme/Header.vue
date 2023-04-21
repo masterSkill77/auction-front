@@ -2,7 +2,7 @@
   <header class="header-area">
     <!-- Top Header Area -->
     <div class="top-header">
-      <div class="container h-100">
+      <div class="container-fluid h-100">
         <div class="row h-100">
           <div class="col-12 h-100">
             <div
@@ -17,7 +17,9 @@
                 <router-link to="/login" v-if="!isLogged">Login</router-link>
                 <a href="/logout" @click.prevent="logout()" v-else>Logout</a>
                 <a href="#">FAQ</a>
-                <a href="#" class="active">Earn Money</a>
+                <router-link v-if="isLogged" to="/"
+                  >My profile ({{ me.email }})</router-link
+                >
               </div>
             </div>
           </div>
@@ -35,7 +37,7 @@ import Menu from "@/components/UI/menu/Menu.vue";
 import { storeToRefs } from "pinia";
 import router from "@/router/index";
 
-const { isAuthenticated } = storeToRefs(useAuthStore());
+const { isAuthenticated, me } = storeToRefs(useAuthStore());
 const isLogged = isAuthenticated;
 
 const logout = () => {

@@ -14,6 +14,9 @@ export const useAuthStore = defineStore("auth", {
     isAuthenticated() {
       return !!this.token;
     },
+    me() {
+      return this.user;
+    },
   },
   actions: {
     async login(email, password) {
