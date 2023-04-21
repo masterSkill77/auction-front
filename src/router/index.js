@@ -47,6 +47,9 @@ const router = createRouter({
       path: "/profile",
       name: "Profile",
       component: AdminPage,
+      meta: {
+        requiresAuth: true,
+      },
     },
     {
       path: "/login",
