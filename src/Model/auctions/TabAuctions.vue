@@ -59,6 +59,8 @@ import { defineComponent, ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import Pagination from "../../components/UI/items/Pagination.vue";
 
+console.log(window.Echo);
+
 export default defineComponent({
   components: {
     Pagination,

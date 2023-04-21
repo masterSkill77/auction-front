@@ -10,7 +10,7 @@
               With supporting text below as a natural lead-in to additional
               content.
             </p>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Make a bid</a>
+            <a href="#" class="btn btn-primary" v-if="auction.owner.id != me.id" data-toggle="modal" data-target="#exampleModal">Make a bid</a>
           </div>
           <div class="card-footer text-muted">
             <vue-countdown :time="
@@ -127,7 +127,8 @@
   </section>
 </template>
 <script>
-  import {
+  import { storeToRefs } from "pinia";
+import {
     defineComponent,
     onBeforeMount,
     ref
@@ -138,9 +139,11 @@
   import {
     useAuctionStore
   } from "../../stores/auction";
+import { useAuthStore } from "../../stores/auth";
 
   export default defineComponent({
     setup() {
+      const { me } = storeToRefs(useAuthStore());
       const auction = ref({
         nft: {}
       });
@@ -153,6 +156,7 @@
 
       return {
         auction,
+        me
       };
     },
   });
