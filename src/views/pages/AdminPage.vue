@@ -1,6 +1,5 @@
 <template>
   <HeaderDashboard />
-
   <div class="left-side-bar">
     <div class="brand-logo">
       <router-link to="/">
@@ -15,17 +14,10 @@
   <div class="mobile-menu-overlay"></div>
 
   <div class="main-container">
-    {{ "test :" + $route.path }}
     <router-view class="container-fluid" :key="$route.path" />
   </div>
 </template>
 <script setup>
-import HeaderDashboard from "@/components/UI/dashboard/HeaderDashboard.vue";
+import HeaderDashboard from "../../components/UI/dashboard/HeaderDashboard.vue";
 import Menu from "../../components/UI/dashboard/menu/Menu.vue";
-import { ref } from "vue";
-const componentKey = ref(0);
-
-const forceRerender = () => {
-  componentKey.value += 1;
-};
 </script>

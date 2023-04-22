@@ -26,9 +26,8 @@
         </div>
       </div>
     </div>
-
     <!-- Navbar Area -->
-    <Menu />
+    <Menu v-if="!$route.path.includes('profile')" />
   </header>
 </template>
 <script setup>
