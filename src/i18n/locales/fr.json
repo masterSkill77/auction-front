@@ -1,5 +1,14 @@
 {
   "menu": {
-    "home": "Accueil"
+    "home": "Accueil",
+    "news": "Actualités",
+    "auctions": "Enchères",
+    "about": "Guide",
+    "goto": "Aller vers la boutique",
+    "profile": "Profil",
+    "mynft": "Mes NFTs",
+    "myauctions": "Mes enchères",
+    "contact": "Contact",
+    "settings": "Paramètres"
   }
 }

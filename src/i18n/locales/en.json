@@ -1,5 +1,14 @@
 {
   "menu": {
-    "home": "Home"
+    "home": "Home",
+    "news": "News",
+    "auctions": "Auctions",
+    "about": "About",
+    "goto": "Go to shop",
+    "profile": "Profile",
+    "mynft": "My NFTs",
+    "myauctions": "My auctions",
+    "contact": "Contact",
+    "settings": "Settings"
   }
 }

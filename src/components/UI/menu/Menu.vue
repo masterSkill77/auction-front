@@ -30,17 +30,26 @@
             <!-- Nav Start -->
             <div class="classynav">
               <ul>
-                <li><router-link to="/">Home</router-link></li>
+                <li>
+                  <router-link to="/">{{ $t("menu.home") }}</router-link>
+                </li>
 
                 <li>
-                  <router-link to="/auctions">Auctions</router-link>
+                  <router-link to="/auctions">{{
+                    $t("menu.auctions")
+                  }}</router-link>
                 </li>
-                <li><router-link to="#">Currencies</router-link></li>
                 <li>
-                  <router-link to="/about">About</router-link>
+                  <router-link to="/about">{{ $t("menu.about") }}</router-link>
                 </li>
-                <li><router-link to="/news">News</router-link></li>
-                <li><router-link to="/contact">Contact</router-link></li>
+                <li>
+                  <router-link to="/news">{{ $t("menu.news") }}</router-link>
+                </li>
+                <li>
+                  <router-link to="/contact">{{
+                    $t("menu.contact")
+                  }}</router-link>
+                </li>
               </ul>
 
               <!-- Newsletter Form -->
