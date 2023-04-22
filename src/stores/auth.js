@@ -21,10 +21,13 @@ export const useAuthStore = defineStore("auth", {
   actions: {
     async login(email, password) {
       try {
-        const response = await axios.post(VITE_APP_BACKEND_URL + "/login", {
-          email,
-          password,
-        });
+        const response = await axios.post(
+          import.meta.env.VITE_APP_BACKEND_URL + "/login",
+          {
+            email,
+            password,
+          }
+        );
         this._isAuthenticated = true;
         this.token = response.data.access_token;
         this.user = response.data.user;

@@ -35,7 +35,7 @@ export default defineComponent({
 <template>
   <Preloader />
   <div>
-    <Header v-if="route.name != 'Profile'" />
+    <Header />
     <Suspense>
       <RouterView />
     </Suspense>

@@ -1,4 +1,5 @@
 import axios from "axios";
+import router from "../router";
 const TOKEN_NAME = "auction_token";
 const instance = axios.create({
   baseURL: import.meta.env.VITE_APP_BACKEND_URL,

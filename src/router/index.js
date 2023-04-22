@@ -5,9 +5,11 @@ import AboutPage from "@/views/pages/AboutPage.vue";
 import NewsPage from "@/views/pages/NewsPage.vue";
 import AuctionsPage from "@/views/pages/AuctionsPage.vue";
 import AdminPage from "@/views/pages/AdminPage.vue";
+import ChatPage from "@/views/pages/ChatPage.vue";
 import AuctionPage from "@/Model/auctions/AuctionCard.vue";
 import LoginPage from "@/views/auth/LoginPage.vue";
 import NotFound from "@/views/404.vue";
+import AdminHomePage from "@/components/UI/dashboard/AdminHomePage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +52,24 @@ const router = createRouter({
       meta: {
         requiresAuth: true,
       },
+      children: [
+        {
+          path: "chat",
+          name: "Chat",
+          component: ChatPage,
+          meta: {
+            requiresAuth: true,
+          },
+        },
+        {
+          path: "",
+          name: "HomeAdminPage",
+          component: AdminHomePage,
+          meta: {
+            requiresAuth: true,
+          },
+        },
+      ],
     },
     {
       path: "/login",
@@ -62,7 +82,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
-  const src = "/public/js/active.js";
+  const src = "/js/active.js";
   var s = document.createElement("script");
   s.setAttribute("src", src);
   document.body.appendChild(s);
@@ -76,6 +96,7 @@ router.beforeEach((to, from, next) => {
     }
   } else {
     next();
+    return;
   }
 });
 
