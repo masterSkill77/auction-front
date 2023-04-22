@@ -10,5 +10,9 @@
     "myauctions": "Mes enchères",
     "contact": "Contact",
     "settings": "Paramètres"
+  },
+  "personnalInfo": {
+    "email": "Adresse mail",
+    "phone": "Téléphone"
   }
 }

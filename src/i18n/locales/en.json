@@ -10,5 +10,9 @@
     "myauctions": "My auctions",
     "contact": "Contact",
     "settings": "Settings"
+  },
+  "personnalInfo": {
+    "email": "Email Address",
+    "phone": "Phone Number"
   }
 }

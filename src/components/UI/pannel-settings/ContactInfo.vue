@@ -35,27 +35,18 @@
       </div>
     </div>
   </div>
-  <h5 class="text-center h5 mb-0">Ross C. Lopez</h5>
-  <p class="text-center text-muted font-14">Lorem ipsum dolor sit amet</p>
+  <h5 class="text-center h5 mb-0">{{ me.name + " " + me.lastname }}</h5>
+  <p class="text-center text-muted font-14">{{ me.username }}</p>
   <div class="profile-info">
     <h5 class="mb-20 h5 text-blue">Contact Information</h5>
     <ul>
       <li>
-        <span>Email Address:</span>
-        FerdinandMChilds@test.com
+        <span>{{ $t("personnalInfo.email") }}:</span>
+        {{ me.email }}
       </li>
       <li>
-        <span>Phone Number:</span>
+        <span>{{ $t("personnalInfo.phone") }}:</span>
         619-229-0054
-      </li>
-      <li>
-        <span>Country:</span>
-        America
-      </li>
-      <li>
-        <span>Address:</span>
-        1807 Holden Street<br />
-        San Diego, CA 92115
       </li>
     </ul>
   </div>
