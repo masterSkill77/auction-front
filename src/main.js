@@ -19,12 +19,25 @@ window.Echo = new Echo({
 
 // import './assets/main.css'
 
+import { createI18n } from "vue-i18n";
+
+import { languages } from "./i18n/index.js";
+import { defaultLocale } from "./i18n/index.js";
+const messages = Object.assign(languages);
+
+const i18n = createI18n({
+  locale: defaultLocale,
+  fallbackLocale: "fr",
+  messages,
+});
+
 const app = createApp(App);
 
 app.use(createPinia());
 // const pinia = createPinia();
 // app.use(pinia);
 app.use(router);
+app.use(i18n);
 app.component(VueCountdown.name, VueCountdown);
 
 app.mount("#app");

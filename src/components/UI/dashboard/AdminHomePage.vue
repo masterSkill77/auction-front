@@ -13,7 +13,7 @@
             </div>
           </h4>
           <p class="font-18 max-width-600">
-            
+            {{ $t("menu.home") }}
           </p>
         </div>
       </div>
