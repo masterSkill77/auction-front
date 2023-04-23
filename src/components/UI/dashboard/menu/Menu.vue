@@ -32,6 +32,12 @@
             ><span class="mtext">{{ $t("menu.settings") }}</span>
           </router-link>
         </li>
+        <li>
+          <router-link to="/profile/create" class="dropdown-toggle no-arrow">
+            <span class="micon dw dw-diagram"></span
+            ><span class="mtext">{{ $t("menu.create") }}</span>
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>

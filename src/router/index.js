@@ -14,6 +14,10 @@ import SettingsPage from "@/views/pages/SettingsPage.vue";
 import PaiementPage from "@/views/pages/PaiementPage.vue";
 import MyAuctionsPage from "@/views/pages/MyAuctionsPage.vue";
 import MyNftPage from "@/views/pages/MyNftPage.vue";
+import CreateWizardPage from "@/views/pages/CreateWizardPage.vue";
+import HomeCreatePage from "@/Model/wizard/HomeCreatePage.vue";
+import NftCreation from "@/Model/wizard/nft/NftCreation.vue";
+import AuctionCreation from "@/Model/wizard/auction/AuctionCreation.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -104,6 +108,40 @@ const router = createRouter({
           meta: {
             requiresAuth: true,
           },
+        },
+        {
+          path: "create",
+          name: "wizard",
+          component: CreateWizardPage,
+          meta: {
+            requiresAuth: true,
+          },
+          children: [
+            {
+              path: "",
+              name: "wizard-home",
+              component: HomeCreatePage,
+              meta: {
+                requiresAuth: true,
+              },
+            },
+            {
+              path: "nft",
+              name: "wizard-nft",
+              component: NftCreation,
+              meta: {
+                requiresAuth: true,
+              },
+            },
+            {
+              path: "auction",
+              name: "wizard-  auction",
+              component: AuctionCreation,
+              meta: {
+                requiresAuth: true,
+              },
+            },
+          ],
         },
       ],
     },

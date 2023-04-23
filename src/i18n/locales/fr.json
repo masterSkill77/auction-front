@@ -9,7 +9,8 @@
     "mynft": "Mes NFTs",
     "myauctions": "Mes enchères",
     "contact": "Contact",
-    "settings": "Paramètres"
+    "settings": "Paramètres",
+    "create": "Création"
   },
   "personnalInfo": {
     "email": "Adresse mail",
@@ -43,5 +44,15 @@
   "success": {
     "title": "Succès",
     "bid": "Offre deposée"
+  },
+  "creation": {
+    "nft": {
+      "title": "NFT",
+      "description": ""
+    },
+    "auction": {
+      "title": "Enchère",
+      "description": ""
+    }
   }
 }
