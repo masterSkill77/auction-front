@@ -31,7 +31,9 @@
   },
   "auction": {
     "owner": "Owner",
-    "details": "Details"
+    "details": "Details",
+    "win_auction_title": "Auctions won",
+    "own_auction_title": "My initiated auctions"
   },
   "error": {
     "title": "An error was occured",

@@ -1,14 +1,20 @@
 <template>
   <section class="cryptos-feature-area section-padding-0-0">
     <div class="min-height-200px">
-      <AuctionsAdmin
-        :auctions="allAuctions.own_auctions"
-        :title="'My own auctions'"
-      />
-      <AuctionsAdmin
-        :auctions="allAuctions.win_auctions"
-        :title="'My win auctions'"
-      />
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <AuctionsAdmin
+            :auctions="allAuctions.own_auctions"
+            :title="$t('auction.own_auction_title')"
+          />
+        </div>
+        <div class="col-12 col-lg-6">
+          <AuctionsAdmin
+            :auctions="allAuctions.win_auctions"
+            :title="$t('auction.win_auction_title')"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>
