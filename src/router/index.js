@@ -79,13 +79,17 @@ const router = createRouter({
             requiresAuth: true,
           },
         },
+        {
+          path: "paiement",
+          name: "Paiement",
+          component: PaiementPage,
+          meta: {
+            requiresAuth: true,
+          },
+        },
       ],
     },
-    {
-      path: "/paiement",
-      name: "Paiement",
-      component: PaiementPage,
-    },
+
     {
       path: "/login",
       name: "login",
