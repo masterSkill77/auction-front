@@ -11,6 +11,7 @@ import LoginPage from "@/views/auth/LoginPage.vue";
 import NotFound from "@/views/404.vue";
 import AdminHomePage from "@/components/UI/dashboard/AdminHomePage.vue";
 import SettingsPage from "@/views/pages/SettingsPage.vue";
+import PaiementPage from "@/views/pages/PaiementPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -79,6 +80,11 @@ const router = createRouter({
           },
         },
       ],
+    },
+    {
+      path: "/paiement",
+      name: "Paiement",
+      component: PaiementPage,
     },
     {
       path: "/login",

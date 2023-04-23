@@ -43,6 +43,11 @@
                   <router-link to="/about">{{ $t("menu.about") }}</router-link>
                 </li>
                 <li>
+                  <router-link to="/paiement">{{
+                    $t("menu.about")
+                  }}</router-link>
+                </li>
+                <li>
                   <router-link to="/news">{{ $t("menu.news") }}</router-link>
                 </li>
                 <li>
