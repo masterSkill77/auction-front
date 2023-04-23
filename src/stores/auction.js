@@ -5,6 +5,7 @@ export const useAuctionStore = defineStore("auction", {
   state: () => ({
     auctions: [], // évitez d'utiliser le préfixe _ pour les propriétés d'état
     auction: {},
+    myAuctions: [],
   }),
   actions: {
     async fetchAuctions() {
@@ -12,6 +13,12 @@ export const useAuctionStore = defineStore("auction", {
         .get("/auction")
         .then(({ data }) => data.data);
       this.auctions = response;
+    },
+    async fetchMyAuctions() {
+      const response = await axios
+        .get("/mine/auctions")
+        .then(({ data }) => data.data);
+      this.myAuctions = response;
     },
     async fetchAuctionPage(pageNumber) {
       const response = await axios

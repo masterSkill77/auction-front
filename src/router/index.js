@@ -12,6 +12,7 @@ import NotFound from "@/views/404.vue";
 import AdminHomePage from "@/components/UI/dashboard/AdminHomePage.vue";
 import SettingsPage from "@/views/pages/SettingsPage.vue";
 import PaiementPage from "@/views/pages/PaiementPage.vue";
+import MyAuctionsPage from "@/views/pages/MyAuctionsPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -83,6 +84,14 @@ const router = createRouter({
           path: "paiement",
           name: "Paiement",
           component: PaiementPage,
+          meta: {
+            requiresAuth: true,
+          },
+        },
+        {
+          path: "auctions",
+          name: "My Auctions",
+          component: MyAuctionsPage,
           meta: {
             requiresAuth: true,
           },

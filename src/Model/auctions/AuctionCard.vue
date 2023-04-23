@@ -7,12 +7,13 @@
           <div class="card-body">
             <h5 class="card-title">{{ auction.nft.title }}</h5>
             <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
+              {{ auction.nft.description }}
             </p>
-            <a href="#" class="btn btn-primary" v-if="auction.owner.id != me.id" data-toggle="modal" data-target="#exampleModal">Make a bid</a>
+            <a href="#" class="btn btn-primary"
+              v-if="auction.owner.id != me.id && new Date(auction.end_date).getTime() - new Date().getTime() > 0"
+              data-toggle="modal" data-target="#exampleModal">Make a bid</a>
           </div>
-          <div class="card-footer text-muted">
+          <div class="card-footer text-muted" v-if="new Date(auction.end_date).getTime() - new Date().getTime() > 0">
             <vue-countdown :time="
                 new Date(auction.end_date).getTime() - new Date().getTime()
               " v-slot="{ days, hours, minutes, seconds }">
@@ -103,32 +104,45 @@
         </div>
       </div>
       <Teleport to="body">
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{ $t('bid.title') }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form @submit.prevent="makeBid">
+              <div class="modal-body">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input type="text" class="form-control" v-model="bid" required min="0" aria-label="Amount (to the nearest dollar)">
+                  <div class="input-group-append">
+                    <span class="input-group-text">.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
       </Teleport>
     </div>
   </section>
 </template>
 <script>
-  import { storeToRefs } from "pinia";
-import {
+  import {
+    storeToRefs
+  } from "pinia";
+  import {
     defineComponent,
     onBeforeMount,
     ref
@@ -139,23 +153,46 @@ import {
   import {
     useAuctionStore
   } from "../../stores/auction";
-import { useAuthStore } from "../../stores/auth";
+  import {
+    useAuthStore
+  } from "../../stores/auth";
+
+import {useBidStore} from "../../stores/bid"
 
   export default defineComponent({
+    methods : {
+      async makeBid(){
+        console.log(this.bid);
+        const body = {
+          bidder_id : this.me.id,
+          bid_amount: this.bid,
+          auction_id : this.auctionId
+        }
+        const response = await useBidStore().makeBid(body);
+        console.log(response);
+        this.auction = await useAuctionStore().fetchAuction(this.auctionId);
+      }
+    },
     setup() {
-      const { me } = storeToRefs(useAuthStore());
+      const {
+        me
+      } = storeToRefs(useAuthStore());
       const auction = ref({
         nft: {}
       });
+      const bid = ref(0);
       const route = useRoute();
-      const auctionId = route.params.auctionId;
+      let auctionId = ref()
+      auctionId.value = route.params.auctionId;
 
       onBeforeMount(async () => {
-        auction.value = await useAuctionStore().fetchAuction(auctionId);
+        auction.value = await useAuctionStore().fetchAuction(auctionId.value);
       });
 
       return {
         auction,
+        auctionId,
+        bid,
         me
       };
     },
