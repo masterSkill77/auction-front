@@ -20,7 +20,11 @@
     "user": "User"
   },
   "timer": {
-    "remaining": "Time remaining"
+    "remaining": "Time remaining",
+    "day": "day(s)",
+    "hour": "hour(s)",
+    "minute": "minute(s)",
+    "second": "second(s)"
   },
   "bid": {
     "start_price": "Start price",
@@ -47,11 +51,11 @@
   "creation": {
     "nft": {
       "title": "NFT",
-      "description": ""
+      "description": "The creation of NFT (Non-Fungible Token) is a growing practice in the world of blockchain and cryptocurrency. NFTs make it possible to represent unique digital assets such as works of art, videos, music, video games, etc. Each NFT has a unique code written on the blockchain, which guarantees the authenticity and ownership of the asset represented."
     },
     "auction": {
       "title": "Auction",
-      "description": ""
+      "description": "NFT auctions are a popular way to buy and sell unique and collectible NFTs. Auctions work like traditional auctions, where buyers bid on an NFT, and the highest bid wins the auction. NFT auctions can last from a few hours to several days, and sellers often have the option of setting a minimum reserve price for their NFT."
     }
   }
 }

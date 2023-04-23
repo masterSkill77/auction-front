@@ -28,8 +28,9 @@
             v-slot="{ days, hours, minutes, seconds }"
           >
             <b>
-              {{ $t("timer.remaining") }}：{{ days }} days, {{ hours }} hours,
-              {{ minutes }} minutes, {{ seconds }} seconds.
+              {{ $t("timer.remaining") }}：{{ days }} {{ $t("timer.day") }},
+              {{ hours }} {{ $t("timer.hour") }}, {{ minutes }}
+              {{ $t("timer.minute") }}, {{ seconds }} {{ $t("timer.second") }}.
             </b>
           </vue-countdown>
           <p>

@@ -20,7 +20,11 @@
     "user": "Utilisateur"
   },
   "timer": {
-    "remaining": "Temps restant"
+    "remaining": "Temps restant",
+    "day": "jour(s)",
+    "hour": "heure(s)",
+    "minute": "minute(s)",
+    "second": "seconde(s)"
   },
   "bid": {
     "start_price": "Prix de départ",
@@ -48,11 +52,11 @@
   "creation": {
     "nft": {
       "title": "NFT",
-      "description": ""
+      "description": "La création de NFT (Non-Fungible Token) est une pratique en plein essor dans l'univers de la blockchain et de la crypto-monnaie. Les NFT permettent de représenter des actifs numériques uniques tels que des œuvres d'art, des vidéos, des musiques, des jeux vidéo, etc. Chaque NFT possède un code unique inscrit sur la blockchain, ce qui garantit l'authenticité et la propriété de l'actif représenté."
     },
     "auction": {
       "title": "Enchère",
-      "description": ""
+      "description": "Les enchères de NFT sont un moyen populaire pour acheter et vendre des NFTs uniques et de collection. Les enchères fonctionnent comme des enchères traditionnelles, où les acheteurs enchérissent sur un NFT, et l'offre la plus élevée remporte l'enchère. Les enchères de NFT peuvent durer de quelques heures à plusieurs jours, et les vendeurs ont souvent la possibilité de fixer un prix de réserve minimum pour leur NFT."
     }
   }
 }

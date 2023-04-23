@@ -25,8 +25,18 @@
                 <a href="#">{{ auction.nft.title }}</a>
               </h4>
               <div class="price">
-                Current bid :<ins>$ {{ auction.current_bid }}</ins> Start price
-                :<ins>$ {{ auction.start_price }}</ins>
+                Current bid :<ins
+                  >$
+                  {{
+                    new Intl.NumberFormat("fr").format(auction.current_bid)
+                  }}</ins
+                >
+                Start price :<ins
+                  >$
+                  {{
+                    new Intl.NumberFormat("fr").format(auction.start_price)
+                  }}</ins
+                >
               </div>
               <router-link
                 class="btn btn-outline-primary"
