@@ -28,13 +28,17 @@
             v-slot="{ days, hours, minutes, seconds }"
           >
             <b>
-              Time Remaining：{{ days }} days, {{ hours }} hours,
+              {{ $t("timer.remaining") }}：{{ days }} days, {{ hours }} hours,
               {{ minutes }} minutes, {{ seconds }} seconds.
             </b>
           </vue-countdown>
           <p>
             {{ auction.nft.description }}
           </p>
+          <div>
+            {{ $t("bid.current_bid") }} : $
+            {{ new Intl.NumberFormat("fr").format(auction.current_bid) }}
+          </div>
           <router-link :to="'/auction/' + auction.id" class="btn cryptos-btn"
             >Read More</router-link
           >

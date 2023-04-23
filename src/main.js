@@ -23,6 +23,7 @@ import { createI18n } from "vue-i18n";
 
 import { languages } from "./i18n/index.js";
 import { defaultLocale } from "./i18n/index.js";
+import Notifications from "@kyvg/vue3-notification";
 const messages = Object.assign(languages);
 
 const i18n = createI18n({
@@ -38,6 +39,8 @@ app.use(createPinia());
 // app.use(pinia);
 app.use(router);
 app.use(i18n);
+app.use(Notifications);
+
 app.component(VueCountdown.name, VueCountdown);
 
 app.mount("#app");

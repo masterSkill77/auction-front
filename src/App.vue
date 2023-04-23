@@ -39,6 +39,7 @@ export default defineComponent({
     <Suspense>
       <RouterView />
     </Suspense>
+    <notifications />
   </div>
   <Footer />
 </template>

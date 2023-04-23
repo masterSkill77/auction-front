@@ -13,6 +13,33 @@
   },
   "personnalInfo": {
     "email": "Adresse mail",
-    "phone": "Téléphone"
+    "phone": "Téléphone",
+    "username": "Nom d'utilisateur",
+    "name": "Nom",
+    "user": "Utilisateur"
+  },
+  "timer": {
+    "remaining": "Temps restant"
+  },
+  "bid": {
+    "start_price": "Prix de départ",
+    "amount": "Montant",
+    "title": "Offre",
+    "button": "Placer une offre",
+    "current_bid": "Montant actuel",
+    "date": "Date",
+    "start_date": "Date de mise aux enchères"
+  },
+  "auction": {
+    "owner": "Possesseur",
+    "details": "Détails"
+  },
+  "error": {
+    "title": "Une erreur est survenue",
+    "BID_TOO_LOW": "Offre en dessous de l'offre actuelle ou bien en dessous de montant de départ"
+  },
+  "success": {
+    "title": "Succès",
+    "bid": "Offre deposée"
   }
 }

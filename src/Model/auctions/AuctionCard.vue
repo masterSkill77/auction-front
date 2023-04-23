@@ -11,14 +11,14 @@
             </p>
             <a href="#" class="btn btn-primary"
               v-if="auction.owner.id != me.id && new Date(auction.end_date).getTime() - new Date().getTime() > 0"
-              data-toggle="modal" data-target="#exampleModal">Make a bid</a>
+              data-toggle="modal" data-target="#exampleModal">{{  $t('bid.button')  }}</a>
           </div>
           <div class="card-footer text-muted" v-if="new Date(auction.end_date).getTime() - new Date().getTime() > 0">
             <vue-countdown :time="
                 new Date(auction.end_date).getTime() - new Date().getTime()
               " v-slot="{ days, hours, minutes, seconds }">
               <b>
-                Time Remaining：{{ days }} days, {{ hours }} hours,
+                {{ $t("timer.remaining") }}：{{ days }} days, {{ hours }} hours,
                 {{ minutes }} minutes, {{ seconds }} seconds.
               </b>
             </vue-countdown>
@@ -30,15 +30,15 @@
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="tab--1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1"
-                aria-selected="false">Owner</a>
+                aria-selected="false">{{ $t('auction.owner') }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="tab--2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2"
-                aria-selected="false">Details</a>
+                aria-selected="false">{{ $t('auction.details') }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="tab--3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3"
-                aria-selected="true">Bids</a>
+                aria-selected="true">{{ $t('bid.title') }}s</a>
             </li>
           </ul>
 
@@ -49,9 +49,9 @@
                 <div class="cryptos-tab-text">
                   <p>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Name : {{ auction.owner.name + " " + auction.owner.lastname }}</li>
-                      <li class="list-group-item">Username : {{ auction.owner.username }}</li>
-                      <li class="list-group-item">Email : {{ auction.owner.email }}</li>
+                      <li class="list-group-item">{{ $t("personnalInfo.name") }}: {{ auction.owner.name + " " + auction.owner.lastname }}</li>
+                      <li class="list-group-item">{{ $t("personnalInfo.username") }} : {{ auction.owner.username }}</li>
+                      <li class="list-group-item">{{ $t("personnalInfo.email") }} : {{ auction.owner.email }}</li>
                     </ul>
                   </p>
                 </div>
@@ -63,9 +63,9 @@
                 <div class="cryptos-tab-text">
                   <p>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Start price : $ {{ auction.start_price }}</li>
-                      <li class="list-group-item">Current bid : $ {{ auction.current_bid }}</li>
-                      <li class="list-group-item">Start date : {{ auction.start_date }}</li>
+                      <li class="list-group-item">{{ $t('bid.start_price') }} : $ {{ auction.start_price }}</li>
+                      <li class="list-group-item">{{ $t('bid.current_bid') }} : $ {{ new Intl.NumberFormat('fr').format(auction.current_bid) }}</li>
+                      <li class="list-group-item">{{ $t('bid.start_date') }} : {{ auction.start_date }}</li>
                     </ul>
                   </p>
                 </div>
@@ -80,16 +80,16 @@
                       <thead>
                         <tr>
                           <th scope="col">#</th>
-                          <th scope="col">User</th>
-                          <th scope="col">Amount ($)</th>
-                          <th scope="col">Date</th>
+                          <th scope="col">{{  $t('personnalInfo.user') }}</th>
+                          <th scope="col">{{ $t('bid.amount') }} ($)</th>
+                          <th scope="col">{{ $t('bid.date')}}</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr v-for="bid in auction.bids" :key="bid.in">
+                        <tr v-for="bid in auction.bids.reverse()" :key="bid.id">
                           <th scope="row">{{ bid.id }}</th>
                           <td>{{ bid.bidder.name + " " + bid.bidder.lastname }}</td>
-                          <td>{{  bid.bid_amount  }}</td>
+                          <td>{{  new Intl.NumberFormat('fr').format(bid.bid_amount ) }}</td>
                           <td>{{  bid.created_at  }}</td>
                         </tr>
 
@@ -168,11 +168,32 @@ import {useBidStore} from "../../stores/bid"
           bid_amount: this.bid,
           auction_id : this.auctionId
         }
-        const response = await useBidStore().makeBid(body);
-        console.log(response);
+        const response = await useBidStore().makeBid(body).then((data => {
+          this.$notify({
+            title: this.$t('success.title'),
+            text: this.$t('success.bid'),
+            type : 'success'
+          });
+        })).catch(({response}) => {
+          if(response.data.error)
+          this.$notify({
+            title:this.$t('error.title'),
+            text: this.$t('error.' + response.data.error),
+            type : "error",
+          });
+        });
+        this.bid = 0
         this.auction = await useAuctionStore().fetchAuction(this.auctionId);
       }
     },
+    mounted(){
+      window.Echo.channel("auction").listen(
+      ".auction-done",
+      async function (data) {
+        auction = await useAuctionStore().fetchAuction(auctionId);
+      }
+    );
+  },
     setup() {
       const {
         me

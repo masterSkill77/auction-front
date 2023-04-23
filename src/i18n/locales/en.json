@@ -13,6 +13,32 @@
   },
   "personnalInfo": {
     "email": "Email Address",
-    "phone": "Phone Number"
+    "phone": "Phone Number",
+    "username": "Username",
+    "name": "Name",
+    "user": "User"
+  },
+  "timer": {
+    "remaining": "Time remaining"
+  },
+  "bid": {
+    "start_price": "Start price",
+    "title": "Bid",
+    "button": "Make a bid",
+    "amount": "Amount",
+    "date": "Date",
+    "start_date": "Start date"
+  },
+  "auction": {
+    "owner": "Owner",
+    "details": "Details"
+  },
+  "error": {
+    "title": "An error was occured",
+    "BID_TOO_LOW": "Bid below current bid or well below starting amount"
+  },
+  "success": {
+    "title": "Successfuly",
+    "bid": "Bid submitted"
   }
 }
