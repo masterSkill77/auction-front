@@ -28,9 +28,10 @@
                     id="card-element"
                     type="tel"
                     inputmode="numeric"
-                    pattern="[0-9\s]{13,19}"
+                    pattern="[0-9\s]{16}"
                     autocomplete="cc-number"
-                    maxlength="19"
+                    maxlength="16"
+                    minlength="16"
                     placeholder="xxxx xxxx xxxx xxxx"
                     class="form-control"
                   />
@@ -115,7 +116,7 @@ export default defineComponent({
   methods: {
     async pay() {
       await axios
-        .post("/paiement")
+        .post("/paiement", { auction_id: 2 })
         .then((response) => console.log(response.data));
     },
   },
