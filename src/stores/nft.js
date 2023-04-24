@@ -30,9 +30,9 @@ export const useNftStore = defineStore("nft", {
     },
     async fetchNftPage(pageNumber) {
       const response = await axios
-        .get("/nft?page=" + pageNumber)
+        .get("/mine/nft?page=" + pageNumber)
         .then(({ data }) => data.data);
-      this.nfts = response;
+      this.myNfts = response;
     },
     async fetchNft(id) {
       const response = await axios.get("/nft/" + id).then(({ data }) => {

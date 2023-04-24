@@ -35,7 +35,7 @@ export default defineComponent({
     links = links.slice(1);
     const changePage = function (link) {
       const pageNumber = parseInt(link.split("=").pop());
-
+      console.log(pageNumber);
       emit("changePage", pageNumber);
     };
     return {

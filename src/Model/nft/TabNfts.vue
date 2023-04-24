@@ -92,6 +92,7 @@ export default defineComponent({
     async changePage(pageNumber) {
       await useNftStore().fetchNftPage(pageNumber);
       const { myNfts } = storeToRefs(useNftStore());
+      console.log(myNfts.value.data);
       this.allNfts = myNfts.value;
       this.linksOfPage = this.allNfts.links;
     },
@@ -108,10 +109,12 @@ export default defineComponent({
     const { myNfts } = storeToRefs(useNftStore());
     this.allNfts = myNfts.value;
     this.linksOfPage = this.allNfts.links;
-    // window.Echo.channel("Nft").listen(".Nft-done", async function (data) {
-    //   console.log(data);
-    //   await fetchData();
-    // });
+    window.Echo.channel("auction").listen(
+      ".auction-done",
+      async function (data) {
+        await fetchData();
+      }
+    );
   },
 });
 </script>
