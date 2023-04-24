@@ -10,7 +10,8 @@
     "myauctions": "Mes enchères",
     "contact": "Contact",
     "settings": "Paramètres",
-    "create": "Création"
+    "create": "Création",
+    "logout": "Déconnexion"
   },
   "personnalInfo": {
     "email": "Adresse mail",

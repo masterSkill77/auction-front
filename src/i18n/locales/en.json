@@ -10,7 +10,8 @@
     "myauctions": "My auctions",
     "contact": "Contact",
     "settings": "Settings",
-    "create": "Create"
+    "create": "Create",
+    "logout": "Logout"
   },
   "personnalInfo": {
     "email": "Email Address",

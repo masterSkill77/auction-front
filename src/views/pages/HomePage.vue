@@ -1,39 +1,198 @@
 <template>
-  <div class="p-2 single-hero-slide" style="background-color: #eef3f6">
-    <div class="container-fluid h-100">
+  <div class="hero-slides">
+    <div class="container-fluid h-50">
       <div class="row h-100 align-items-center">
-        <div class="col-12 col-md-9 pl-5">
-          <div class="hero-slides-content">
-            <h2 data-animation="fadeInUp" data-delay="100ms">
-              Take a step into the
-              <span style="color: #ffaf02">Crypto World</span>
-            </h2>
-            <h6 data-animation="fadeInUp" data-delay="400ms">
-              Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-              Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-              pulvinar.
-            </h6>
-            <a
-              href="#"
-              class="btn cryptos-btn mt-3"
-              data-animation="fadeInUp"
-              data-delay="700ms"
-              >Read More</a
-            >
-          </div>
-        </div>
-        <div class="col-12 col-md-3 mt-5 text-center">
+        <div class="col-12">
           <div
-            class="hero-slides-thumb"
-            data-animation="fadeInUp"
-            data-delay="1000ms"
+            id="carouselExampleCaptions"
+            class="carousel slide"
+            data-ride="carousel"
           >
-            <img src="img/bg-img/bg-2.png" alt="" class="w-50" />
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselExampleCaptions"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="single-hero-slide">
+                  <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                      <div class="col-12 col-md-7">
+                        <div class="hero-slides-content">
+                          <h2
+                            data-animation="fadeInUp"
+                            data-delay="100ms"
+                            style="animation-delay: 100ms; opacity: 1"
+                            class="animated fadeInUp"
+                          >
+                            Take a step into the <span>Crypto World</span>
+                          </h2>
+                          <h6
+                            data-animation="fadeInUp"
+                            data-delay="400ms"
+                            style="animation-delay: 400ms; opacity: 1"
+                            class="animated fadeInUp"
+                          >
+                            Cras vitae turpis lacinia, lacinia lacus non,
+                            fermentum nisi. Donec et sollicitudin est, in
+                            euismod erat. Ut at erat et arcu pulvinar.
+                          </h6>
+                          <a
+                            href="#"
+                            class="btn cryptos-btn animated fadeInUp"
+                            data-animation="fadeInUp"
+                            data-delay="700ms"
+                            style="animation-delay: 700ms; opacity: 1"
+                            >Read More</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-5">
+                        <div
+                          class="hero-slides-thumb animated fadeInUp"
+                          data-animation="fadeInUp"
+                          data-delay="1000ms"
+                          style="animation-delay: 1000ms; opacity: 1"
+                        >
+                          <img src="img/bg-img/bg-2.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="single-hero-slide">
+                  <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                      <div class="col-12 col-md-7">
+                        <div class="hero-slides-content">
+                          <h2
+                            data-animation="fadeInUp"
+                            data-delay="100ms"
+                            style="animation-delay: 100ms; opacity: 1"
+                            class="animated fadeInUp"
+                          >
+                            Take a step into the <span>Crypto World</span>
+                          </h2>
+                          <h6
+                            data-animation="fadeInUp"
+                            data-delay="400ms"
+                            style="animation-delay: 400ms; opacity: 1"
+                            class="animated fadeInUp"
+                          >
+                            Cras vitae turpis lacinia, lacinia lacus non,
+                            fermentum nisi. Donec et sollicitudin est, in
+                            euismod erat. Ut at erat et arcu pulvinar.
+                          </h6>
+                          <a
+                            href="#"
+                            class="btn cryptos-btn animated fadeInUp"
+                            data-animation="fadeInUp"
+                            data-delay="700ms"
+                            style="animation-delay: 700ms; opacity: 1"
+                            >Read More</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-5">
+                        <div
+                          class="hero-slides-thumb animated fadeInUp"
+                          data-animation="fadeInUp"
+                          data-delay="1000ms"
+                          style="animation-delay: 1000ms; opacity: 1"
+                        >
+                          <img src="img/bg-img/bg-2.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="single-hero-slide">
+                  <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                      <div class="col-12 col-md-7">
+                        <div class="hero-slides-content">
+                          <h2
+                            data-animation="fadeInUp"
+                            data-delay="100ms"
+                            style="animation-delay: 100ms; opacity: 1"
+                            class="animated fadeInUp"
+                          >
+                            Take a step into the <span>Crypto World</span>
+                          </h2>
+                          <h6
+                            data-animation="fadeInUp"
+                            data-delay="400ms"
+                            style="animation-delay: 400ms; opacity: 1"
+                            class="animated fadeInUp"
+                          >
+                            Cras vitae turpis lacinia, lacinia lacus non,
+                            fermentum nisi. Donec et sollicitudin est, in
+                            euismod erat. Ut at erat et arcu pulvinar.
+                          </h6>
+                          <a
+                            href="#"
+                            class="btn cryptos-btn animated fadeInUp"
+                            data-animation="fadeInUp"
+                            data-delay="700ms"
+                            style="animation-delay: 700ms; opacity: 1"
+                            >Read More</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-5">
+                        <div
+                          class="hero-slides-thumb animated fadeInUp"
+                          data-animation="fadeInUp"
+                          data-delay="1000ms"
+                          style="animation-delay: 1000ms; opacity: 1"
+                        >
+                          <img src="img/bg-img/bg-2.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleCaptions"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleCaptions"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- ##### Course Area Start ##### -->
   <Explaination />
   <!-- ##### Course Area End ##### -->

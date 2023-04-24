@@ -38,8 +38,23 @@
             ><span class="mtext">{{ $t("menu.create") }}</span>
           </router-link>
         </li>
+        <li>
+          <a href="" @click.prevent="logout" class="dropdown-toggle no-arrow">
+            <span class="micon dw dw-logout-1"></span
+            ><span class="mtext">{{ $t("menu.logout") }}</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import { useAuthStore } from "../../../../stores/auth";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const logout = () => {
+  useAuthStore().logout();
+  router.push("/login");
+};
+</script>
