@@ -40,7 +40,16 @@
     "owner": "Owner",
     "details": "Details",
     "win_auction_title": "Auctions won",
-    "own_auction_title": "My initiated auctions"
+    "own_auction_title": "My initiated auctions",
+    "done": "Done",
+    "in_progress": "In progress"
+  },
+  "form": {
+    "button": {
+      "submit": "Save",
+      "close": "Close",
+      "cancel": "Cancel"
+    }
   },
   "error": {
     "title": "An error was occured",
@@ -49,7 +58,8 @@
   "success": {
     "title": "Successfuly",
     "bid": "Bid submitted",
-    "nft": "NFT created and deployed"
+    "nft": "NFT created and deployed",
+    "auction": "Auction created successfuly"
   },
   "creation": {
     "nft": {

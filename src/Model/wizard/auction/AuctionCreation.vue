@@ -66,16 +66,43 @@
     </div>
   </div>
 </template>
-<script setup>
-import { storeToRefs } from "pinia";
+<script>
 import { useNftStore } from "@/stores/nft";
-import { ref } from "vue";
+import { defineComponent, ref } from "vue";
 import { useAuctionStore } from "../../../stores/auction";
 
-const myNfts = await useNftStore().fetchMyAvailableNfts();
-let auction = ref({});
-const createAuction = async function () {
-  auction.value.start_date = new Date();
-  await useAuctionStore().createAuction(auction.value);
-};
+export default defineComponent({
+  async setup() {
+    let myNfts = await useNftStore().fetchMyAvailableNfts();
+    let auction = ref({});
+    return {
+      myNfts,
+      auction,
+    };
+  },
+  methods: {
+    async createAuction() {
+      this.auction.start_date = new Date();
+      await useAuctionStore()
+        .createAuction(this.auction)
+        .then(async () => {
+          this.$notify({
+            title: this.$t("success.title"),
+            text: this.$t("success.auction"),
+            type: "success",
+          });
+
+          this.myNfts = await useNftStore().fetchMyAvailableNfts();
+          this.$router.push("/profile/auctions");
+        })
+        .catch(() => {
+          this.$notify({
+            title: this.$t("error.title"),
+            text: this.$t("error.contact-us"),
+            type: "error",
+          });
+        });
+    },
+  },
+});
 </script>

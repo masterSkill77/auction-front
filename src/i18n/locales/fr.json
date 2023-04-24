@@ -41,7 +41,16 @@
     "owner": "Possesseur",
     "details": "Détails",
     "win_auction_title": "Mes enchères gagnées",
-    "own_auction_title": "Mes enchères initiées"
+    "own_auction_title": "Mes enchères initiées",
+    "done": "Fini",
+    "in_progress": "En cours"
+  },
+  "form": {
+    "button": {
+      "submit": "Enregistrer",
+      "close": "Fermer",
+      "cancel": "Fermer"
+    }
   },
   "error": {
     "title": "Une erreur est survenue",
@@ -50,7 +59,8 @@
   "success": {
     "title": "Succès",
     "bid": "Offre deposée",
-    "nft": "NFT créé et déployé"
+    "nft": "NFT créé et déployé",
+    "auction": "Enchère créée avec succès"
   },
   "creation": {
     "nft": {

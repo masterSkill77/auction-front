@@ -8,7 +8,7 @@
       </div>
     </div>
   </div>
-  <div class="product-wrap">
+  <div class="product-wrap p-5 mb-5" style="border: 1px solid grey">
     <div class="product-list">
       <ul class="row">
         <li
@@ -16,7 +16,38 @@
           :key="auction.id"
           class="col-lg-4 col-md-6 col-sm-12"
         >
-          <div class="product-box">
+          <del v-if="auction.status == 1">
+            <div class="product-box">
+              <div class="producct-img">
+                <img :src="auction.nft.image_uri" alt="" />
+              </div>
+              <div class="product-caption">
+                <h4>
+                  <a href="#">{{ auction.nft.title }}</a>
+                </h4>
+                <div class="price">
+                  Current bid :<ins
+                    >$
+                    {{
+                      new Intl.NumberFormat("fr").format(auction.current_bid)
+                    }}</ins
+                  >
+                  Start price :<ins
+                    >$
+                    {{
+                      new Intl.NumberFormat("fr").format(auction.start_price)
+                    }}</ins
+                  >
+                </div>
+                <router-link
+                  class="btn btn-outline-primary"
+                  :to="`/auction/${auction.auction_uuid}`"
+                  >Read More</router-link
+                >
+              </div>
+            </div>
+          </del>
+          <div v-else class="product-box">
             <div class="producct-img">
               <img :src="auction.nft.image_uri" alt="" />
             </div>

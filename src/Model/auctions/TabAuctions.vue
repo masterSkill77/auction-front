@@ -21,7 +21,11 @@
         class="col-12 col-md-4 col-xl-3"
       >
         <div class="single-feature-area mb-100 text-center">
-          <img :src="auction.nft.image_uri" alt="" />
+          <img
+            :src="auction.nft.image_uri"
+            alt=""
+            class="auction-image img-thumbnail"
+          />
           <h3 class="my-2">{{ auction.nft.title }}</h3>
           <vue-countdown
             :time="new Date(auction.end_date).getTime() - new Date().getTime()"
@@ -119,4 +123,10 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+.auction-image {
+  width: 100%;
+  height: 200px !important;
+  object-fit: cover;
+}
+</style>
