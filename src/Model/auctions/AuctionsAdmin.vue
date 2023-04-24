@@ -40,7 +40,7 @@
               </div>
               <router-link
                 class="btn btn-outline-primary"
-                :to="`/auction/${auction.id}`"
+                :to="`/auction/${auction.auction_uuid}`"
                 >Read More</router-link
               >
             </div>

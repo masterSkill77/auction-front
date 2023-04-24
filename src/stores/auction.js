@@ -36,6 +36,13 @@ export const useAuctionStore = defineStore("auction", {
     setAuction(auction) {
       this.auction = auction;
     },
+    async createAuction(auction) {
+      const response = await axios
+        .post("/auction/", auction)
+        .then(({ data }) => {
+          return data;
+        });
+    },
   },
   getters: {
     getAuctions() {

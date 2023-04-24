@@ -40,7 +40,9 @@
             {{ $t("bid.current_bid") }} : $
             {{ new Intl.NumberFormat("fr").format(auction.current_bid) }}
           </div>
-          <router-link :to="'/auction/' + auction.id" class="btn cryptos-btn"
+          <router-link
+            :to="'/auction/' + auction.auction_uuid"
+            class="btn cryptos-btn"
             >Read More</router-link
           >
         </div>

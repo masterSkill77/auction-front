@@ -53,11 +53,7 @@
               tabindex="-1"
               aria-hidden="true"
             >
-              <option
-                v-for="myNft in myNfts.data"
-                :key="myNft.id"
-                :value="myNft.id"
-              >
+              <option v-for="myNft in myNfts" :key="myNft.id" :value="myNft.id">
                 {{ myNft.title }}
               </option>
             </select>
@@ -74,11 +70,12 @@
 import { storeToRefs } from "pinia";
 import { useNftStore } from "@/stores/nft";
 import { ref } from "vue";
-await useNftStore().fetchMyNfts();
-const { myNfts } = storeToRefs(useNftStore());
-console.log(myNfts.value);
+import { useAuctionStore } from "../../../stores/auction";
+
+const myNfts = await useNftStore().fetchMyAvailableNfts();
 let auction = ref({});
-const createAuction = function () {
-  console.log(auction.value);
+const createAuction = async function () {
+  auction.value.start_date = new Date();
+  await useAuctionStore().createAuction(auction.value);
 };
 </script>
