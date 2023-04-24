@@ -101,8 +101,8 @@ export default defineComponent({
     },
   },
   async mounted() {
-    const fetchData = this.fetchData;
     await useAuctionStore().fetchAuctions();
+    const fetchData = this.fetchData;
     const { auctions } = storeToRefs(useAuctionStore());
     this.allAuctions = auctions.value;
     this.linksOfPage = this.allAuctions.links;

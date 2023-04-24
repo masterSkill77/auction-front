@@ -190,7 +190,7 @@ import {useBidStore} from "../../stores/bid"
       window.Echo.channel("auction").listen(
       ".auction-done",
       async function (data) {
-        auction = await useAuctionStore().fetchAuction(auctionId);
+        this.auction = await useAuctionStore().fetchAuction(auctionId);
       }
     );
   },

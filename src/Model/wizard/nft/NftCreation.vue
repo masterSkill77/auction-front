@@ -1,300 +1,82 @@
 <template>
-  <div class="pd-20 card-box mb-30">
-    <div class="clearfix">
-      <h4 class="text-blue h4">Step wizard</h4>
-      <p class="mb-30">jQuery Step wizard</p>
-    </div>
-    <div class="wizard-content">
-      <form
-        class="tab-wizard wizard-circle wizard clearfix"
-        role="application"
-        id="steps-uid-0"
-      >
-        <div class="steps clearfix">
-          <ul role="tablist">
-            <li
-              role="tab"
-              class="first done disabled"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              <a
-                id="steps-uid-0-t-0"
-                href="#steps-uid-0-h-0"
-                aria-controls="steps-uid-0-p-0"
-                ><span class="step">1</span> Personal Info</a
-              >
-            </li>
-            <li
-              role="tab"
-              class="done disabled"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              <a
-                id="steps-uid-0-t-1"
-                href="#steps-uid-0-h-1"
-                aria-controls="steps-uid-0-p-1"
-                ><span class="step">2</span> Job Status</a
-              >
-            </li>
-            <li
-              role="tab"
-              class="done disabled"
-              aria-disabled="false"
-              aria-selected="false"
-            >
-              <a
-                id="steps-uid-0-t-2"
-                href="#steps-uid-0-h-2"
-                aria-controls="steps-uid-0-p-2"
-                ><span class="step">3</span> Interview</a
-              >
-            </li>
-            <li
-              role="tab"
-              class="last current"
-              aria-disabled="false"
-              aria-selected="true"
-            >
-              <a
-                id="steps-uid-0-t-3"
-                href="#steps-uid-0-h-3"
-                aria-controls="steps-uid-0-p-3"
-                ><span class="current-info audible">current step: </span
-                ><span class="step">4</span> Remark</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="content clearfix">
-          <h5 id="steps-uid-0-h-0" tabindex="-1" class="title">
-            Personal Info
-          </h5>
-          <section
-            id="steps-uid-0-p-0"
-            role="tabpanel"
-            aria-labelledby="steps-uid-0-h-0"
-            class="body"
-            aria-hidden="true"
-            style="display: none"
-          >
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>First Name :</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Last Name :</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Email Address :</label>
-                  <input type="email" class="form-control" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Phone Number :</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Select City :</label>
-                  <select class="custom-select form-control">
-                    <option value="">Select City</option>
-                    <option value="Amsterdam">India</option>
-                    <option value="Berlin">UK</option>
-                    <option value="Frankfurt">US</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Date of Birth :</label>
-                  <input
-                    type="text"
-                    class="form-control date-picker"
-                    placeholder="Select Date"
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Step 2 -->
-          <h5 id="steps-uid-0-h-1" tabindex="-1" class="title">Job Status</h5>
-          <section
-            id="steps-uid-0-p-1"
-            role="tabpanel"
-            aria-labelledby="steps-uid-0-h-1"
-            class="body"
-            aria-hidden="true"
-            style="display: none"
-          >
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Job Title :</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Company Name :</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label>Job Description :</label>
-                  <textarea class="form-control"></textarea>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Step 3 -->
-          <h5 id="steps-uid-0-h-2" tabindex="-1" class="title">Interview</h5>
-          <section
-            id="steps-uid-0-p-2"
-            role="tabpanel"
-            aria-labelledby="steps-uid-0-h-2"
-            class="body"
-            aria-hidden="true"
-            style="display: none"
-          >
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Interview For :</label>
-                  <input type="text" class="form-control" />
-                </div>
-                <div class="form-group">
-                  <label>Interview Type :</label>
-                  <select class="form-control">
-                    <option>Normal</option>
-                    <option>Difficult</option>
-                    <option>Hard</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Interview Date :</label>
-                  <input
-                    type="text"
-                    class="form-control date-picker"
-                    placeholder="Select Date"
-                  />
-                </div>
-                <div class="form-group">
-                  <label>Interview Time :</label>
-                  <input
-                    class="form-control time-picker td-input"
-                    placeholder="Select time"
-                    type="text"
-                    readonly=""
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Step 4 -->
-          <h5 id="steps-uid-0-h-3" tabindex="-1" class="title current">
-            Remark
-          </h5>
-          <section
-            id="steps-uid-0-p-3"
-            role="tabpanel"
-            aria-labelledby="steps-uid-0-h-3"
-            class="body current"
-            aria-hidden="false"
-            style=""
-          >
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Behaviour :</label>
-                  <input type="text" class="form-control" />
-                </div>
-                <div class="form-group">
-                  <label>Confidance</label>
-                  <input type="text" class="form-control" />
-                </div>
-                <div class="form-group">
-                  <label>Result</label>
-                  <select class="form-control">
-                    <option>Select Result</option>
-                    <option>Selected</option>
-                    <option>Rejected</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Comments</label>
-                  <textarea class="form-control"></textarea>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="actions clearfix">
-          <ul role="menu" aria-label="Pagination">
-            <li class="" aria-disabled="false">
-              <a href="#previous" role="menuitem">Previous</a>
-            </li>
-            <li
-              aria-hidden="true"
-              aria-disabled="true"
-              class="disabled"
-              style="display: none"
-            >
-              <a href="#next" role="menuitem">Next</a>
-            </li>
-            <li aria-hidden="false" style="">
-              <a href="#finish" role="menuitem">Submit</a>
-            </li>
-          </ul>
-        </div>
-      </form>
-    </div>
-
-    <div
-      class="modal fade"
-      id="success-modal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      style="display: none"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-body text-center font-18">
-            <h3 class="mb-20">Form Submitted!</h3>
-            <div class="mb-30 text-center">
-              <img src="/vendors/images/success.png" />
-            </div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">
-              Done
-            </button>
-          </div>
-        </div>
+  <div>
+    <div class="form-group row">
+      <label class="col-sm-12 col-md-2 col-form-label">Text</label>
+      <div class="col-sm-12 col-md-10">
+        <input
+          class="form-control"
+          v-model="title"
+          type="text"
+          placeholder="Johnny Brown"
+        />
       </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-12 col-md-2 col-form-label">URL</label>
+      <div class="col-sm-12 col-md-10">
+        <input v-model="image_uri" class="form-control" type="url" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Textarea</label>
+      <textarea class="form-control" v-model="description"></textarea>
+    </div>
+    <div class="btn btn-primary mb-3" @click="uploadNft">
+      {{ $t("form.button.submit") }}
     </div>
   </div>
 </template>
+<script>
+import { defineComponent, ref } from "vue";
+import { useNftStore } from "@/stores/nft";
+
+export default defineComponent({
+  setup() {
+    let title = ref("");
+    let description = ref("");
+    let image_uri = ref("");
+    const category_id = 1;
+    return {
+      title,
+      description,
+      category_id,
+      image_uri,
+      description,
+    };
+  },
+  methods: {
+    async uploadNft() {
+      const body = {
+        title: this.title,
+        description: this.description,
+        image_uri: this.image_uri,
+        category_id: this.category_id,
+      };
+      await useNftStore()
+        .createNft(body)
+        .then((data) => {
+          this.$notify({
+            title: this.$t("success.title"),
+            text: this.$t("success.nft"),
+            type: "success",
+          });
+        })
+        .catch(({ response }) => {
+          if (response.data.error)
+            this.$notify({
+              title: this.$t("error.title"),
+              text: this.$t("error." + response.data.error),
+              type: "error",
+            });
+          else {
+            this.$notify({
+              title: this.$t("error.title"),
+              text: this.$t("error.contact-us"),
+              type: "error",
+            });
+          }
+        });
+    },
+  },
+});
+</script>

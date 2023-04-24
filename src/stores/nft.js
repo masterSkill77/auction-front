@@ -8,6 +8,9 @@ export const useNftStore = defineStore("nft", {
     myNfts: [],
   }),
   actions: {
+    async createNft(body) {
+      return axios.post("/nft", body);
+    },
     async fetchNfts() {
       const response = await axios.get("/nft").then(({ data }) => data.data);
       this.nfts = response;
