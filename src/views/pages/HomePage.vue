@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-slides">
+  <div class="hero-slides p-0 m-0">
     <div class="container-fluid h-50">
       <div class="row h-100 align-items-center">
         <div class="col-12">
