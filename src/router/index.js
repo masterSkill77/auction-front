@@ -18,6 +18,7 @@ import CreateWizardPage from "@/views/pages/CreateWizardPage.vue";
 import HomeCreatePage from "@/Model/wizard/HomeCreatePage.vue";
 import NftCreation from "@/Model/wizard/nft/NftCreation.vue";
 import AuctionCreation from "@/Model/wizard/auction/AuctionCreation.vue";
+import VideoCall from "@/Model/video-call/VideoCall.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -86,7 +87,7 @@ const router = createRouter({
           },
         },
         {
-          path: "paiement",
+          path: "paiement/:uuid",
           name: "Paiement",
           component: PaiementPage,
           meta: {
@@ -145,7 +146,10 @@ const router = createRouter({
         },
       ],
     },
-
+    {
+      path: "/video-call",
+      component: VideoCall,
+    },
     {
       path: "/login",
       name: "login",

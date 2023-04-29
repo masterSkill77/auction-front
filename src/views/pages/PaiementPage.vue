@@ -33,20 +33,37 @@
                     maxlength="16"
                     minlength="16"
                     placeholder="xxxx xxxx xxxx xxxx"
+                    v-model="card.cardNumber"
                     class="form-control"
                   />
                 </div>
                 <div class="form-group">
                   <label for="card-expiry">Expiration Date</label>
-                  <input type="month" id="card-expiry" class="form-control" />
+                  <input
+                    type="month"
+                    id="card-expiry"
+                    class="form-control"
+                    v-model="card.expiryDate"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="card-cvc">CVC</label>
-                  <input id="card-cvc" class="form-control" />
+                  <input
+                    id="card-cvc"
+                    class="form-control"
+                    v-model="card.cvc"
+                  />
                 </div>
               </StripeElements>
-              <button type="button" class="btn btn-primary mt-3" @click="pay">
-                Pay
+              <button
+                type="button"
+                class="btn btn-success mt-3 mr-2"
+                @click="payAnother"
+              >
+                Pay with another card
+              </button>
+              <button type="button" class="btn btn-success mt-3" @click="pay">
+                Pay with my configured card
               </button>
             </div>
           </div>
@@ -60,7 +77,9 @@
 import { StripeElements, StripeElement } from "vue-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { defineComponent, ref, onBeforeMount } from "vue";
+import { useAuctionStore } from "./../../stores/auction";
 import axios from "@/src/axios";
+import { useRoute } from "vue-router";
 
 export default defineComponent({
   name: "CardOnly",
@@ -69,8 +88,8 @@ export default defineComponent({
     StripeElements,
     StripeElement,
   },
-
   setup() {
+    const route = useRoute();
     const stripeKey = ref(import.meta.env.VITE_STRIPE_KEY); // test key
     const instanceOptions = ref({
       // https://stripe.com/docs/js/initializing#init_stripe_js-options
@@ -92,7 +111,6 @@ export default defineComponent({
       },
     });
     const stripeLoaded = ref(false);
-    const card = ref();
     const elms = ref();
 
     onBeforeMount(() => {
@@ -108,17 +126,28 @@ export default defineComponent({
       instanceOptions,
       elementsOptions,
       cardOptions,
-      card,
+      route,
       elms,
     };
   },
-
+  data() {
+    return {
+      auction: {},
+      card: {},
+    };
+  },
+  async mounted() {
+    const auctionId = this.route.params.uuid;
+    this.auction = await useAuctionStore().fetchAuction(auctionId);
+    if (this.auction.status == 1) this.$router.push("404");
+  },
   methods: {
     async pay() {
       await axios
-        .post("/paiement", { auction_id: 2 })
+        .post("/paiement", { auction_id: this.auction.id })
         .then((response) => console.log(response.data));
     },
+    async payAnother() {},
   },
 });
 </script>
