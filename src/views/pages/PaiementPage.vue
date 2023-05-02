@@ -139,7 +139,7 @@ export default defineComponent({
   async mounted() {
     const auctionId = this.route.params.uuid;
     this.auction = await useAuctionStore().fetchAuction(auctionId);
-    if (this.auction.status == 1) this.$router.push("404");
+    if (this.auction.is_paid == 1) this.$router.push("404");
   },
   methods: {
     async pay() {
