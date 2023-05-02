@@ -113,7 +113,7 @@ const router = createRouter({
         },
         {
           path: "nft/:id",
-          name: "My-Nft",
+          name: "Nft",
           component: NftPage,
           meta: {
             requiresAuth: true,
