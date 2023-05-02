@@ -38,7 +38,9 @@
                       ></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-link"></i></a>
+                      <router-link :to="`/profile/nft/${nft.id}`"
+                        ><i class="fa fa-link"></i
+                      ></router-link>
                     </li>
                   </ul>
                 </div>

@@ -19,6 +19,7 @@ import HomeCreatePage from "@/Model/wizard/HomeCreatePage.vue";
 import NftCreation from "@/Model/wizard/nft/NftCreation.vue";
 import AuctionCreation from "@/Model/wizard/auction/AuctionCreation.vue";
 import VideoCall from "@/Model/video-call/VideoCall.vue";
+import NftPage from "@/Model/nft/Nft.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -110,6 +111,15 @@ const router = createRouter({
             requiresAuth: true,
           },
         },
+        {
+          path: "nft/:id",
+          name: "My-Nft",
+          component: NftPage,
+          meta: {
+            requiresAuth: true,
+          },
+        },
+
         {
           path: "create",
           name: "wizard",
