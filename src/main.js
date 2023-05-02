@@ -1,3 +1,6 @@
+import "survey-core/defaultV2.min.css";
+import "survey-creator-core/survey-creator-core.min.css";
+
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import VueCountdown from "@chenfengyuan/vue-countdown";
@@ -40,7 +43,6 @@ app.use(createPinia());
 app.use(router);
 app.use(i18n);
 app.use(Notifications);
-
 app.component(VueCountdown.name, VueCountdown);
 
 app.mount("#app");
