@@ -54,7 +54,8 @@
   },
   "error": {
     "title": "An error was occured",
-    "BID_TOO_LOW": "Bid below current bid or well below starting amount"
+    "BID_TOO_LOW": "Bid below current bid or well below starting amount",
+    "CONFIG_NOT_FOUND": "Your card configuration is not found. Please, reconfigure it"
   },
   "success": {
     "title": "Successfuly",

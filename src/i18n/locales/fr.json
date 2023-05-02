@@ -54,7 +54,8 @@
   },
   "error": {
     "title": "Une erreur est survenue",
-    "BID_TOO_LOW": "Offre en dessous de l'offre actuelle ou bien en dessous de montant de départ"
+    "BID_TOO_LOW": "Offre en dessous de l'offre actuelle ou bien en dessous de montant de départ",
+    "CONFIG_NOT_FOUND": "Votre carte de crédit n'est pas configuré correctement. S'il vous plaît, reconfigurez-la"
   },
   "success": {
     "title": "Succès",
