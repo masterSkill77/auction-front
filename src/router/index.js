@@ -8,6 +8,7 @@ import AdminPage from "@/views/pages/AdminPage.vue";
 import ChatPage from "@/views/pages/ChatPage.vue";
 import AuctionPage from "@/Model/auctions/AuctionCard.vue";
 import LoginPage from "@/views/auth/LoginPage.vue";
+import RegisterPage from "@/views/auth/RegisterPage.vue";
 import NotFound from "@/views/404.vue";
 import AdminHomePage from "@/components/UI/dashboard/AdminHomePage.vue";
 import SettingsPage from "@/views/pages/SettingsPage.vue";
@@ -28,6 +29,26 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomePage,
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: RegisterPage,
+      beforeEnter: (to, from, next) => {
+        next();
+        // const authStore = useAuthStore();
+        // const src = "/js/active.js";
+        // var s = document.createElement("script");
+        // s.setAttribute("src", src);
+        // document.body.appendChild(s);
+        // if (!authStore.isAuthenticated) {
+        //   next();
+        //   return;
+        // } else {
+        //   next({ name: "home" });
+        //   return;
+        // }
+      },
     },
     {
       path: "/about",
@@ -165,6 +186,7 @@ const router = createRouter({
       name: "login",
       component: LoginPage,
     },
+
     { path: "/:catchAll(.*)", name: "NotFound", component: NotFound },
   ],
 });
