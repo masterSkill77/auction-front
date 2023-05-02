@@ -44,6 +44,16 @@
                 <div class="price">
                   {{ $t("bid.paid") }} : {{ auction.is_paid ? "Yes" : "No" }}
                 </div>
+                <div
+                  class="price"
+                  v-if="!auction.is_paid && auction.winner_id == user.id"
+                >
+                  <router-link
+                    class="btn btn-outline-success"
+                    :to="`/profile/paiement/${auction.auction_uuid}`"
+                    >Payer</router-link
+                  >
+                </div>
                 <router-link
                   class="btn btn-outline-primary"
                   :to="`/auction/${auction.auction_uuid}`"
@@ -88,7 +98,19 @@
 </template>
 
 <script>
+import { storeToRefs } from "pinia";
+import { useAuthStore } from "../../stores/auth";
 export default {
   props: ["auctions", "title"],
+
+  data() {
+    return {
+      user: {},
+    };
+  },
+  mounted() {
+    const { me } = storeToRefs(useAuthStore());
+    this.user = me.value;
+  },
 };
 </script>
