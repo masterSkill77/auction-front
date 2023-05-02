@@ -14,7 +14,7 @@
         <li
           v-for="auction in auctions"
           :key="auction.id"
-          class="col-lg-4 col-md-6 col-sm-12"
+          class="col-lg-6 col-md-6 col-sm-12"
         >
           <del v-if="auction.status == 1">
             <div class="product-box">
@@ -26,18 +26,23 @@
                   <a href="#">{{ auction.nft.title }}</a>
                 </h4>
                 <div class="price">
-                  Current bid :<ins
+                  {{ $t("bid.current_bid") }} :<ins
                     >$
                     {{
                       new Intl.NumberFormat("fr").format(auction.current_bid)
                     }}</ins
                   >
-                  Start price :<ins
+                </div>
+                <div class="price">
+                  {{ $t("bid.start_price") }} :<ins
                     >$
                     {{
                       new Intl.NumberFormat("fr").format(auction.start_price)
                     }}</ins
                   >
+                </div>
+                <div class="price">
+                  {{ $t("bid.paid") }} : {{ auction.is_paid ? "Yes" : "No" }}
                 </div>
                 <router-link
                   class="btn btn-outline-primary"
@@ -56,13 +61,13 @@
                 <a href="#">{{ auction.nft.title }}</a>
               </h4>
               <div class="price">
-                Current bid :<ins
+                {{ $t("bid.current_bid") }} :<ins
                   >$
                   {{
                     new Intl.NumberFormat("fr").format(auction.current_bid)
                   }}</ins
                 >
-                Start price :<ins
+                {{ $t("bid.start_price") }} :<ins
                   >$
                   {{
                     new Intl.NumberFormat("fr").format(auction.start_price)

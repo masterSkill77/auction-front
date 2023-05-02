@@ -33,6 +33,7 @@
     "button": "Make a bid",
     "amount": "Amount",
     "date": "Date",
+    "current_bid": "Current bid",
     "start_date": "Start date",
     "end_date": "End date"
   },
