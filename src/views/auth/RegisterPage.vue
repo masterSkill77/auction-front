@@ -30,6 +30,7 @@ StylesManager.applyTheme("modern");
 surveyLocalization.supportedLocales = ["en", "fr"];
 surveyLocalization.currentLocale = "fr";
 import { useAuthStore } from "../../stores/auth";
+import { storeToRefs } from "pinia";
 // import { localization } from "survey-creator-core";
 // localization.currentLocale = "fr";
 // ...
@@ -51,6 +52,8 @@ export default {
     },
   },
   async mounted() {
+    const { isAuthenticated } = storeToRefs(useAuthStore());
+    if (isAuthenticated.value) return this.$router.push("/");
     const surveyJSON = await axios
       .get("/form/1")
       .then(({ data }) => data.form_content);

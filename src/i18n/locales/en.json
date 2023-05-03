@@ -11,7 +11,9 @@
     "contact": "Contact",
     "settings": "Settings",
     "create": "Create",
-    "logout": "Logout"
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register"
   },
   "personnalInfo": {
     "email": "Email Address",

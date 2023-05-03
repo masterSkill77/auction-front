@@ -34,21 +34,6 @@ const router = createRouter({
       path: "/register",
       name: "register",
       component: RegisterPage,
-      beforeEnter: (to, from, next) => {
-        next();
-        // const authStore = useAuthStore();
-        // const src = "/js/active.js";
-        // var s = document.createElement("script");
-        // s.setAttribute("src", src);
-        // document.body.appendChild(s);
-        // if (!authStore.isAuthenticated) {
-        //   next();
-        //   return;
-        // } else {
-        //   next({ name: "home" });
-        //   return;
-        // }
-      },
     },
     {
       path: "/about",

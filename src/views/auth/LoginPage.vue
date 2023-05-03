@@ -53,6 +53,7 @@
 </template>
 <script>
 import { useAuthStore } from "@/stores/auth";
+import { storeToRefs } from "pinia";
 
 export default {
   data() {
@@ -60,6 +61,10 @@ export default {
       email: "",
       password: "",
     };
+  },
+  async mounted() {
+    const { isAuthenticated } = storeToRefs(useAuthStore());
+    if (isAuthenticated.value) return this.$router.push("/");
   },
   methods: {
     async login() {

@@ -14,8 +14,15 @@
               </div>
               <!-- Top Login & Faq & Earn Monery btn -->
               <div class="login-faq-earn-money">
-                <router-link to="/login" v-if="!isLogged">Login</router-link>
-                <a href="/logout" @click.prevent="logout()" v-else>Logout</a>
+                <router-link to="/register" v-if="!isLogged">{{
+                  $t("menu.register")
+                }}</router-link>
+                <router-link to="/login" v-if="!isLogged">{{
+                  $t("menu.login")
+                }}</router-link>
+                <a href="/logout" @click.prevent="logout()" v-else>{{
+                  $t("menu.logout")
+                }}</a>
                 <a href="#">FAQ</a>
                 <router-link v-if="isLogged" to="/profile"
                   >Dashboard ({{ me.email }})</router-link

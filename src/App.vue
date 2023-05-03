@@ -21,10 +21,12 @@ export default defineComponent({
     const isAuthenticated = authStore.isAuthenticated;
     const route = useRoute();
     onBeforeMount(async () => {
-      await useAuctionStore().fetchAuctions();
-      await useNftStore().fetchMyNfts();
-      const auctionStore = useAuctionStore();
-      await auctionStore.fetchAuctions();
+      if (isAuthenticated) {
+        await useAuctionStore().fetchAuctions();
+        await useNftStore().fetchMyNfts();
+        const auctionStore = useAuctionStore();
+        await auctionStore.fetchAuctions();
+      }
     });
     return {
       route,
