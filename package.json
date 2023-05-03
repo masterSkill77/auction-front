@@ -21,13 +21,15 @@
     "survey-creator": "^1.9.85",
     "survey-creator-knockout": "^1.9.84",
     "survey-vue": "^1.9.85",
+    "survey-vue-ui": "^1.9.85",
     "surveyjs-widgets": "^1.9.85",
     "vue": "^3.2.47",
     "vue-countdown": "^1.0.4",
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.1.6",
     "vue-step-wizard": "^0.1.17",
-    "vue-stripe-js": "^1.0.1"
+    "vue-stripe-js": "^1.0.1",
+    "webpack": "^5.81.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.31.1",
