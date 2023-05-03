@@ -55,13 +55,19 @@
   "error": {
     "title": "Une erreur est survenue",
     "BID_TOO_LOW": "Offre en dessous de l'offre actuelle ou bien en dessous de montant de départ",
-    "CONFIG_NOT_FOUND": "Votre carte de crédit n'est pas configuré correctement. S'il vous plaît, reconfigurez-la"
+    "CONFIG_NOT_FOUND": "Votre carte de crédit n'est pas configuré correctement. S'il vous plaît, reconfigurez-la",
+    "contact-us": "Une erreur est survenue, veuillez contacter le support technique s'il vous plaît",
+    "inputs": {
+      "email_existe": "Cet email est déjà utilisé. Veuillez en choisir un autre.",
+      "username_existe": "Ce nom d'utilisateur est déjà utilisé. Veuillez en choisir un autre."
+    }
   },
   "success": {
     "title": "Succès",
     "bid": "Offre deposée",
     "nft": "NFT créé et déployé",
-    "auction": "Enchère créée avec succès"
+    "auction": "Enchère créée avec succès",
+    "register": "Vous êtes inscrit sur la plateforme, veuillez vérifier votre email pour le confirmer et commencer à collecter NFT"
   },
   "creation": {
     "nft": {

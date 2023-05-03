@@ -21,16 +21,17 @@
 import "survey-core/modern.min.css";
 
 import "survey-creator-core/survey-creator-core.i18n";
-import { SurveyCreator } from "survey-creator-knockout";
+// import { SurveyCreator } from "survey-creator-knockout";
 import "survey-core/survey.i18n";
 import { Survey } from "survey-knockout-ui";
 import axios from "@/src/axios";
-import { surveyLocalization, StylesManager, Model } from "survey-core";
+import { surveyLocalization, StylesManager } from "survey-core";
 StylesManager.applyTheme("modern");
 surveyLocalization.supportedLocales = ["en", "fr"];
 surveyLocalization.currentLocale = "fr";
-import { localization } from "survey-creator-core";
-localization.currentLocale = "fr";
+import { useAuthStore } from "../../stores/auth";
+// import { localization } from "survey-creator-core";
+// localization.currentLocale = "fr";
 // ...
 
 const creatorOptions = {
@@ -41,20 +42,12 @@ const creatorOptions = {
 
 export default {
   name: "survey-creator",
-  components: {
-    Survey,
-  },
-  data() {
-    const survey = new Model(
-      JSON.parse(window.localStorage.getItem("survey-json"))
-    );
-    return {
-      survey,
-    };
-  },
   methods: {
-    onComplete(sender) {
-      console.log(sender.data);
+    async onComplete(sender) {
+      this.$notify({
+        title: this.$t("success.title"),
+      });
+      await useAuthStore().register(sender.data);
     },
   },
   async mounted() {
@@ -62,9 +55,45 @@ export default {
       .get("/form/1")
       .then(({ data }) => data.form_content);
 
-    const survey = new Survey(JSON.parse(surveyJSON));
-    survey.render("survey");
+    const survey = new Survey(surveyJSON);
     survey.onComplete.add(this.onComplete);
+    survey.onCurrentPageChanging.add(async (sender, options) => {
+      var page = sender.currentPage;
+      var questionEmail = page.getQuestionByName("email");
+      var questionUsername = page.getQuestionByName("username");
+      if (questionEmail) {
+        const exists = await useAuthStore().emailOrUsernamExists(
+          sender.data["email"]
+        );
+        if (exists == 1) {
+          sender.currentPage = page;
+          options.allowChanging = false;
+          options.allow = false;
+          questionEmail.addError(this.$t("error.inputs.email_existe"));
+        } else {
+          questionEmail.clearErrors();
+          options.allow = true;
+          options.allowChanging = true;
+        }
+      }
+      if (questionUsername) {
+        const exists = await useAuthStore().emailOrUsernamExists(
+          sender.data["username"]
+        );
+        if (exists == 1) {
+          sender.currentPage = page;
+          options.allowChanging = false;
+          options.allow = false;
+          questionUsername.addError(this.$t("error.inputs.username_existe"));
+        } else {
+          questionUsername.clearErrors();
+          options.allow = true;
+          options.allowChanging = true;
+        }
+      }
+    });
+
+    survey.render("survey");
     // const creator = new SurveyCreator(creatorOptions);
     // creator.text = window.localStorage.getItem("survey-json");
     // creator.saveSurveyFunc = (saveNo, callback) => {

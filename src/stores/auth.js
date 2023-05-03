@@ -40,6 +40,36 @@ export const useAuthStore = defineStore("auth", {
       }
     },
 
+    async emailOrUsernamExists(emailOrUsername) {
+      return await axios
+        .get(
+          import.meta.env.VITE_APP_BACKEND_URL +
+            "/check-exists/" +
+            emailOrUsername
+        )
+        .then(({ data }) => data);
+    },
+    async register(data) {
+      [data.card_expires_year, data.card_expires_month] =
+        data.card_expires.split("-");
+
+      try {
+        const response = await axios.post(
+          import.meta.env.VITE_APP_BACKEND_URL + "/register",
+          data
+        );
+        return response;
+        // this._isAuthenticated = true;
+        // this.token = response.data.access_token;
+        // this.user = response.data.user;
+        // localStorage.setItem(IS_AUTHENTICATED, true);
+        // localStorage.setItem(TOKEN_NAME, this.token);
+        // localStorage.setItem(USER_TOKEN, JSON.stringify(this.user));
+      } catch (error) {
+        console.error(error);
+        throw new Error("Register failed");
+      }
+    },
     logout() {
       this._isAuthenticated = false;
       this.token = "";

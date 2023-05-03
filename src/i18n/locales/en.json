@@ -55,13 +55,19 @@
   "error": {
     "title": "An error was occured",
     "BID_TOO_LOW": "Bid below current bid or well below starting amount",
-    "CONFIG_NOT_FOUND": "Your card configuration is not found. Please, reconfigure it"
+    "CONFIG_NOT_FOUND": "Your card configuration is not found. Please, reconfigure it",
+    "contact-us": "An error has occurred, please contact technical support",
+    "inputs": {
+      "email_existe": "This email already exists",
+      "username_existe": "This username is already taken"
+    }
   },
   "success": {
     "title": "Successfuly",
     "bid": "Bid submitted",
     "nft": "NFT created and deployed",
-    "auction": "Auction created successfuly"
+    "auction": "Auction created successfuly",
+    "register": "You are registered on the plateforme, please check your email to confirm it and start collecting NFT"
   },
   "creation": {
     "nft": {
