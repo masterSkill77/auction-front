@@ -27,6 +27,16 @@
                 <router-link v-if="isLogged" to="/profile"
                   >Dashboard ({{ me.email }})</router-link
                 >
+                <label for="locale">Locale: </label>
+                <select v-model="$i18n.locale" id="locale">
+                  <option
+                    v-for="locale in $i18n.availableLocales"
+                    :value="locale"
+                    :key="locale.id"
+                  >
+                    {{ locale }}
+                  </option>
+                </select>
               </div>
             </div>
           </div>
@@ -38,6 +48,7 @@
   </header>
 </template>
 <script setup>
+import SwitchLang from "vue-switch-lang";
 import { useAuthStore } from "@/stores/auth";
 import Menu from "@/components/UI/menu/Menu.vue";
 import { storeToRefs } from "pinia";

@@ -4,6 +4,7 @@ import "survey-creator-core/survey-creator-core.min.css";
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import VueCountdown from "@chenfengyuan/vue-countdown";
+import i18n from "./i18n";
 
 import App from "./App.vue";
 import router from "./router";
@@ -22,18 +23,7 @@ window.Echo = new Echo({
 
 // import './assets/main.css'
 
-import { createI18n } from "vue-i18n";
-
-import { languages } from "./i18n/index.js";
-import { defaultLocale } from "./i18n/index.js";
 import Notifications from "@kyvg/vue3-notification";
-const messages = Object.assign(languages);
-
-const i18n = createI18n({
-  locale: defaultLocale,
-  fallbackLocale: "fr",
-  messages,
-});
 
 const app = createApp(App);
 
