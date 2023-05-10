@@ -39,10 +39,10 @@ export default {
 
     this.peer = new Peer(undefined, {
       host: "/",
-      port: "3001",
+      port: import.meta.env.VITE_PEERJS_PORT,
     });
 
-    this.socket = io("http://127.0.0.1:3000");
+    this.socket = io(import.meta.env.VITE_APP_SOCKET_URL);
 
     navigator.mediaDevices
       .getUserMedia({
