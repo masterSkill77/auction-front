@@ -37,7 +37,8 @@
     "current_bid": "Montant actuel",
     "date": "Date",
     "start_date": "Date de mise aux enchères",
-    "end_date": "Date butoir"
+    "end_date": "Date butoir",
+    "live": "Participer"
   },
   "auction": {
     "owner": "Possesseur",
@@ -72,6 +73,11 @@
     "register": "Vous êtes inscrit sur la plateforme, veuillez vérifier votre email pour le confirmer et commencer à collecter NFT"
   },
   "creation": {
+    "type_auction": {
+      "title": "Type de l'enchère",
+      "chrono": "Chronometrée",
+      "direct": "En direct"
+    },
     "nft": {
       "title": "NFT",
       "description": "La création de NFT (Non-Fungible Token) est une pratique en plein essor dans l'univers de la blockchain et de la crypto-monnaie. Les NFT permettent de représenter des actifs numériques uniques tels que des œuvres d'art, des vidéos, des musiques, des jeux vidéo, etc. Chaque NFT possède un code unique inscrit sur la blockchain, ce qui garantit l'authenticité et la propriété de l'actif représenté."

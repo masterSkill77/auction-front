@@ -37,7 +37,8 @@
     "date": "Date",
     "current_bid": "Current bid",
     "start_date": "Start date",
-    "end_date": "End date"
+    "end_date": "End date",
+    "live": "Take place"
   },
   "auction": {
     "owner": "Owner",
@@ -72,6 +73,11 @@
     "register": "You are registered on the plateforme, please check your email to confirm it and start collecting NFT"
   },
   "creation": {
+    "type_auction": {
+      "title": "Auction type",
+      "chrono": "Stopwatch",
+      "direct": "Live"
+    },
     "nft": {
       "title": "NFT",
       "description": "The creation of NFT (Non-Fungible Token) is a growing practice in the world of blockchain and cryptocurrency. NFTs make it possible to represent unique digital assets such as works of art, videos, music, video games, etc. Each NFT has a unique code written on the blockchain, which guarantees the authenticity and ownership of the asset represented."

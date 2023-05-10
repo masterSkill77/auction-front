@@ -9,9 +9,12 @@
             <p class="card-text">
               {{ auction.nft.description }}
             </p>
-            <a href="#" class="btn btn-primary"
-              v-if="auction.owner.id != me.id && new Date(auction.end_date).getTime() - new Date().getTime() > 0"
-              data-toggle="modal" data-target="#exampleModal">{{  $t('bid.button')  }}</a>
+            <div v-if="auction.owner.id != me.id && new Date(auction.end_date).getTime() - new Date().getTime() > 0">
+              <a href="#" v-if="auction.type == 0" class="btn btn-primary" data-toggle="modal"
+                data-target="#exampleModal">{{  $t('bid.button')  }}</a>
+                <router-link :to="`/auction-live/${auction.auction_uuid}`" v-else class="btn btn-primary">{{  $t('bid.live')  }}</router-link>
+            </div>
+
           </div>
           <div class="card-footer text-muted" v-if="new Date(auction.end_date).getTime() - new Date().getTime() > 0">
             <vue-countdown :time="
@@ -49,7 +52,8 @@
                 <div class="cryptos-tab-text">
                   <p>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">{{ $t("personnalInfo.name") }}: {{ auction.owner.name + " " + auction.owner.lastname }}</li>
+                      <li class="list-group-item">{{ $t("personnalInfo.name") }}:
+                        {{ auction.owner.name + " " + auction.owner.lastname }}</li>
                       <li class="list-group-item">{{ $t("personnalInfo.username") }} : {{ auction.owner.username }}</li>
                       <li class="list-group-item">{{ $t("personnalInfo.email") }} : {{ auction.owner.email }}</li>
                     </ul>
@@ -64,7 +68,8 @@
                   <p>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">{{ $t('bid.start_price') }} : $ {{ auction.start_price }}</li>
-                      <li class="list-group-item">{{ $t('bid.current_bid') }} : $ {{ new Intl.NumberFormat('fr').format(auction.current_bid) }}</li>
+                      <li class="list-group-item">{{ $t('bid.current_bid') }} : $
+                        {{ new Intl.NumberFormat('fr').format(auction.current_bid) }}</li>
                       <li class="list-group-item">{{ $t('bid.start_date') }} : {{ auction.start_date }}</li>
                     </ul>
                   </p>
@@ -115,22 +120,23 @@
                 </button>
               </div>
               <form @submit.prevent="makeBid">
-              <div class="modal-body">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">$</span>
-                  </div>
-                  <input type="text" class="form-control" v-model="bid" required min="0" aria-label="Amount (to the nearest dollar)">
-                  <div class="input-group-append">
-                    <span class="input-group-text">.00</span>
+                <div class="modal-body">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="text" class="form-control" v-model="bid" required min="0"
+                      aria-label="Amount (to the nearest dollar)">
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
-              </div>
-            </form>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -157,43 +163,48 @@
     useAuthStore
   } from "../../stores/auth";
 
-import {useBidStore} from "../../stores/bid"
+  import {
+    useBidStore
+  } from "../../stores/bid"
 
   export default defineComponent({
-    methods : {
-      async makeBid(){
+    methods: {
+      async makeBid() {
         console.log(this.bid);
         const body = {
-          bidder_id : this.me.id,
+          bidder_id: this.me.id,
           bid_amount: this.bid,
-          auction_id : this.auctionId
+          auction_id: this.auctionId
         }
         const response = await useBidStore().makeBid(body).then((data => {
           this.$notify({
             title: this.$t('success.title'),
             text: this.$t('success.bid'),
-            type : 'success'
+            type: 'success'
           });
-        })).catch(({response}) => {
-          if(response.data.error)
-          this.$notify({
-            title:this.$t('error.title'),
-            text: this.$t('error.' + response.data.error),
-            type : "error",
-          });
+        })).catch(({
+          response
+        }) => {
+          if (response.data.error)
+            this.$notify({
+              title: this.$t('error.title'),
+              text: this.$t('error.' + response.data.error),
+              type: "error",
+            });
         });
         this.bid = 0
         this.auction = await useAuctionStore().fetchAuction(this.auctionId);
       }
     },
-    mounted(){
+    mounted() {
+      const $ = this;
       window.Echo.channel("auction").listen(
-      ".auction-done",
-      async function (data) {
-        this.auction = await useAuctionStore().fetchAuction(auctionId);
-      }
-    );
-  },
+        ".auction-done",
+        async function (data) {
+          this.auction = await useAuctionStore().fetchAuction(auctionId);
+        }
+      );
+    },
     setup() {
       const {
         me

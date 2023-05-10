@@ -25,7 +25,7 @@
                 <h4>
                   <a href="#">{{ auction.nft.title }}</a>
                 </h4>
-                <div class="price">
+                <div class="price w-100">
                   {{ $t("bid.current_bid") }} :<ins
                     >$
                     {{
@@ -33,7 +33,7 @@
                     }}</ins
                   >
                 </div>
-                <div class="price">
+                <div class="price w-100">
                   {{ $t("bid.start_price") }} :<ins
                     >$
                     {{
@@ -77,6 +77,8 @@
                     new Intl.NumberFormat("fr").format(auction.current_bid)
                   }}</ins
                 >
+              </div>
+              <div class="price">
                 {{ $t("bid.start_price") }} :<ins
                   >$
                   {{
@@ -84,6 +86,12 @@
                   }}</ins
                 >
               </div>
+              <router-link
+                v-if="auction.type == 1"
+                class="btn btn-outline-primary mr-2"
+                :to="`/auction-live/${auction.auction_uuid}`"
+                >Go live</router-link
+              >
               <router-link
                 class="btn btn-outline-primary"
                 :to="`/auction/${auction.auction_uuid}`"

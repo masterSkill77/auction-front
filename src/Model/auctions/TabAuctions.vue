@@ -115,7 +115,6 @@ export default defineComponent({
     window.Echo.channel("auction").listen(
       ".auction-done",
       async function (data) {
-        console.log(data);
         await fetchData();
       }
     );

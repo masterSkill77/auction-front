@@ -163,7 +163,7 @@ const router = createRouter({
       ],
     },
     {
-      path: "/video-call",
+      path: "/auction-live/:uuid",
       component: VideoCall,
     },
     {
@@ -172,6 +172,7 @@ const router = createRouter({
       component: LoginPage,
     },
 
+    { path: "/404", name: "NotFoundData", component: NotFound },
     { path: "/:catchAll(.*)", name: "NotFound", component: NotFound },
   ],
 });

@@ -59,6 +59,42 @@
             </select>
           </div>
         </div>
+        <div class="col-md-6 col-sm-12">
+          <fieldset class="form-group">
+            <legend class="col-form-label pt-0">
+              {{ $t("creation.type_auction.title") }}
+            </legend>
+            <div class="col-10">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios1"
+                  value="0"
+                  checked
+                  v-model="auction.type"
+                />
+                <label class="form-check-label" for="gridRadios1">
+                  {{ $t("creation.type_auction.chrono") }}
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios2"
+                  value="1"
+                  v-model="auction.type"
+                />
+                <label class="form-check-label" for="gridRadios2">
+                  {{ $t("creation.type_auction.direct") }}
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
       </div>
     </div>
     <div class="btn btn-primary mb-3" @click="createAuction">
