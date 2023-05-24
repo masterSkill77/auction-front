@@ -5,7 +5,8 @@
         <div class="col-md-4">
           <img
             :src="
-              me.configuration.profile_image ?? '/vendors/images/banner-img.png'
+              JSON.parse(me.configuration.profile_image)[0].content ??
+              '/vendors/images/banner-img.png'
             "
             alt=""
           />

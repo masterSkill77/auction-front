@@ -70,7 +70,8 @@
     "bid": "Bid submitted",
     "nft": "NFT created and deployed",
     "auction": "Auction created successfuly",
-    "register": "You are registered on the plateforme, please check your email to confirm it and start collecting NFT"
+    "register": "You are registered on the plateforme, please check your email to confirm it and start collecting NFT",
+    "message": "Operation successfuly done"
   },
   "creation": {
     "type_auction": {

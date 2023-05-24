@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
+import axiosInstance from "@/src/axios";
 const TOKEN_NAME = "auction_token";
 const USER_TOKEN = "auction_user";
 const IS_AUTHENTICATED = "auction_isAuthenticated";
@@ -77,6 +78,28 @@ export const useAuthStore = defineStore("auth", {
       localStorage.removeItem(IS_AUTHENTICATED);
       localStorage.removeItem(TOKEN_NAME);
       localStorage.removeItem(USER_TOKEN);
+    },
+
+    async updateProfile(data, userId) {
+      [data.card_expires_year, data.card_expires_month] =
+        data.card_expires.split("-");
+
+      try {
+        const response = await axiosInstance.put(
+          import.meta.env.VITE_APP_BACKEND_URL + "/profile/" + userId,
+          data
+        );
+        return response;
+        // this._isAuthenticated = true;
+        // this.token = response.data.access_token;
+        // this.user = response.data.user;
+        // localStorage.setItem(IS_AUTHENTICATED, true);
+        // localStorage.setItem(TOKEN_NAME, this.token);
+        // localStorage.setItem(USER_TOKEN, JSON.stringify(this.user));
+      } catch (error) {
+        console.error(error);
+        throw new Error("Register failed");
+      }
     },
   },
 });

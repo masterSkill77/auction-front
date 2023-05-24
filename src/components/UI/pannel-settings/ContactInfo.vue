@@ -3,7 +3,11 @@
     <a href="modal" data-toggle="modal" data-target="#modal" class="edit-avatar"
       ><i class="fa fa-pencil"></i
     ></a>
-    <img :src="me.configuration.profile_image" alt="" class="avatar-photo" />
+    <img
+      :src="JSON.parse(me.configuration.profile_image)[0].content"
+      alt=""
+      class="avatar-photo"
+    />
     <div
       class="modal fade"
       id="modal"
@@ -19,7 +23,7 @@
             <div class="img-container">
               <img
                 id="image"
-                :src="me.configuration.profile_image"
+                :src="JSON.parse(me.configuration.profile_image)[0].content"
                 alt="Picture"
                 class=""
               />

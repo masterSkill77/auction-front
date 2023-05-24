@@ -70,7 +70,8 @@
     "bid": "Offre deposée",
     "nft": "NFT créé et déployé",
     "auction": "Enchère créée avec succès",
-    "register": "Vous êtes inscrit sur la plateforme, veuillez vérifier votre email pour le confirmer et commencer à collecter NFT"
+    "register": "Vous êtes inscrit sur la plateforme, veuillez vérifier votre email pour le confirmer et commencer à collecter NFT",
+    "message": "Enregistrement validé avec succès"
   },
   "creation": {
     "type_auction": {

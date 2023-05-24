@@ -55,9 +55,6 @@ export default {
   },
   methods: {
     async onComplete(sender) {
-      thisthis.currentLang.$notify({
-        title: this.$t("success.title"),
-      });
       await useAuthStore().register(sender.data);
     },
   },
@@ -83,15 +80,15 @@ export default {
     if (this.updateProfile) {
       const { me } = storeToRefs(useAuthStore());
 
-      this.survey.onComplete.add(() => {
-        self.$emit("updateProfile");
+      this.survey.onComplete.add((sender) => {
+        self.$emit("updateProfile", sender.data, me.value.id);
       });
       this.survey.mergeData({
         name: me.value.name,
         lastname: me.value.lastname,
         email: me.value.email,
         username: me.value.username,
-        profile_image: me.value.configuration.profile_image,
+        profile_image: JSON.parse(me.value.configuration.profile_image)[0],
         card_number: me.value.configuration.card_number,
         cvc: me.value.configuration.cvc,
         card_expires:
@@ -107,17 +104,9 @@ export default {
       var page = sender.currentPage;
       var questionEmail = null;
       var questionUsername = null;
-      var questionPassword = null;
       if (!self.updateProfile) {
         questionEmail = page.getQuestionByName("email");
         questionUsername = page.getQuestionByName("username");
-      }
-      if (self.updateProfile) {
-        questionPassword = page.getQuestionByName("password");
-        // sender.currentPage = page;
-        options.allowChanging = true;
-        options.allow = true;
-        questionPassword.isRequired = false;
       }
 
       if (questionEmail) {

@@ -38,13 +38,32 @@
 </template>
 
 <script>
+import { useAuthStore } from "../../../stores/auth";
 import RegisterPage from "../../../views/auth/RegisterPage.vue";
 export default {
   components: {
     "register-page": RegisterPage,
   },
   methods: {
-    updateProfile: async () => {},
+    async updateProfile(data, userId) {
+      const self = this;
+      await useAuthStore()
+        .updateProfile(data, userId)
+        .then(() => {
+          self.$notify({
+            title: self.$t("success.title"),
+            text: self.$t("success.message"),
+            type: "success",
+          });
+        })
+        .catch((e) => {
+          self.$notify({
+            title: self.$t("error.title"),
+            text: self.$t("error.contact-us"),
+            type: "error",
+          });
+        });
+    },
   },
 };
 </script>
