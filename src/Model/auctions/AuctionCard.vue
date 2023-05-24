@@ -10,9 +10,8 @@
               {{ auction.nft.description }}
             </p>
             <div v-if="auction.owner.id != me.id && new Date(auction.end_date).getTime() - new Date().getTime() > 0">
-              <a href="#" v-if="auction.type == 0" class="btn btn-primary" data-toggle="modal"
+              <a href="#" class="btn btn-primary" data-toggle="modal"
                 data-target="#exampleModal">{{  $t('bid.button')  }}</a>
-                <router-link :to="`/auction-live/${auction.auction_uuid}`" v-else class="btn btn-primary">{{  $t('bid.live')  }}</router-link>
             </div>
 
           </div>
@@ -222,7 +221,7 @@
       });
 
       return {
-        auction,
+        auction : {bids : [],owner : {id : null},nft : {image_uri : null}},
         auctionId,
         bid,
         me

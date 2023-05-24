@@ -81,7 +81,7 @@ video {
           class="mt-4 mr-2 btn btn-warning"
           v-if="auction.owner_id == me.id"
         >
-          Terminer l'nechère
+          Terminer l'enchère
         </button>
         <button
           class="mt-4 mr-2 btn btn-primary"
@@ -228,7 +228,10 @@ export default {
         this.socket.emit("join-room", ROOM_ID, id);
       });
 
-      this.socket.on("user-connected", (userId) => {});
+      this.socket.on("user-connected", (userId) => {
+        console.log('user connected', userId);
+        // window.location.reload();
+      });
 
       this.myVideo = document.createElement("video");
       this.myVideo.muted = true;

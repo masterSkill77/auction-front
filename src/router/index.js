@@ -163,10 +163,6 @@ const router = createRouter({
       ],
     },
     {
-      path: "/auction-live/:uuid",
-      component: VideoCall,
-    },
-    {
       path: "/login",
       name: "login",
       component: LoginPage,

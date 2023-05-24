@@ -87,12 +87,6 @@
                 >
               </div>
               <router-link
-                v-if="auction.type == 1"
-                class="btn btn-outline-primary mr-2"
-                :to="`/auction-live/${auction.auction_uuid}`"
-                >Go live</router-link
-              >
-              <router-link
                 class="btn btn-outline-primary"
                 :to="`/auction/${auction.auction_uuid}`"
                 >Read More</router-link
