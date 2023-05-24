@@ -4,10 +4,12 @@
   >
     <div class="container-fluid">
       <div class="row align-items-center">
-        <div class="col-md-6 col-lg-6">
-          <img src="vendors/images/register-page-img.png" alt="" />
+        <div v-if="!updateProfile" class="col-md-6 col-lg-6">
+          <img src="/vendors/images/register-page-img.png" alt="" />
         </div>
-        <div class="col-md-6 col-lg-6">
+        <div
+          :class="!updateProfile ? 'col-md-6 col-lg-6' : 'col-md-12 col-lg-12'"
+        >
           <div class="register-box-5 p-2 bg-white box-shadow border-radius-10">
             <div id="survey" />
           </div>
@@ -28,9 +30,10 @@ import axios from "@/src/axios";
 import { surveyLocalization, StylesManager } from "survey-core";
 StylesManager.applyTheme("modern");
 surveyLocalization.supportedLocales = ["en", "fr"];
-surveyLocalization.currentLocale = "fr";
+localStorage.getItem("auction-local") ?? import.meta.env.VITE_DEFAULT_LOCALE;
 import { useAuthStore } from "../../stores/auth";
 import { storeToRefs } from "pinia";
+import { useI18nStore } from "../../stores/i18n";
 // import { localization } from "survey-creator-core";
 // localization.currentLocale = "fr";
 // ...
@@ -43,27 +46,80 @@ const creatorOptions = {
 
 export default {
   name: "survey-creator",
+  props: ["updateProfile"],
+  data() {
+    return {
+      langue: null,
+      survey: null,
+    };
+  },
   methods: {
     async onComplete(sender) {
-      this.$notify({
+      thisthis.currentLang.$notify({
         title: this.$t("success.title"),
       });
       await useAuthStore().register(sender.data);
     },
   },
+  watch: {
+    langue(newLangue) {
+      this.survey.locale = newLangue;
+    },
+  },
   async mounted() {
+    const self = this;
     const { isAuthenticated } = storeToRefs(useAuthStore());
-    if (isAuthenticated.value) return this.$router.push("/");
+    const { currentLocale } = storeToRefs(useI18nStore());
+    if (isAuthenticated.value && this.updateProfile == undefined)
+      return this.$router.push("/");
     const surveyJSON = await axios
       .get("/form/1")
       .then(({ data }) => data.form_content);
 
-    const survey = new Survey(surveyJSON);
-    survey.onComplete.add(this.onComplete);
-    survey.onCurrentPageChanging.add(async (sender, options) => {
+    this.survey = new Survey(surveyJSON);
+    this.survey.locale = currentLocale.value;
+    this.langue = currentLocale;
+
+    if (this.updateProfile) {
+      const { me } = storeToRefs(useAuthStore());
+
+      this.survey.onComplete.add(() => {
+        self.$emit("updateProfile");
+      });
+      this.survey.mergeData({
+        name: me.value.name,
+        lastname: me.value.lastname,
+        email: me.value.email,
+        username: me.value.username,
+        profile_image: me.value.configuration.profile_image,
+        card_number: me.value.configuration.card_number,
+        cvc: me.value.configuration.cvc,
+        card_expires:
+          me.value.configuration.card_expires_year +
+          "-" +
+          me.value.configuration.card_expires_month,
+        etherum_adress: me.value.etherum_adress,
+      });
+    } else {
+      this.survey.onComplete.add(this.onComplete);
+    }
+    this.survey.onCurrentPageChanging.add(async (sender, options) => {
       var page = sender.currentPage;
-      var questionEmail = page.getQuestionByName("email");
-      var questionUsername = page.getQuestionByName("username");
+      var questionEmail = null;
+      var questionUsername = null;
+      var questionPassword = null;
+      if (!self.updateProfile) {
+        questionEmail = page.getQuestionByName("email");
+        questionUsername = page.getQuestionByName("username");
+      }
+      if (self.updateProfile) {
+        questionPassword = page.getQuestionByName("password");
+        // sender.currentPage = page;
+        options.allowChanging = true;
+        options.allow = true;
+        questionPassword.isRequired = false;
+      }
+
       if (questionEmail) {
         const exists = await useAuthStore().emailOrUsernamExists(
           sender.data["email"]
@@ -96,7 +152,7 @@ export default {
       }
     });
 
-    survey.render("survey");
+    this.survey.render("survey");
     // const creator = new SurveyCreator(creatorOptions);
     // creator.text = window.localStorage.getItem("survey-json");
     // creator.saveSurveyFunc = (saveNo, callback) => {

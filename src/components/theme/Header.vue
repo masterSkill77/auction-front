@@ -27,8 +27,11 @@
                 <router-link v-if="isLogged" to="/profile"
                   >Dashboard ({{ me.email }})</router-link
                 >
-                <label for="locale">Locale: </label>
-                <select v-model="$i18n.locale" id="locale">
+                <select
+                  v-model="$i18n.locale"
+                  @change="changeLange($i18n.locale)"
+                  id="locale"
+                >
                   <option
                     v-for="locale in $i18n.availableLocales"
                     :value="locale"
@@ -48,11 +51,11 @@
   </header>
 </template>
 <script setup>
-import SwitchLang from "vue-switch-lang";
 import { useAuthStore } from "@/stores/auth";
 import Menu from "@/components/UI/menu/Menu.vue";
 import { storeToRefs } from "pinia";
 import router from "@/router/index";
+import { useI18nStore } from "../../stores/i18n";
 
 const { isAuthenticated, me } = storeToRefs(useAuthStore());
 const isLogged = isAuthenticated;
@@ -60,5 +63,10 @@ const isLogged = isAuthenticated;
 const logout = () => {
   useAuthStore().logout();
   router.push("/login");
+};
+
+const changeLange = (langue) => {
+  localStorage.setItem("auction-local", langue);
+  useI18nStore().changeLanguage(langue);
 };
 </script>
