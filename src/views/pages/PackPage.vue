@@ -1,8 +1,12 @@
 <template>
   <div class="contact-directory-list">
     <ul class="row">
-      <li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-        <div class="contact-directory-box">
+      <li
+        class="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+        v-for="pack in packs"
+        :key="pack.id"
+      >
+        <div class="contact-directory-box bg-secondary">
           <div class="contact-dire-info text-center">
             <div class="contact-avatar">
               <span>
@@ -10,20 +14,16 @@
               </span>
             </div>
             <div class="contact-name">
-              <h4>Wade Wilson</h4>
-              <p>UI/UX designer</p>
-              <div class="work text-success">
-                <i class="ion-android-person"></i> Freelancer
-              </div>
-            </div>
-            <div class="contact-skill">
-              <span class="badge badge-pill">UI</span>
-              <span class="badge badge-pill">UX</span>
-              <span class="badge badge-pill">Photoshop</span>
-              <span class="badge badge-pill badge-primary">+ 8</span>
+              <h4>{{ pack.pack_name }}</h4>
+              <p>Price : {{ pack.pack_price }} LIFETIME</p>
             </div>
             <div class="profile-sort-desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
+              <ul>
+                <li>NFT Création : {{ pack.pack_max_nft_creation }}</li>
+                <li>Auction Création : {{ pack.pack_max_auction_creation }}</li>
+                <li>Bid : {{ pack.pack_max_bid }}</li>
+                <li></li>
+              </ul>
             </div>
           </div>
           <div class="view-contact">
@@ -36,7 +36,21 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      packs: [],
+    };
+  },
+  async mounted() {
+    await axios
+      .get(import.meta.env.VITE_APP_BACKEND_URL + "/pack")
+      .then(({ data }) => (this.packs = data));
+
+    console.log(this.packs);
+  },
+};
 </script>
 
 <style></style>
