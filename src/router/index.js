@@ -20,6 +20,7 @@ import HomeCreatePage from "@/Model/wizard/HomeCreatePage.vue";
 import NftCreation from "@/Model/wizard/nft/NftCreation.vue";
 import AuctionCreation from "@/Model/wizard/auction/AuctionCreation.vue";
 import VideoCall from "@/Model/video-call/VideoCall.vue";
+import PackPage from "@/views/pages/PackPage.vue";
 import NftPage from "@/Model/nft/Nft.vue";
 
 const router = createRouter({
@@ -159,6 +160,11 @@ const router = createRouter({
               },
             },
           ],
+        },
+        {
+          name: "Pack",
+          path: "packs",
+          component: PackPage,
         },
       ],
     },

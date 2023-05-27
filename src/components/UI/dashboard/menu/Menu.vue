@@ -39,6 +39,12 @@
           </router-link>
         </li>
         <li>
+          <router-link to="/profile/packs" class="dropdown-toggle no-arrow">
+            <span class="micon dw dw-shopping-cart2"></span
+            ><span class="mtext">Pack</span>
+          </router-link>
+        </li>
+        <li>
           <a href="" @click.prevent="logout" class="dropdown-toggle no-arrow">
             <span class="micon dw dw-logout-1"></span
             ><span class="mtext">{{ $t("menu.logout") }}</span>

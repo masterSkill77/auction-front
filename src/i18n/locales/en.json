@@ -57,7 +57,10 @@
   },
   "error": {
     "title": "An error was occured",
+    "max_nft_allowed": "You have reached the max nft creation allowed for default pack",
     "BID_TOO_LOW": "Bid below current bid or well below starting amount",
+    "network": "",
+    "login": "Your information are not correct",
     "CONFIG_NOT_FOUND": "Your card configuration is not found. Please, reconfigure it",
     "contact-us": "An error has occurred, please contact technical support",
     "inputs": {

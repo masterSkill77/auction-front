@@ -68,12 +68,18 @@ export default {
   },
   methods: {
     async login() {
-      try {
-        await useAuthStore().login(this.email, this.password);
-        this.$router.push({ name: "home" });
-      } catch (error) {
-        console.error(error);
-      }
+      await useAuthStore()
+        .login(this.email, this.password)
+        .then(() => {
+          this.$router.push({ name: "home" });
+        })
+        .catch((error) => {
+          this.$notify({
+            title: this.$t("error.title"),
+            text: this.$t("error.login"),
+            type: "error",
+          });
+        });
     },
   },
 };

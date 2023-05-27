@@ -58,6 +58,9 @@
   "error": {
     "title": "Une erreur est survenue",
     "BID_TOO_LOW": "Offre en dessous de l'offre actuelle ou bien en dessous de montant de départ",
+    "login": "Vos informations ne sont pas correctes",
+    "network": "",
+    "max_nft_allowed": "Vous avez atteint le nombre maximum de création de nft autorisé par le pack default",
     "CONFIG_NOT_FOUND": "Votre carte de crédit n'est pas configuré correctement. S'il vous plaît, reconfigurez-la",
     "contact-us": "Une erreur est survenue, veuillez contacter le support technique s'il vous plaît",
     "inputs": {

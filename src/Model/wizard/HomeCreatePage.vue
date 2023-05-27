@@ -7,11 +7,13 @@
       style="cursor: pointer !important"
     >
       <div class="single-feature-area mb-100 text-center text-bold">
-        <i class="icon-bitcoin"></i>
-        <h3>{{ $t("creation.nft.title") }}</h3>
-        <p style="font-weight: bold">
-          {{ $t("creation.nft.description") }}
-        </p>
+        <div>
+          <i class="icon-bitcoin"></i>
+          <h3>{{ $t("creation.nft.title") }}</h3>
+          <p style="font-weight: bold">
+            {{ $t("creation.nft.description") }}
+          </p>
+        </div>
       </div>
     </router-link>
 
