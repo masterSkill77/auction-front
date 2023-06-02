@@ -169,7 +169,6 @@
   export default defineComponent({
     methods: {
       async makeBid() {
-        console.log(this.bid);
         const body = {
           bidder_id: this.me.id,
           bid_amount: this.bid,
@@ -218,10 +217,11 @@
 
       onBeforeMount(async () => {
         auction.value = await useAuctionStore().fetchAuction(auctionId.value);
+        console.log({"my-auction" :auction.value});
       });
 
       return {
-        auction : {bids : [],owner : {id : null},nft : {image_uri : null}},
+        auction,
         auctionId,
         bid,
         me
