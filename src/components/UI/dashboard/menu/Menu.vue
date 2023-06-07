@@ -50,6 +50,23 @@
             ><span class="mtext">{{ $t("menu.logout") }}</span>
           </a>
         </li>
+        <li>
+          <a href="" @click.prevent="" class="dropdown-toggle no-arrow">
+            <select
+              v-model="$i18n.locale"
+              @change="changeLange($i18n.locale)"
+              id="locale"
+            >
+              <option
+                v-for="locale in $i18n.availableLocales"
+                :value="locale"
+                :key="locale.id"
+              >
+                {{ locale }}
+              </option>
+            </select>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -57,10 +74,16 @@
 <script setup>
 import { useAuthStore } from "../../../../stores/auth";
 import { useRouter } from "vue-router";
+import { useI18nStore } from "../../../../stores/i18n";
 const router = useRouter();
 
 const logout = () => {
   useAuthStore().logout();
   router.push("/login");
+};
+
+const changeLange = (langue) => {
+  localStorage.setItem("auction-local", langue);
+  useI18nStore().changeLanguage(langue);
 };
 </script>
