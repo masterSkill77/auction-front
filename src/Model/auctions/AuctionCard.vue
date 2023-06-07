@@ -133,7 +133,12 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ $t('button.close') }}</button>
-                  <button type="submit" class="btn btn-primary">{{  $t('bid.make_bid')  }}</button>
+                  <button type="submit" class="btn btn-primary" :disabled="loading">
+                    <span  v-if="loading" class="spinner-border spinner-border-sm" role="status">
+                  </span>
+                    <span v-else>{{  $t('bid.make_bid')  }}</span>  
+                  </button>
+                  
                 </div>
               </form>
             </div>
@@ -169,6 +174,7 @@
   export default defineComponent({
     methods: {
       async makeBid() {
+        this.loading = true
         const body = {
           bidder_id: this.me.id,
           bid_amount: this.bid,
@@ -190,8 +196,10 @@
               type: "error",
             });
         });
-        this.bid = this.auction.current_bid
+
         this.auction = await useAuctionStore().fetchAuction(this.auctionId);
+        this.bid = this.auction.current_bid
+        this.loading = false
       }
     },
     mounted() {
@@ -213,6 +221,7 @@
       const bid = ref(0);
       const route = useRoute();
       let auctionId = ref()
+      let loading = ref(false);
       auctionId.value = route.params.auctionId;
 
       onBeforeMount(async () => {
@@ -224,7 +233,8 @@
         auction,
         auctionId,
         bid,
-        me
+        me,
+        loading
       };
     },
   });
