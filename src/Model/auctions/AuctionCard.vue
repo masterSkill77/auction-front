@@ -125,15 +125,15 @@
                       <span class="input-group-text">$</span>
                     </div>
                     <input type="text" class="form-control" v-model="bid" required min="0"
-                      aria-label="Amount (to the nearest dollar)">
+                      aria-label="Amount (to the nearest dollar)" >
                     <div class="input-group-append">
                       <span class="input-group-text">.00</span>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ $t('button.close') }}</button>
+                  <button type="submit" class="btn btn-primary">{{  $t('bid.make_bid')  }}</button>
                 </div>
               </form>
             </div>
@@ -190,7 +190,7 @@
               type: "error",
             });
         });
-        this.bid = 0
+        this.bid = this.auction.current_bid
         this.auction = await useAuctionStore().fetchAuction(this.auctionId);
       }
     },
@@ -217,7 +217,7 @@
 
       onBeforeMount(async () => {
         auction.value = await useAuctionStore().fetchAuction(auctionId.value);
-        console.log({"my-auction" :auction.value});
+        bid.value = auction.value.current_bid == 0 ? auction.value.start_price : auction.value.current_bid
       });
 
       return {
