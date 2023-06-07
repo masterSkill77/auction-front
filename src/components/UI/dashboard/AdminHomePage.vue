@@ -68,7 +68,7 @@
               <div id="chart4"></div>
             </div>
             <div class="widget-data">
-              <div class="h4 mb-0">$6060</div>
+              <div class="h4 mb-0">{{ available }} ETH</div>
               <div class="weight-600 font-14">Worth</div>
             </div>
           </div>
@@ -95,6 +95,19 @@
 <script setup>
 import { storeToRefs } from "pinia";
 import { useAuthStore } from "../../../stores/auth";
+import { onMounted, ref } from "vue";
+import axios from "axios";
 
 const { me } = storeToRefs(useAuthStore());
+const available = ref(0);
+
+onMounted(async () => {
+  await axios
+    .get(import.meta.env.VITE_APP_NFT_URL + "/me/" + me.value.etherum_adress)
+    .then((res) => {
+      available.value = res.data;
+      console.log(available.value);
+    })
+    .catch((e) => console.log(e));
+});
 </script>
