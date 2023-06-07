@@ -1,4 +1,10 @@
-<template></template>
+<template>
+  <div class="header">
+    <div class="header-left">
+      <div class="menu-icon dw dw-menu" @click="$emit('openMenu')"></div>
+    </div>
+  </div>
+</template>
 
 <script>
 import { storeToRefs } from "pinia";
