@@ -1,5 +1,5 @@
 <template>
-  <header class="header-area">
+  <header class="header-area" v-if="!$route.path.includes('profile')">
     <!-- Top Header Area -->
     <div class="top-header">
       <div class="container-fluid h-100">

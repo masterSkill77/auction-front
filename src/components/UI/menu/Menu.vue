@@ -1,13 +1,17 @@
 <template>
   <div class="cryptos-main-menu">
-    <div class="classy-nav-container breakpoint-off">
+    <div
+      :class="`classy-nav-container light left ${
+        'breakpoint-' + (breakpoint ? 'on' : 'off')
+      }`"
+    >
       <div class="container">
         <!-- Menu -->
         <nav class="classy-navbar justify-content-between" id="cryptosNav">
           <!-- Logo -->
-          <router-link class="nav-brand" to="/"
+          <a class="nav-brand" href="/"
             ><img src="/img/core-img/logo.png" alt=""
-          /></router-link>
+          /></a>
 
           <!-- Navbar Toggler -->
           <div class="classy-navbar-toggler">
@@ -26,8 +30,6 @@
                 <span class="top"></span><span class="bottom"></span>
               </div>
             </div>
-
-            <!-- Nav Start -->
             <div class="classynav">
               <ul>
                 <li>
@@ -65,7 +67,6 @@
                 </form>
               </div>
             </div>
-            <!-- Nav End -->
           </div>
         </nav>
       </div>
@@ -76,5 +77,11 @@
 <script setup>
 import { ref } from "vue";
 
+let breakpoint = ref(false);
 const menuOn = ref(false);
+if (window.innerWidth < 992) breakpoint.value = true;
+
+window.addEventListener("resize", () => {
+  breakpoint.value = window.innerWidth > 992 ? false : true;
+});
 </script>
