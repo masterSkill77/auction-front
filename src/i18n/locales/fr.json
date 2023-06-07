@@ -119,5 +119,19 @@
       "title": "Choisissez notre plateforme",
       "description": "Les utilisateurs nos font confiance pour la sécurité, la flexibilité ainsi que la mise en place des solutions marketing de notre plateforme, Vous aussi, qu'attendez-vous pour nous rejoindre ?"
     }
+  },
+  "slider": {
+    "slider_1": {
+      "title": "Découvrez les NFTs",
+      "description": "Quoi de mieux que les ' Non Fongible Tokens ' pour vous intriger aujourd'hui ? Inscrivez-vous sur notre plateforme.Un jeton non fongible est une donnée cryptographique représentant la propriété d'un objet numérique. L’objet représenté peut être une photo, une vidéo, un objet, un dessin numérisé, un fichier digital, ou encore un son."
+    },
+    "slider_2": {
+      "title": "Les NFTs sont créés et échangés sur une blockchain",
+      "description": "Sur internet, la valeur numérique n’est pas nouvelle. Dans certains jeux vidéo, ou dans une application par exemple, il est possible d’acheter une monnaie virtuelle, des bonus spéciaux, des crédits, ou bien des points de vie. Mais tous ces « objets » et ces récompenses peuvent être dupliqués, copiés et vendus à l’infini par leurs concepteurs sans aucun effort."
+    },
+    "slider_3": {
+      "title": "Smart Contract basé sur Etherum où vous êtes libres",
+      "description": "La popularité de cette technologie innovante dans la finance traditionnelle et le marché de l’art est un vrai sujet juridique. Les montants astronomiques de cryptomonnaies (converties en euro ou en dollars) échangés ont forcément attiré les régulateurs, qui font aujourd’hui face à un défi."
+    }
   }
 }

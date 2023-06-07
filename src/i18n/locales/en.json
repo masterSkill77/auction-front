@@ -117,6 +117,34 @@
     "about_start_area": {
       "title": "Choose our platform",
       "description": "Users trust us for the security, flexibility, and implementation of marketing solutions on our platform. What are you waiting for? Join us now!"
+    },
+    "home_guide": {
+      "fast_easy": {
+        "title": "Fast & Easy",
+        "description": ""
+      },
+      "commisions": {
+        "title": "0 Commission",
+        "description": "We don't take any commision on the auction, you are free on what you do, but remember that when we use another plateforme for payment gateway, there can be a commision on these plateforme that are not related to us."
+      },
+      "secure": {
+        "title": "Secure",
+        "description": ""
+      }
+    }
+  },
+  "slider": {
+    "slider_1": {
+      "title": "Discover NFTs",
+      "description": "What better way to intrigue you today than with 'Non-Fungible Tokens'? Sign up on our platform. A non-fungible token is a cryptographic data representing ownership of a digital object. The represented object can be a photo, a video, an item, a digitized drawing, a digital file, or even a sound."
+    },
+    "slider_2": {
+      "title": "NFTs are created and traded on a blockchain",
+      "description": "On the internet, digital value is not new. In certain video games or applications, it's possible to purchase virtual currency, special bonuses, credits, or even health points. But all these 'objects' and rewards can be duplicated, copied, and sold infinitely by their creators without any effort."
+    },
+    "slider_3": {
+      "title": "Smart Contract based on Ethereum where you are free",
+      "description": "The popularity of this innovative technology in traditional finance and the art market poses a real legal challenge. The astronomical amounts of cryptocurrencies (converted to euros or dollars) being exchanged have inevitably attracted regulators, who are now facing a challenge."
     }
   }
 }

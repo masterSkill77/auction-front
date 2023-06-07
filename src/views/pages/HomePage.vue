@@ -30,7 +30,7 @@
                             style="animation-delay: 100ms; opacity: 1"
                             class="animated fadeInUp"
                           >
-                            Take a step into the <span>Crypto World</span>
+                            <span>{{ $t("slider.slider_1.title") }}</span>
                           </h2>
                           <h6
                             data-animation="fadeInUp"
@@ -38,9 +38,7 @@
                             style="animation-delay: 400ms; opacity: 1"
                             class="animated fadeInUp"
                           >
-                            Cras vitae turpis lacinia, lacinia lacus non,
-                            fermentum nisi. Donec et sollicitudin est, in
-                            euismod erat. Ut at erat et arcu pulvinar.
+                            {{ $t("slider.slider_1.description") }}
                           </h6>
                           <a
                             href="#"
@@ -78,7 +76,7 @@
                             style="animation-delay: 100ms; opacity: 1"
                             class="animated fadeInUp"
                           >
-                            Take a step into the <span>Crypto World</span>
+                            {{ $t("slider.slider_2.title") }}
                           </h2>
                           <h6
                             data-animation="fadeInUp"
@@ -86,9 +84,7 @@
                             style="animation-delay: 400ms; opacity: 1"
                             class="animated fadeInUp"
                           >
-                            Cras vitae turpis lacinia, lacinia lacus non,
-                            fermentum nisi. Donec et sollicitudin est, in
-                            euismod erat. Ut at erat et arcu pulvinar.
+                            {{ $t("slider.slider_2.description") }}
                           </h6>
                           <a
                             href="#"
@@ -126,7 +122,9 @@
                             style="animation-delay: 100ms; opacity: 1"
                             class="animated fadeInUp"
                           >
-                            Take a step into the <span>Crypto World</span>
+                            <span>
+                              {{ $t("slider.slider_3.title") }}
+                            </span>
                           </h2>
                           <h6
                             data-animation="fadeInUp"
@@ -134,9 +132,7 @@
                             style="animation-delay: 400ms; opacity: 1"
                             class="animated fadeInUp"
                           >
-                            Cras vitae turpis lacinia, lacinia lacus non,
-                            fermentum nisi. Donec et sollicitudin est, in
-                            euismod erat. Ut at erat et arcu pulvinar.
+                            {{ $t("slider.slider_3.description") }}
                           </h6>
                           <a
                             href="#"
