@@ -90,5 +90,33 @@
       "title": "Auction",
       "description": "NFT auctions are a popular way to buy and sell unique and collectible NFTs. Auctions work like traditional auctions, where buyers bid on an NFT, and the highest bid wins the auction. NFT auctions can last from a few hours to several days, and sellers often have the option of setting a minimum reserve price for their NFT."
     }
+  },
+  "guide": {
+    "crypto_about_area": {
+      "title": "What is an NFT",
+      "description_1": "NFT stands for Non-Fungible Token. Let's start with the basics: what does non-fungible mean? The adjective 'fungible' is an economic term that refers to a good or asset that can be exchanged for another good or asset of the same value. For example, a one-dollar bill is fungible because it can easily be exchanged for another one-dollar bill of equal value.",
+      "description_2": "A 'non-fungible' item cannot be exchanged for something of equal value. A piece of land is non-fungible, as each piece of land has its own unique characteristics, and finding another piece of land with strictly identical value is difficult, if not impossible. Art is another example of a non-fungible asset, as its value is highly subjective. This is where NFTs come in.",
+      "description_3": "An NFT guarantees exclusive ownership of a digital asset (e.g., artwork, an in-game purchase, or even a tweet!). You can purchase an NFT at a certain price, but its non-fungible nature allows its market value to fluctuate."
+    },
+    "plateforme_area": {
+      "title": "How to use the platform ?",
+      "description": "On the platform, you can create, deploy, auction, and acquire NFTs.",
+      "action_1": {
+        "title": "Create an account",
+        "description": "Create your account to link your Ethereum address and configure your wallet."
+      },
+      "action_2": {
+        "title": "Choose a pack",
+        "description": "By default, the pack is set to DEFAULT, but you can subscribe to other packs (lifetime) to access additional features."
+      },
+      "action_3": {
+        "title": "Create your NFT and auction it or participate",
+        "description": "From now on, you can create NFTs, auction them, or participate in auctions by other users."
+      }
+    },
+    "about_start_area": {
+      "title": "Choose our platform",
+      "description": "Users trust us for the security, flexibility, and implementation of marketing solutions on our platform. What are you waiting for? Join us now!"
+    }
   }
 }

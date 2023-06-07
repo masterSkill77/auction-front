@@ -90,5 +90,34 @@
       "title": "Enchère",
       "description": "Les enchères de NFT sont un moyen populaire pour acheter et vendre des NFTs uniques et de collection. Les enchères fonctionnent comme des enchères traditionnelles, où les acheteurs enchérissent sur un NFT, et l'offre la plus élevée remporte l'enchère. Les enchères de NFT peuvent durer de quelques heures à plusieurs jours, et les vendeurs ont souvent la possibilité de fixer un prix de réserve minimum pour leur NFT."
     }
+  },
+  "guide": {
+    "crypto_about_area": {
+      "title": "Qu'est-ce qu'un NFT",
+      "description_1": "NFT signifie jeton non fongible. Commençons par le début : que signifie non fongible ? L’adjectif « fongible » est un terme économique qui fait référence à un bien ou à un actif pouvant être échangé contre un autre bien ou un autre actif de même valeur. Par exemple, un billet d’un dollar est fongible, car il peut facilement être échangé contre un autre billet d’un dollar de même valeur.",
+      "description_2": "Un élément « non fongible » ne peut pas être échangé contre quelque chose de valeur égale. Une parcelle de terrain est non fongible, puisque chaque terrain a ses propres caractéristiques, et trouver une autre parcelle dont la valeur est strictement identique est difficile, voire impossible. L’art est un autre exemple d’actif non fongible, étant donné que sa valeur est très subjective. C’est là qu’interviennent les NFT.",
+      "description_3": "Un NFT garantit la propriété exclusive d’un actif numérique (par exemple, celle d’une œuvre d’art, un achat dans un jeu vidéo ou un tweet - oui, un tweet !). Vous pouvez acheter un NFT à un certain prix, mais le fait qu’il soit non fongible permet à sa valeur marchande de fluctuer."
+    },
+    "plateforme_area": {
+      "title": "Comment utiliser le plateforme ?",
+      "description": "Sur le plateforme, vous pouvez créer, déployer, mettre aux enchères ainsi qu'acquerir des NFT.",
+      "action_1": {
+        "title": "Créer un compte",
+        "description": "Créer votre compte pour pouvoir lier votre adresse Etherum et configurer votre Wallet."
+      },
+      "action_2": {
+        "title": "Choisir un pack",
+        "description": "Par défaut, le pack est configuré sur DEFAULT, mais vous pouvez vous soucrire sur d'autre pack ( à vie ) pour accèder à d'autre fonctionnalités."
+      },
+
+      "action_3": {
+        "title": "Créer votre NFT et mettez-le aux enchères ou participez",
+        "description": "A partir de maintenant, vous pouvez créer des NFTs, les mettre aux enchères ou bien participer aux enchères des autres utilisateurs."
+      }
+    },
+    "about_start_area": {
+      "title": "Choisissez notre plateforme",
+      "description": "Les utilisateurs nos font confiance pour la sécurité, la flexibilité ainsi que la mise en place des solutions marketing de notre plateforme, Vous aussi, qu'attendez-vous pour nous rejoindre ?"
+    }
   }
 }
