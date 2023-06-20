@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-area section-padding-100">
+  <div class="blog-area section-padding-100" v-if="!homePage">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-12">
@@ -115,17 +115,56 @@
       </div>
     </div>
   </div>
+  <div class="col-12 col-lg-7" v-else>
+    <div class="blog-area">
+      <!-- Single Blog Area -->
+      <div
+        v-for="nouvel in newsHome"
+        :key="nouvel.id"
+        class="single-blog-area d-flex align-items-start"
+      >
+        <!-- Thumbnail -->
+        <div class="blog-thumbnail">
+          <img
+            :src="
+              nouvel.image_url ? nouvel.image_url : 'img/blog-img/blog1.jpg'
+            "
+            alt=""
+          />
+        </div>
+        <!-- Content -->
+        <div class="blog-content">
+          <a :href="nouvel.link" target="_blank" class="post-title">{{
+            nouvel.title
+          }}</a>
+          <div class="meta-data">
+            <a href="#">{{ nouvel.creator[0] }}</a> |
+            <a href="#">{{ nouvel.pubDate }}</a>
+          </div>
+          <p>
+            {{ nouvel.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import axios from "@/src/axios";
 
 export default {
+  props: ["homePage"],
   methods: {
     async getNews() {
       return axios
         .get(import.meta.env.VITE_APP_BACKEND_URL + "/news")
         .then((res) => res.data);
+    },
+  },
+  computed: {
+    newsHome() {
+      if (this.homePage) return this.news.slice(0, 3);
     },
   },
   data() {

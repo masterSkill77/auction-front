@@ -92,6 +92,20 @@
     }
   },
   "guide": {
+    "home_guide": {
+      "fast_easy": {
+        "title": "Rapide et facile",
+        "description": "A la fin de l'enchère, le gagnant va immédiatement proceder aux paiements."
+      },
+      "commisions": {
+        "title": "0 Commission",
+        "description": "Nous ne prenons pas de commision. Mais comme on utilise d'autre plateforme pour certaines tâches, il se peut que des frais supplementaire peuvent être pris en compte."
+      },
+      "secure": {
+        "title": "Securisé",
+        "description": "Avec notre smart contract et les autres systçmes utilisés, vous êtes en securité"
+      }
+    },
     "crypto_about_area": {
       "title": "Qu'est-ce qu'un NFT",
       "description_1": "NFT signifie jeton non fongible. Commençons par le début : que signifie non fongible ? L’adjectif « fongible » est un terme économique qui fait référence à un bien ou à un actif pouvant être échangé contre un autre bien ou un autre actif de même valeur. Par exemple, un billet d’un dollar est fongible, car il peut facilement être échangé contre un autre billet d’un dollar de même valeur.",

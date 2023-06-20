@@ -121,7 +121,7 @@
     "home_guide": {
       "fast_easy": {
         "title": "Fast & Easy",
-        "description": ""
+        "description": "Wait the end of the auction, and directly get your money from the winner"
       },
       "commisions": {
         "title": "0 Commission",
@@ -129,7 +129,7 @@
       },
       "secure": {
         "title": "Secure",
-        "description": ""
+        "description": "With our smart contract and third party of payment, our system is secured"
       }
     }
   },
