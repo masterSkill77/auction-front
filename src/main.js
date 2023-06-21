@@ -6,6 +6,8 @@ import { createPinia } from "pinia";
 import VueCountdown from "@chenfengyuan/vue-countdown";
 import i18n from "./i18n";
 
+import "hover.css";
+
 import App from "./App.vue";
 import router from "./router";
 
