@@ -205,7 +205,7 @@
         </div>
         <div class="col-12 col-md-6">
           <div class="about-content mb-100">
-            <div class="section-heading">
+            <div class="section-heading hvr-grow">
               <h3>Let’s change <br /><span>the world</span> together</h3>
               <h5>
                 Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.

@@ -121,7 +121,7 @@
       <div
         v-for="nouvel in newsHome"
         :key="nouvel.id"
-        class="single-blog-area d-flex align-items-start"
+        class="single-blog-area d-flex align-items-start hvr-bounce-in"
       >
         <!-- Thumbnail -->
         <div class="blog-thumbnail">

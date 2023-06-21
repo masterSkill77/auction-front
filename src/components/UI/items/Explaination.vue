@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="row">
           <!-- Single Course Area -->
-          <div class="col-12 col-sm-12 col-lg-4">
+          <div class="col-12 col-sm-12 col-lg-4 hvr-bounce-out cursor-pointer">
             <div class="single-feature-area style-2 mb-100 text-center">
               <i class="icon-safebox"></i>
               <h3>{{ $t("guide.home_guide.fast_easy.title") }}</h3>
@@ -15,7 +15,7 @@
           </div>
 
           <!-- Single Course Area -->
-          <div class="col-12 col-sm-12 col-lg-4">
+          <div class="col-12 col-sm-12 col-lg-4 hvr-bounce-out cursor-pointer">
             <div class="single-feature-area style-2 mb-100 text-center">
               <i class="icon-exchange"></i>
               <h3>{{ $t("guide.home_guide.commisions.title") }}</h3>
@@ -26,7 +26,7 @@
           </div>
 
           <!-- Single Course Area -->
-          <div class="col-12 col-sm-12 col-lg-4">
+          <div class="col-12 col-sm-12 col-lg-4 hvr-bounce-out cursor-pointer">
             <div class="single-feature-area style-2 mb-100 text-center">
               <i class="icon-wallet"></i>
               <h3>{{ $t("guide.home_guide.secure.title") }}</h3>
