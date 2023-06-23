@@ -32,6 +32,7 @@
     "vue-step-wizard": "^0.1.17",
     "vue-stripe-js": "^1.0.1",
     "vue-switch-lang": "^0.4.0",
+    "vue3-marquee": "^3.2.1",
     "webpack": "^5.81.0"
   },
   "devDependencies": {
