@@ -2,7 +2,7 @@
   <div class="contact-directory-list">
     <ul class="row">
       <li
-        class="col-xl-4 col-lg-4 col-md-6 col-sm-12"
+        class="col-xl-4 col-lg-4 col-md-6 col-sm-12 hvr-bounce-out"
         v-for="pack in packs"
         :key="pack.id"
       >
@@ -43,7 +43,7 @@
               </ul>
             </div>
           </div>
-          <div class="view-contact">
+          <div class="view-contact bg-secondary">
             <router-link to="/profile/upgrade-pack" v-if="pack.id != me.pack.id"
               >Upgrade pack</router-link
             >
