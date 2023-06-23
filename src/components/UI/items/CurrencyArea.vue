@@ -29,7 +29,7 @@
       </div>
     </div>
   </div>
-  <div class="w-100">
+  <div class="w-100 hvr-shrink">
     <Vue3Marquee :duration="50" :pauseOnHover="true" v-if="header">
       <div
         v-for="(crypto, index) in cryptos"
