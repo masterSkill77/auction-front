@@ -29,8 +29,8 @@
               <div id="chart"></div>
             </div>
             <div class="widget-data">
-              <div class="h4 mb-0">2020</div>
-              <div class="weight-600 font-14">Contact</div>
+              <div class="h4 mb-0">{{ me.pack.pack_name }}</div>
+              <div class="weight-600 font-14">Pack</div>
             </div>
           </div>
         </div>
@@ -42,8 +42,8 @@
               <div id="chart2"></div>
             </div>
             <div class="widget-data">
-              <div class="h4 mb-0">400</div>
-              <div class="weight-600 font-14">Deals</div>
+              <div class="h4 mb-0">{{ me.current_allow_nft }}</div>
+              <div class="weight-600 font-14">Création NFT restant</div>
             </div>
           </div>
         </div>
@@ -55,8 +55,21 @@
               <div id="chart3"></div>
             </div>
             <div class="widget-data">
-              <div class="h4 mb-0">350</div>
-              <div class="weight-600 font-14">Campaign</div>
+              <div class="h4 mb-0">{{ me.current_allow_auction }}</div>
+              <div class="weight-600 font-14">Création Enchere restant</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 mb-30">
+        <div class="card-box height-100-p widget-style1">
+          <div class="d-flex flex-wrap align-items-center">
+            <div class="progress-data">
+              <div id="chart3"></div>
+            </div>
+            <div class="widget-data">
+              <div class="h4 mb-0">{{ me.current_allow_bid }}</div>
+              <div class="weight-600 font-14">Placement d'offre restant</div>
             </div>
           </div>
         </div>
