@@ -38,7 +38,8 @@
     "date": "Date",
     "start_date": "Date de mise aux enchères",
     "end_date": "Date butoir",
-    "live": "Participer"
+    "live": "Participer",
+    "make_bid": "Placer une offre"
   },
   "auction": {
     "owner": "Possesseur",

@@ -29,8 +29,8 @@
       </div>
     </div>
   </div>
-  <div class="w-100 hvr-shrink">
-    <Vue3Marquee :duration="50" :pauseOnHover="true" v-if="header">
+  <div class="w-100 cursor-pointer">
+    <Vue3Marquee :duration="50" v-if="header">
       <div
         v-for="(crypto, index) in cryptos"
         :key="index"
@@ -103,3 +103,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.cursor-pointer {
+  cursor: pointer;
+}
+</style>

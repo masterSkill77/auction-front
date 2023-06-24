@@ -38,7 +38,8 @@
     "current_bid": "Current bid",
     "start_date": "Start date",
     "end_date": "End date",
-    "live": "Take place"
+    "live": "Take place",
+    "make_bid": "Make a bid"
   },
   "auction": {
     "owner": "Owner",

@@ -3,7 +3,7 @@
     <div class="col-md-12 col-sm-12">
       <div class="blog-detail card-box overflow-hidden mb-30">
         <div class="row">
-          <div class="blog-img col-lg-5 col-md-12">
+          <div class="blog-img col-lg-5 col-md-12 cursor-pointer hvr-buzz-out">
             <img
               :src="JSON.parse(user.configuration.profile_image)[0].content"
               alt=""

@@ -93,9 +93,9 @@
                       <tbody>
                         <tr v-for="bid in auction.bids.reverse()" :key="bid.id">
                           <th scope="row">{{ bid.id }}</th>
-                          <td>{{ bid.bidder.name + " " + bid.bidder.lastname }}</td>
+                          <td>{{ bid.bidder.name + " " + bid.bidder.lastname }} <router-link :to="`/profile/user/${bid.bidder.id}`" v-if="bid.bidder.id  != me.id"><button class="btn btn-outline-success btn-sm">Profil</button> </router-link></td>
                           <td>{{  new Intl.NumberFormat('fr').format(bid.bid_amount ) }}</td>
-                          <td>{{  bid.created_at  }}</td>
+                          <td>{{  formatMoment(bid.created_at).fromNow()  }}</td>
                         </tr>
 
                       </tbody>
@@ -108,7 +108,7 @@
           </div>
         </div>
       </div>
-      <Teleport to="body">
+      <Teleport to="body" v-if="auction.owner.id != me.id && new Date(auction.end_date).getTime() - new Date().getTime() > 0">
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -133,7 +133,7 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ $t('button.close') }}</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ $t('form.button.close') }}</button>
                   <button type="submit" class="btn btn-primary" :disabled="loading">
                     <span  v-if="loading" class="spinner-border spinner-border-sm" role="status">
                   </span>
@@ -150,6 +150,8 @@
   </section>
 </template>
 <script>
+import moment from "moment"
+import { useI18nStore } from "../../stores/i18n";
   import {
     storeToRefs
   } from "pinia";
@@ -226,12 +228,80 @@
       auctionId.value = route.params.auctionId;
 
       onBeforeMount(async () => {
+        moment.locale('fr', {
+    months : 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split('_'),
+    monthsShort : 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split('_'),
+    monthsParseExact : true,
+    weekdays : 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split('_'),
+    weekdaysShort : 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
+    weekdaysMin : 'Di_Lu_Ma_Me_Je_Ve_Sa'.split('_'),
+    weekdaysParseExact : true,
+    longDateFormat : {
+        LT : 'HH:mm',
+        LTS : 'HH:mm:ss',
+        L : 'DD/MM/YYYY',
+        LL : 'D MMMM YYYY',
+        LLL : 'D MMMM YYYY HH:mm',
+        LLLL : 'dddd D MMMM YYYY HH:mm'
+    },
+    calendar : {
+        sameDay : '[Aujourd’hui à] LT',
+        nextDay : '[Demain à] LT',
+        nextWeek : 'dddd [à] LT',
+        lastDay : '[Hier à] LT',
+        lastWeek : 'dddd [dernier à] LT',
+        sameElse : 'L'
+    },
+    relativeTime : {
+        future : 'dans %s',
+        past : 'il y a %s',
+        s : 'quelques secondes',
+        m : 'une minute',
+        mm : '%d minutes',
+        h : 'une heure',
+        hh : '%d heures',
+        d : 'un jour',
+        dd : '%d jours',
+        M : 'un mois',
+        MM : '%d mois',
+        y : 'un an',
+        yy : '%d ans'
+    },
+    dayOfMonthOrdinalParse : /\d{1,2}(er|e)/,
+    ordinal : function (number) {
+        return number + (number === 1 ? 'er' : 'e');
+    },
+    meridiemParse : /PD|MD/,
+    isPM : function (input) {
+        return input.charAt(0) === 'M';
+    },
+    // In case the meridiem units are not separated around 12, then implement
+    // this function (look at locale/id.js for an example).
+    // meridiemHour : function (hour, meridiem) {
+    //     return /* 0-23 hour, given meridiem token and hour 1-12 */ ;
+    // },
+    meridiem : function (hours, minutes, isLower) {
+        return hours < 12 ? 'PD' : 'MD';
+    },
+    week : {
+        dow : 1, // Monday is the first day of the week.
+        doy : 4  // Used to determine first week of the year.
+    }
+});
+
+
         auction.value = await useAuctionStore().fetchAuction(auctionId.value);
         bid.value = auction.value.current_bid == 0 ? auction.value.start_price : auction.value.current_bid
       });
 
+     const formatMoment = (date) => {
+       moment.locale(useI18nStore().currentLocale)
+        return moment(date)
+      }
+
       return {
         auction,
+        formatMoment,
         auctionId,
         bid,
         me,
