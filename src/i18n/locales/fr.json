@@ -147,5 +147,15 @@
       "title": "Smart Contract basé sur Etherum où vous êtes libres",
       "description": "La popularité de cette technologie innovante dans la finance traditionnelle et le marché de l’art est un vrai sujet juridique. Les montants astronomiques de cryptomonnaies (converties en euro ou en dollars) échangés ont forcément attiré les régulateurs, qui font aujourd’hui face à un défi."
     }
+  },
+  "pack": {
+    "price": "Prix",
+    "licence": "Prix à vie",
+    "nft_creation": "Max de création de NFT",
+    "auction_creation": "Max d'initier une enchère",
+    "max_bid": "Max d'offre autorisé",
+    "remain_nft": "Création de NFT restant",
+    "remain_auction": "Initiation d'enchère restante",
+    "remain_bid": "Placement d'un offre restante"
   }
 }

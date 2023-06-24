@@ -146,5 +146,15 @@
       "title": "Smart Contract based on Ethereum where you are free",
       "description": "The popularity of this innovative technology in traditional finance and the art market poses a real legal challenge. The astronomical amounts of cryptocurrencies (converted to euros or dollars) being exchanged have inevitably attracted regulators, who are now facing a challenge."
     }
+  },
+  "pack": {
+    "price": "Price",
+    "licence": "Lifetime Price",
+    "nft_creation": "Max NFT creation",
+    "auction_creation": "Max auction creation",
+    "max_bid": "Max of bid allowed",
+    "remain_nft": "Remaining NFT creation allowed",
+    "remain_auction": "Remaining auction creation allowed",
+    "remain_bid": "Remaining bid allowed"
   }
 }
