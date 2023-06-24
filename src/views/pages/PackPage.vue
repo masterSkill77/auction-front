@@ -2,7 +2,8 @@
   <div class="contact-directory-list">
     <ul class="row">
       <li
-        class="col-xl-4 col-lg-4 col-md-6 col-sm-12 hvr-float-shadow cursor-pointer"
+        class="col-xl-4 col-lg-4 col-md-6 col-sm-12 hvr-float-shadow"
+        style="cursor: pointer !important"
         v-for="pack in packs"
         :key="pack.id"
       >
