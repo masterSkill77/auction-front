@@ -52,7 +52,8 @@
                   <p>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">{{ $t("personnalInfo.name") }}:
-                        {{ auction.owner.name + " " + auction.owner.lastname }}</li>
+                        {{ auction.owner.name + " " + auction.owner.lastname }}
+                       <router-link :to="`/profile/user/${auction.owner.id}`" v-if="auction.owner.id != me.id"><button class="btn btn-outline-success btn-sm">Profil</button> </router-link></li>
                       <li class="list-group-item">{{ $t("personnalInfo.username") }} : {{ auction.owner.username }}</li>
                       <li class="list-group-item">{{ $t("personnalInfo.email") }} : {{ auction.owner.email }}</li>
                     </ul>

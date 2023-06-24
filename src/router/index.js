@@ -4,6 +4,7 @@ import HomePage from "@/views/pages/HomePage.vue";
 import AboutPage from "@/views/pages/AboutPage.vue";
 import NewsPage from "@/views/pages/NewsPage.vue";
 import AuctionsPage from "@/views/pages/AuctionsPage.vue";
+import ProfilePage from "@/views/pages/ProfilePage.vue";
 import AdminPage from "@/views/pages/AdminPage.vue";
 import ChatPage from "@/views/pages/ChatPage.vue";
 import AuctionPage from "@/Model/auctions/AuctionCard.vue";
@@ -82,6 +83,14 @@ const router = createRouter({
           path: "",
           name: "HomeAdminPage",
           component: AdminHomePage,
+          meta: {
+            requiresAuth: true,
+          },
+        },
+        {
+          path: "user/:id",
+          name: "ProfileForUser",
+          component: ProfilePage,
           meta: {
             requiresAuth: true,
           },
