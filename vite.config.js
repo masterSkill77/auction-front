@@ -6,6 +6,9 @@ import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  isCustomElement: (tagName) => {
+    return tagName === "vue-advanced-chat" || tagName === "emoji-picker";
+  },
   plugins: [
     vue(),
     VueI18nPlugin({
