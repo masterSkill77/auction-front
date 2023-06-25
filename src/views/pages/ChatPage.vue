@@ -1,371 +1,145 @@
 <template>
-  <div class="pd-ltr-20 xs-pd-20-10">
-    <div class="min-height-200px">
-      <div class="bg-white border-radius-4 box-shadow mb-30">
-        <div class="row no-gutters">
-          <div class="col-lg-3 col-md-4 col-sm-12">
-            <div class="chat-list bg-light-gray">
-              <div class="chat-search">
-                <span class="ti-search"></span>
-                <input type="text" placeholder="Search Contact" />
-              </div>
-              <div
-                class="notification-list chat-notification-list customscroll mCustomScrollbar _mCS_4"
-              >
-                <div
-                  id="mCSB_4"
-                  class="mCustomScrollBox mCS-dark-2 mCSB_vertical mCSB_inside"
-                  tabindex="0"
-                  style="max-height: none"
-                >
-                  <div
-                    id="mCSB_4_container"
-                    class="mCSB_container"
-                    style="position: relative; top: 0; left: 0"
-                    dir="ltr"
-                  >
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <img
-                            src="/vendors/images/img.jpg"
-                            alt=""
-                            class="mCS_img_loaded"
-                          />
-                          <h3 class="clearfix">John Doe</h3>
-                          <p>
-                            <i class="fa fa-circle text-light-green"></i> online
-                          </p>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div
-                    id="mCSB_4_scrollbar_vertical"
-                    class="mCSB_scrollTools mCSB_4_scrollbar mCS-dark-2 mCSB_scrollTools_vertical mCSB_scrollTools_onDrag_expand"
-                    style="display: block"
-                  >
-                    <div class="mCSB_draggerContainer">
-                      <div
-                        id="mCSB_4_dragger_vertical"
-                        class="mCSB_dragger"
-                        style="
-                          position: absolute;
-                          min-height: 30px;
-                          display: block;
-                          height: 380px;
-                          max-height: 574.547px;
-                          top: 0px;
-                        "
-                      >
-                        <div
-                          class="mCSB_dragger_bar"
-                          style="line-height: 30px"
-                        ></div>
-                      </div>
-                      <div class="mCSB_draggerRail"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-9 col-md-8 col-sm-12">
-            <div class="chat-detail">
-              <div class="chat-profile-header clearfix">
-                <div class="left">
-                  <div class="clearfix">
-                    <div class="chat-profile-photo">
-                      <img src="/vendors/images/profile-photo.jpg" alt="" />
-                    </div>
-                    <div class="chat-profile-name">
-                      <h3>Rachel Curtis</h3>
-                      <span>New York, USA</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="chat-box">
-                <div class="chat-desc customscroll mCustomScrollbar _mCS_5">
-                  <div
-                    id="mCSB_5"
-                    class="mCS-dark-2 mCSB_vertical mCSB_inside"
-                    tabindex="0"
-                    style="max-height: none"
-                  >
-                    <div
-                      id="mCSB_5_container"
-                      class="mCSB_container"
-                      style="position: relative; top: 0; left: 0"
-                      dir="ltr"
-                    >
-                      <ul>
-                        <li class="clearfix admin_chat">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img2.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <p>Maybe you already have additional info?</p>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                        <li class="clearfix admin_chat">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img2.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <p>
-                              It is to early to provide some kind of estimation
-                              here. We need user stories.
-                            </p>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                        <li class="clearfix">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img1.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <p>
-                              We are just writing up the user stories now so
-                              will have requirements for you next week. We are
-                              just writing up the user stories now so will have
-                              requirements for you next week.
-                            </p>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                        <li class="clearfix">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img1.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <p>
-                              Essentially the brief is for you guys to build an
-                              iOS and android app. We will do backend and web
-                              app. We have a version one mockup of the UI,
-                              please see it attached. As mentioned before, we
-                              would simply hand you all the assets for the UI
-                              and you guys code. If you have any early questions
-                              please do send them on to myself. Ill be in touch
-                              in coming days when we have requirements prepared.
-                              Essentially the brief is for you guys to build an
-                              iOS and android app. We will do backend and web
-                              app. We have a version one mockup of the UI,
-                              please see it attached. As mentioned before, we
-                              would simply hand you all the assets for the UI
-                              and you guys code. If you have any early questions
-                              please do send them on to myself. Ill be in touch
-                              in coming days when we have.
-                            </p>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                        <li class="clearfix admin_chat">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img2.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <p>Maybe you already have additional info?</p>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                        <li class="clearfix admin_chat">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img2.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <p>
-                              It is to early to provide some kind of estimation
-                              here. We need user stories.
-                            </p>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                        <li class="clearfix">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img1.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <p>
-                              We are just writing up the user stories now so
-                              will have requirements for you next week. We are
-                              just writing up the user stories now so will have
-                              requirements for you next week.
-                            </p>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                        <li class="clearfix">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img1.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <p>
-                              Essentially the brief is for you guys to build an
-                              iOS and android app. We will do backend and web
-                              app. We have a version one mockup of the UI,
-                              please see it attached. As mentioned before, we
-                              would simply hand you all the assets for the UI
-                              and you guys code. If you have any early questions
-                              please do send them on to myself. Ill be in touch
-                              in coming days when we have requirements prepared.
-                              Essentially the brief is for you guys to build an
-                              iOS and android app. We will do backend and web
-                              app. We have a version one mockup of the UI,
-                              please see it attached. As mentioned before, we
-                              would simply hand you all the assets for the UI
-                              and you guys code. If you have any early questions
-                              please do send them on to myself. Ill be in touch
-                              in coming days when we have.
-                            </p>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                        <li class="clearfix upload-file">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img1.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <div class="upload-file-box clearfix">
-                              <div class="left">
-                                <img
-                                  src="/vendors/images/upload-file-img.jpg"
-                                  alt=""
-                                  class="mCS_img_loaded"
-                                />
-                                <div class="overlay">
-                                  <a href="#">
-                                    <span
-                                      ><i class="fa fa-angle-down"></i
-                                    ></span>
-                                  </a>
-                                </div>
-                              </div>
-                              <div class="right">
-                                <h3>Big room.jpg</h3>
-                                <a href="#">Download</a>
-                              </div>
-                            </div>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                        <li class="clearfix upload-file admin_chat">
-                          <span class="chat-img">
-                            <img
-                              src="/vendors/images/chat-img2.jpg"
-                              alt=""
-                              class="mCS_img_loaded"
-                            />
-                          </span>
-                          <div class="chat-body clearfix">
-                            <div class="upload-file-box clearfix">
-                              <div class="left">
-                                <img
-                                  src="/vendors/images/upload-file-img.jpg"
-                                  alt=""
-                                  class="mCS_img_loaded"
-                                />
-                                <div class="overlay">
-                                  <a href="#">
-                                    <span
-                                      ><i class="fa fa-angle-down"></i
-                                    ></span>
-                                  </a>
-                                </div>
-                              </div>
-                              <div class="right">
-                                <h3>Big room.jpg</h3>
-                                <a href="#">Download</a>
-                              </div>
-                            </div>
-                            <div class="chat_time">09:40PM</div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div
-                      id="mCSB_5_scrollbar_vertical"
-                      class="mCSB_scrollTools mCSB_5_scrollbar mCS-dark-2 mCSB_scrollTools_vertical mCSB_scrollTools_onDrag_expand"
-                      style="display: block"
-                    >
-                      <div class="mCSB_draggerContainer">
-                        <div
-                          id="mCSB_5_dragger_vertical"
-                          class="mCSB_dragger"
-                          style="
-                            position: absolute;
-                            min-height: 30px;
-                            display: block;
-                            height: 151px;
-                            max-height: 487.547px;
-                            top: 0px;
-                          "
-                        >
-                          <div
-                            class="mCSB_dragger_bar"
-                            style="line-height: 30px"
-                          ></div>
-                        </div>
-                        <div class="mCSB_draggerRail"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="chat-footer">
-                  <div class="file-upload">
-                    <a href="#"><i class="fa fa-paperclip"></i></a>
-                  </div>
-                  <div class="chat_text_area">
-                    <textarea placeholder="Type your message…"></textarea>
-                  </div>
-                  <div class="chat_send">
-                    <button class="btn btn-link" type="submit">
-                      <i class="icon-copy ion-paper-airplane"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
+  <!--
+  <vue-advanced-chat
+    :current-user-id="me.id"
+    :rooms="JSON.stringify(rooms)"
+    :messages="JSON.stringify(messages)"
+    :room-actions="JSON.stringify(roomActions)"
+  />
+--></template>
+
+<script>
+import axios from "@/src/axios";
+import { storeToRefs } from "pinia";
+import { defineComponent, ref } from "vue";
+import { register } from "vue-advanced-chat";
+import { useAuthStore } from "../../stores/auth";
+register();
+
+// Or if you used CDN import
+// window['vue-advanced-chat'].register()
+
+export default defineComponent({
+  async setup() {
+    const { me } = storeToRefs(useAuthStore());
+    const allUsers = await axios
+      .get(import.meta.env.VITE_APP_BACKEND_URL + "/users/all")
+      .then((res) => res.data);
+
+    const rooms = allUsers.map((user) => ({
+      roomId: user.id,
+      roomName: user.username,
+      index: user.id,
+      typingUsers: me.id,
+      users: [{ user, me }],
+    }));
+    console.log(rooms);
+    return {
+      rooms,
+      me,
+    };
+  },
+  data() {
+    return {
+      rooms: [
+        {
+          roomId: "1",
+          roomName: "Room 1",
+          avatar: "assets/imgs/people.png",
+          unreadCount: 4,
+          index: 3,
+          lastMessage: {
+            _id: "xyz",
+            content: "Last message received",
+            senderId: "1234",
+            username: "John Doe",
+            timestamp: "10:20",
+            saved: true,
+            distributed: false,
+            seen: false,
+            new: true,
+          },
+          users: [
+            {
+              _id: "1234",
+              username: "John Doe",
+              avatar: "assets/imgs/doe.png",
+              status: {
+                state: "online",
+                lastChanged: "today, 14:30",
+              },
+            },
+            {
+              _id: "4321",
+              username: "John Snow",
+              avatar: "assets/imgs/snow.png",
+              status: {
+                state: "offline",
+                lastChanged: "14 July, 20:00",
+              },
+            },
+          ],
+          typingUsers: [4321],
+        },
+      ],
+      messages: [
+        {
+          _id: "7890",
+          indexId: 12092,
+          content: "Message 1",
+          senderId: "1234",
+          username: "John Doe",
+          avatar: "assets/imgs/doe.png",
+          date: "13 November",
+          timestamp: "10:20",
+          system: false,
+          saved: true,
+          distributed: true,
+          seen: true,
+          deleted: false,
+          failure: true,
+          disableActions: false,
+          disableReactions: false,
+          files: [
+            {
+              name: "My File",
+              size: 67351,
+              type: "png",
+              audio: true,
+              duration: 14.4,
+              url: "https://firebasestorage.googleapis.com/...",
+              preview: "data:image/png;base64,iVBORw0KGgoAA...",
+              progress: 88,
+            },
+          ],
+          reactions: {
+            // 😁: [
+            //   '1234', // USER_ID
+            //   '4321'
+            // ],
+            // 🥰: [
+            //   '1234'
+            // ]
+          },
+          replyMessage: {
+            content: "Reply Message",
+            senderId: "4321",
+            files: [
+              {
+                name: "My Replied File",
+                size: 67351,
+                type: "png",
+                audio: true,
+                duration: 14.4,
+                url: "https://firebasestorage.googleapis.com/...",
+                preview: "data:image/png;base64,iVBORw0KGgoAA...",
+              },
+            ],
+          },
+        },
+      ],
+      roomActions: [],
+    };
+  },
+});
+</script>

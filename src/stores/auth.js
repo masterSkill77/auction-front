@@ -79,7 +79,10 @@ export const useAuthStore = defineStore("auth", {
       localStorage.removeItem(TOKEN_NAME);
       localStorage.removeItem(USER_TOKEN);
     },
-
+    async setUser(user) {
+      this.user = await axiosInstance.get("/user");
+      localStorage.setItem(USER_TOKEN, JSON.stringify(this.user));
+    },
     async updateProfile(data, userId) {
       [data.card_expires_year, data.card_expires_month] =
         data.card_expires.split("-");

@@ -22,8 +22,10 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xl-3 mb-30">
-        <div class="card-box height-100-p widget-style1">
+      <div class="col-xl-3 mb-30 hvr-wobble-horizontal cursor-pointer">
+        <div
+          class="card-box height-100-p widget-style1 bg-secondary text-white"
+        >
           <div class="d-flex flex-wrap align-items-center">
             <div class="progress-data">
               <div id="chart"></div>
@@ -35,8 +37,10 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 mb-30">
-        <div class="card-box height-100-p widget-style1">
+      <div class="col-xl-3 mb-30 hvr-wobble-horizontal cursor-pointer">
+        <div
+          class="card-box height-100-p widget-style1 bg-secondary text-white"
+        >
           <div class="d-flex flex-wrap align-items-center">
             <div class="progress-data">
               <div id="chart2"></div>
@@ -48,8 +52,10 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 mb-30">
-        <div class="card-box height-100-p widget-style1">
+      <div class="col-xl-3 mb-30 hvr-wobble-horizontal cursor-pointer">
+        <div
+          class="card-box height-100-p widget-style1 bg-secondary text-white"
+        >
           <div class="d-flex flex-wrap align-items-center">
             <div class="progress-data">
               <div id="chart3"></div>
@@ -61,8 +67,10 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 mb-30">
-        <div class="card-box height-100-p widget-style1">
+      <div class="col-xl-3 mb-30 hvr-wobble-horizontal cursor-pointer">
+        <div
+          class="card-box height-100-p widget-style1 bg-secondary text-white"
+        >
           <div class="d-flex flex-wrap align-items-center">
             <div class="progress-data">
               <div id="chart3"></div>
@@ -74,8 +82,10 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 mb-30">
-        <div class="card-box height-100-p widget-style1">
+      <div class="col-xl-3 mb-30 hvr-wobble-horizontal cursor-pointer">
+        <div
+          class="card-box height-100-p widget-style1 bg-secondary text-white"
+        >
           <div class="d-flex flex-wrap align-items-center">
             <div class="progress-data">
               <div id="chart4"></div>
