@@ -1,9 +1,11 @@
 <template>
+  <Chat />
   <!--
   <vue-advanced-chat
     :current-user-id="me.id"
     :rooms="JSON.stringify(rooms)"
     :messages="JSON.stringify(messages)"
+import Chat from "../../components/UI/chat/Chat.vue";
     :room-actions="JSON.stringify(roomActions)"
   />
 --></template>
@@ -12,9 +14,8 @@
 import axios from "@/src/axios";
 import { storeToRefs } from "pinia";
 import { defineComponent, ref } from "vue";
-import { register } from "vue-advanced-chat";
 import { useAuthStore } from "../../stores/auth";
-register();
+import Chat from "../../components/UI/chat/Chat.vue";
 
 // Or if you used CDN import
 // window['vue-advanced-chat'].register()
@@ -23,9 +24,8 @@ export default defineComponent({
   async setup() {
     const { me } = storeToRefs(useAuthStore());
     const allUsers = await axios
-      .get(import.meta.env.VITE_APP_BACKEND_URL + "/users/all")
+      .get(import.meta.env.VITE_APP_BACKEND_URL + "/users/friends")
       .then((res) => res.data);
-
     const rooms = allUsers.map((user) => ({
       roomId: user.id,
       roomName: user.username,
@@ -141,5 +141,6 @@ export default defineComponent({
       roomActions: [],
     };
   },
+  components: { Chat },
 });
 </script>
