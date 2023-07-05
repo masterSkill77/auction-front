@@ -215,6 +215,12 @@ export default {
       };
 
       const retour = this.socket.emit("send_message", data);
+      if (retour)
+        this.$notify({
+          title: this.$t("message.title"),
+          text: this.$t("message.success"),
+          type: "success",
+        });
       await this.getMessage(this.selectUser);
       this.message = "";
     },

@@ -158,5 +158,10 @@
     "remain_nft": "Création de NFT restant",
     "remain_auction": "Initiation d'enchère restante",
     "remain_bid": "Placement d'un offre restante"
+  },
+  "message": {
+    "title": "Message",
+    "success": "Message envoyé avec succès",
+    "received": "Vous avez reçu un message de la part de l'utilisateur "
   }
 }

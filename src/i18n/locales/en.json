@@ -157,5 +157,10 @@
     "remain_nft": "Remaining NFT creation allowed",
     "remain_auction": "Remaining auction creation allowed",
     "remain_bid": "Remaining bid allowed"
+  },
+  "message": {
+    "title": "Message",
+    "success": "Message sent successfully",
+    "received": "You've got a message from "
   }
 }

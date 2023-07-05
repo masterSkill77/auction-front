@@ -23,10 +23,6 @@ export default defineComponent({
       .get(import.meta.env.VITE_APP_BACKEND_URL + "/users/friends")
       .then((res) => res.data);
 
-    socket.emit("client_join", me.value);
-    socket.on("joined", () => {
-      console.log("joined");
-    });
     friends = ref(friends);
     return {
       friends,
