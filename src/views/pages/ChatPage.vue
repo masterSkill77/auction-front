@@ -1,6 +1,6 @@
 <template>
   <div class="mb-4">
-    <Chat :friends="friends" :socket="socket" />
+    <Chat :friends="friends" :socketIo="socketIO" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import Chat from "../../components/UI/chat/Chat.vue";
 
 export default defineComponent({
   async setup() {
-    const socket = io(import.meta.env.VITE_APP_SOCKET_URL);
+    const socketIO = io(import.meta.env.VITE_APP_SOCKET_URL);
 
     const { me } = storeToRefs(useAuthStore());
     let friends = await axios
@@ -26,7 +26,7 @@ export default defineComponent({
     friends = ref(friends);
     return {
       friends,
-      socket,
+      socketIO,
       me,
     };
   },

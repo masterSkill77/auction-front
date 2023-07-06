@@ -115,7 +115,7 @@ import { useAuthStore } from "../../../stores/auth";
 import axios from "axios";
 
 export default {
-  props: ["friends", "socket"],
+  props: ["friends", "socketIo"],
   data() {
     return {
       message: "",
@@ -126,9 +126,19 @@ export default {
   },
 
   mounted() {
-    this.scrollToBottom();
+    this.socketIo.on("message_received", (data) => {
+      this.messages = data.messages.sort(
+        (a, b) => parseInt(a.time) - parseInt(b.time)
+      );
+      this.scrollToBottom();
+    });
     const { me } = storeToRefs(useAuthStore());
     this.me = me.value;
+
+    this.socketIo.emit("client_join", me.value);
+    this.socketIo.on("joined", () => {
+      console.log("joined");
+    });
 
     moment.locale("fr", {
       months:
@@ -198,13 +208,6 @@ export default {
         doy: 4, // Used to determine first week of the year.
       },
     });
-
-    this.socket.on("message_received", (data) => {
-      console.log(data);
-      this.messages = data.messages.sort(
-        (a, b) => parseInt(a.time) - parseInt(b.time)
-      );
-    });
   },
   computed: {
     selectedUser: function () {
@@ -225,19 +228,18 @@ export default {
         message: this.message,
       };
 
-      const retour = this.socket.emit("send_message", data);
-      if (retour)
+      const retour = this.socketIo.emit("send_message", data);
+      if (retour) {
         this.$notify({
           title: this.$t("message.title"),
           text: this.$t("message.success"),
           type: "success",
         });
-      await this.getMessage(this.selectUser);
+        setTimeout(async () => {
+          await this.getMessage(this.selectUser);
+        }, 1000);
+      }
       this.message = "";
-
-      this.$nextTick(() => {
-        this.scrollToBottom();
-      });
     },
     async getMessage(friend) {
       this.selectUser = friend;

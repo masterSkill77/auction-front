@@ -21,9 +21,6 @@ export default defineComponent({
     const { me } = storeToRefs(useAuthStore());
     const socket = io(import.meta.env.VITE_APP_SOCKET_URL);
     socket.emit("client_join", me.value);
-    socket.on("joined", () => {
-      console.log("joined");
-    });
 
     socket.on("message_received", (data) => {
       this.$notify({
