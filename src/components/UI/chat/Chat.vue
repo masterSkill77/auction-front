@@ -26,6 +26,9 @@
         </h4>
       </div>
       <div ref="listMessage" class="messageContent">
+        <div v-if="loading" class="spinner-container">
+          <span class="spinner-border spinner-border-lg" role="status"></span>
+        </div>
         <ul>
           <li v-for="message in messages" :key="message.id">
             <div
@@ -63,6 +66,17 @@
   </div>
 </template>
 <style scoped>
+.spinner-container {
+  height: 30em;
+  text-align: center;
+  background-color: rgba(42, 40, 40, 0.822);
+  width: 100%;
+  z-index: 20;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .active {
   background-color: rgba(23, 17, 17, 0.674);
   color: rgb(172, 155, 155);
@@ -121,16 +135,18 @@ export default {
       message: "",
       selectUser: {},
       messages: [],
+      loading: false,
       me: {},
     };
   },
 
   mounted() {
     this.socketIo.on("message_received", (data) => {
+      this.loading = true;
       this.messages = data.messages.sort(
         (a, b) => parseInt(a.time) - parseInt(b.time)
       );
-      this.scrollToBottom();
+      setTimeout(this.scrollToBottom(), 1000);
     });
     const { me } = storeToRefs(useAuthStore());
     this.me = me.value;
@@ -222,6 +238,7 @@ export default {
       }
     },
     async sendMessage() {
+      this.loading = true;
       const data = {
         toUser: this.selectUser,
         fromUser: this.me,
@@ -237,11 +254,13 @@ export default {
         });
         setTimeout(async () => {
           await this.getMessage(this.selectUser);
+          this.loading = false;
         }, 1000);
       }
       this.message = "";
     },
     async getMessage(friend) {
+      this.loading = true;
       this.selectUser = friend;
       await axios
         .get(`${import.meta.env.VITE_CHAT_APP_URL}/${this.me.id}/${friend.id}`)
@@ -254,6 +273,9 @@ export default {
         })
         .finally(() => {
           const $ = this;
+          setTimeout(() => {
+            $.loading = false;
+          }, 1500);
           this.$nextTick(() => {
             $.scrollToBottom();
           });
