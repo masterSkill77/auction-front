@@ -11,31 +11,30 @@
           @click="getMessage(friend)"
           :class="{
             'cursor-pointer userSpace p-4 mb-2': true,
-            active: false,
+            active: friend == selectedUser,
           }"
         >
           {{ friend.username }}
         </li>
       </ul>
     </div>
-    <div
-      v-if="/*selectUser.id == undefined*/ true"
-      class="col-lg-9 col-md-12 col-sm-12"
-    >
+    <div v-if="selectUser.id != undefined" class="col-lg-9 col-md-12 col-sm-12">
       <div class="navbar w-100 header mb-2">
         <h4>
           {{ selectedUser.name }}
           {{ selectedUser.lastname }}
         </h4>
       </div>
-      <div class="messageContent">
-        <ul v-for="message in messages" :key="message.id">
-          <li
-            :class="{ message: true, fromMe: message.from == me.id }"
-            v-if="message.type == 'TEXT'"
-          >
-            <p v-html="message.content"></p>
-            <span>{{ formatMoment(message.time).fromNow() }}</span>
+      <div ref="listMessage" class="messageContent">
+        <ul>
+          <li v-for="message in messages" :key="message.id">
+            <div
+              :class="{ message: true, fromMe: message.from == me.id }"
+              v-if="message.type == 'TEXT'"
+            >
+              <p v-html="message.content"></p>
+              <span>{{ formatMoment(message.time).fromNow() }}</span>
+            </div>
           </li>
         </ul>
       </div>
@@ -64,13 +63,16 @@
   </div>
 </template>
 <style scoped>
+.active {
+  background-color: rgba(23, 17, 17, 0.674);
+  color: rgb(172, 155, 155);
+}
 .footer-chat {
-  /* position: relative;
-  bottom: -32em; */
   z-index: 20;
 }
 .message {
   clear: both;
+  border-radius: 25px;
   width: 70%;
   padding: 15px;
   margin: 5px;
@@ -122,7 +124,9 @@ export default {
       me: {},
     };
   },
+
   mounted() {
+    this.scrollToBottom();
     const { me } = storeToRefs(useAuthStore());
     this.me = me.value;
 
@@ -196,6 +200,7 @@ export default {
     });
 
     this.socket.on("message_received", (data) => {
+      console.log(data);
       this.messages = data.messages.sort(
         (a, b) => parseInt(a.time) - parseInt(b.time)
       );
@@ -207,6 +212,12 @@ export default {
     },
   },
   methods: {
+    scrollToBottom() {
+      const element = this.$refs.listMessage;
+      if (element) {
+        element.scrollTop += element.scrollHeight;
+      }
+    },
     async sendMessage() {
       const data = {
         toUser: this.selectUser,
@@ -223,14 +234,28 @@ export default {
         });
       await this.getMessage(this.selectUser);
       this.message = "";
+
+      this.$nextTick(() => {
+        this.scrollToBottom();
+      });
     },
     async getMessage(friend) {
       this.selectUser = friend;
-      const data = await axios
+      await axios
         .get(`${import.meta.env.VITE_CHAT_APP_URL}/${this.me.id}/${friend.id}`)
-        .then((res) => res.data);
-
-      this.messages = data.sort((a, b) => parseInt(a.time) - parseInt(b.time));
+        .then((res) => res.data)
+        .then((data) => {
+          this.messages = data.sort(
+            (a, b) => parseInt(a.time) - parseInt(b.time)
+          );
+          return true;
+        })
+        .finally(() => {
+          const $ = this;
+          this.$nextTick(() => {
+            $.scrollToBottom();
+          });
+        });
     },
     formatMoment: (date) => {
       moment.locale(useI18nStore().currentLocale);
