@@ -248,7 +248,7 @@
   <!-- ##### Blog Area Start ##### -->
   <section class="cryptos-blog-area section-padding-100">
     <div class="container-full">
-      <div class="d-flex justify-content-around">
+      <div class="row">
         <ListNews :home-page="true" />
         <CurrencyArea />
       </div>

@@ -1,6 +1,6 @@
 <template>
-  <div class="col-12 col-lg-5" v-if="!header">
-    <div class="cryptos-prices-table">
+  <div class="col-12 col-lg-5 col-sm-12" v-if="!header">
+    <div class="cryptos-prices-table m-auto">
       <!-- Single Price Table -->
       <div
         v-for="(crypto, index) in cryptos"

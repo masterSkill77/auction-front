@@ -117,7 +117,7 @@
       </div>
     </div>
   </div>
-  <div class="col-12 col-lg-7" v-else>
+  <div class="col-12 col-lg-7 col-sm-12" v-else>
     <div class="blog-area">
       <!-- Single Blog Area -->
       <div
