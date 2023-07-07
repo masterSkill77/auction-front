@@ -19,7 +19,8 @@ export default defineComponent({
   },
   mounted() {
     const { me } = storeToRefs(useAuthStore());
-    const socket = io(import.meta.env.VITE_APP_SOCKET_URL);
+    let Io = io != undefined ? io : () => {};
+    const socket = Io(import.meta.env.VITE_APP_SOCKET_URL);
     socket.emit("client_join", me.value);
 
     socket.on("message_received", (data) => {

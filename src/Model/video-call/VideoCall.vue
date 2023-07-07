@@ -184,7 +184,10 @@ export default {
         port: import.meta.env.VITE_PEERJS_PORT,
       });
 
-      this.socket = io(import.meta.env.VITE_APP_SOCKET_URL);
+      let Io = io != undefined ? io : () => {};
+  
+
+      this.socket = Io(import.meta.env.VITE_APP_SOCKET_URL);
 
       navigator.mediaDevices
         .getUserMedia({

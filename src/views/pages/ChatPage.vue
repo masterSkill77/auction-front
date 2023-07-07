@@ -16,7 +16,9 @@ import Chat from "../../components/UI/chat/Chat.vue";
 
 export default defineComponent({
   async setup() {
-    const socketIO = io(import.meta.env.VITE_APP_SOCKET_URL);
+    let Io = io != undefined ? io : () => {};
+
+    const socketIO = Io(import.meta.env.VITE_APP_SOCKET_URL);
 
     const { me } = storeToRefs(useAuthStore());
     let friends = await axios
