@@ -95,7 +95,9 @@
         <div class="col-12">
           <div class="newsletter-area mt-100">
             <div class="section-heading text-center mx-auto">
-              <h3>Subscribe to <span>Newsletter</span></h3>
+              <h3
+                v-html="$t('newsletter.title', '<span>Newsletter</span>')"
+              ></h3>
               <h6>
                 Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
                 Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
@@ -108,7 +110,7 @@
                 name="email"
                 placeholder="Subscribe to newsletter"
               />
-              <button type="submit">Subscribe</button>
+              <button type="submit">{{ $t("newsletter.button") }}</button>
             </form>
           </div>
         </div>

@@ -3,13 +3,7 @@
     <div class="row">
       <div class="col-12">
         <div class="section-heading text-center mx-auto">
-          <h3>Let’s change <br /><span>the world</span> together</h3>
-          <p>
-            Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec
-            et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar
-            cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non,
-            fermentum nisi.
-          </p>
+          <h3><span v-html="$t('banner.1')"></span></h3>
         </div>
       </div>
     </div>

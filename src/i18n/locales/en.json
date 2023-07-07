@@ -162,5 +162,18 @@
     "title": "Message",
     "success": "Message sent successfully",
     "received": "You've got a message from "
+  },
+  "banner": {
+    "0": "Let’s change the world together",
+    "1": "Integrate the cryptos world",
+    "2": "NFTs just waiting you",
+    "text-banner-2": "NFTs are available directly on our Smart Contract once you upload them, so minutes later you can directly auction them",
+    "text-banner-4": "We offer you cryptocurrency markers to help you make decisions about your bitcoins.",
+    "text-banner-5": "Our platform is therefore multi-function, which is in addition to being an auction platform, we offer bonuses for our users"
+  },
+  "newsletter": {
+    "title": "Subscribe to our newsletter",
+    "button": "Subscribe",
+    "text": "When you subscribe to our newsletter, you'll receive an email on news and offer from the plateforme"
   }
 }

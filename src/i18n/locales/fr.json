@@ -163,5 +163,18 @@
     "title": "Message",
     "success": "Message envoyé avec succès",
     "received": "Vous avez reçu un message de la part de l'utilisateur "
+  },
+  "banner": {
+    "0": "Allons changer le monde ensemble",
+    "1": "Integrer le monde du crypto",
+    "2": "Les NFT n'attendent que vous",
+    "text-banner-2": "Les NFTs sont disponible directement sur notre Smart Contract une fois que vous les avez uploadés, donc des minutes après vous pouvez directement les mettre aux enchères",
+    "text-banner-4": "Nous vous offrons des marqeurs de cryptomonnaies pour vous aider à prendre des decisions sur vos bitcoins.",
+    "text-banner-5": "Notre plateforme est donc multi fonction, qui est en plus d'être une plateforme d'enchère, on offre des bonus pour nos utilisateurs."
+  },
+  "newsletter": {
+    "title": "Inscrivez-vous à notre newsletter",
+    "button": "S'inscrire",
+    "text": "Quand vous vous inscrivez sur notre newsletter, vous recevriez automatiquement des mails pour les nouveautés sur le plateforme ou les évènements crypto"
   }
 }

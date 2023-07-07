@@ -206,19 +206,14 @@
         <div class="col-12 col-md-6">
           <div class="about-content mb-100">
             <div class="section-heading hvr-grow">
-              <h3>Let’s change <br /><span>the world</span> together</h3>
+              <h3><span v-html="$t('banner.2')"></span></h3>
               <h5>
-                Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-                Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-                pulvinar cursus a eget nisl.
+                {{ $t("banner.text-banner-2") }}
               </h5>
-              <p>
-                Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-                Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-                pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia
-                lacus non, fermentum nisi.
-              </p>
-              <a href="#" class="btn cryptos-btn mt-30">Read More</a>
+
+              <router-link to="/login" class="btn cryptos-btn mt-30"
+                >Read More</router-link
+              >
             </div>
           </div>
         </div>
@@ -236,17 +231,12 @@
       <div class="row">
         <div class="col-12">
           <div class="section-heading text-center white mx-auto">
-            <h3 class="mb-4">Cryptocurrency Calculator</h3>
+            <h3 class="mb-4">Cryptocurrency</h3>
             <h5 class="mb-2">
-              Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-              Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-              pulvinar cursus a eget nisl.
+              {{ $t("banner.text-banner-4") }}
             </h5>
             <p>
-              Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-              Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-              pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia
-              lacus non, fermentum nisi.
+              {{ $t("banner.text-banner-5") }}
             </p>
           </div>
         </div>
@@ -270,11 +260,9 @@
         <div class="col-12">
           <div class="newsletter-area mt-100">
             <div class="section-heading text-center mx-auto">
-              <h3>Subscribe to <span>Newsletter</span></h3>
+              <h3 v-html="$t('newsletter.title')"></h3>
               <h6>
-                Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.
-                Donec et sollicitudin est, in euismod erat. Ut at erat et arcu
-                pulvinar cursus a eget nisl.
+                {{ $t("newsletter.text") }}
               </h6>
             </div>
             <form action="#" method="post">
@@ -283,7 +271,7 @@
                 name="email"
                 placeholder="Subscribe to newsletter"
               />
-              <button type="submit">Subscribe</button>
+              <button type="submit">{{ $t("newsletter.button") }}</button>
             </form>
           </div>
         </div>
