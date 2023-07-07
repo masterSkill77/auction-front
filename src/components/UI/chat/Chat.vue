@@ -26,8 +26,8 @@
         </h4>
       </div>
       <div ref="listMessage" class="messageContent">
-        <div v-if="loading" class="spinner-container">
-          <span class="spinner-border spinner-border-lg" role="status"></span>
+        <div v-if="loading && messages.length != 0" class="spinner-container">
+          <span class="spinner-border spinner-border-xl" role="status"></span>
         </div>
         <ul>
           <li v-for="message in messages" :key="message.id">
@@ -67,9 +67,9 @@
 </template>
 <style scoped>
 .spinner-container {
-  height: 30em;
+  transition: all 0.5;
+  height: 70%;
   text-align: center;
-  background-color: rgba(42, 40, 40, 0.822);
   width: 100%;
   z-index: 20;
   position: absolute;
@@ -142,11 +142,16 @@ export default {
 
   mounted() {
     this.socketIo.on("message_received", (data) => {
-      this.loading = true;
-      this.messages = data.messages.sort(
-        (a, b) => parseInt(a.time) - parseInt(b.time)
-      );
-      setTimeout(this.scrollToBottom(), 1000);
+      if (this.selectedUser.id == data.from.id) {
+        this.loading = true;
+        this.messages = data.messages.sort(
+          (a, b) => parseInt(a.time) - parseInt(b.time)
+        );
+        setTimeout(() => {
+          this.loading = false;
+          this.scrollToBottom();
+        }, 1000);
+      }
     });
     const { me } = storeToRefs(useAuthStore());
     this.me = me.value;
