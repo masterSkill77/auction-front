@@ -23,6 +23,7 @@
               id="exampleInputPassword1"
               placeholder="Password"
               v-model="password"
+              @keyup.enter="login"
             />
           </div>
           <div class="form-check">
@@ -74,11 +75,18 @@ export default {
           this.$router.push({ name: "home" });
         })
         .catch((error) => {
-          this.$notify({
-            title: this.$t("error.title"),
-            text: this.$t("error.login"),
-            type: "error",
-          });
+          if (error.response && error.response.data.error) {
+            this.$notify({
+              title: this.$t("error." + error.response.data.error),
+              text: this.$t("error.text-" + error.response.data.error),
+              type: "error",
+            });
+          } else
+            this.$notify({
+              title: this.$t("error.title"),
+              text: this.$t("error.login"),
+              type: "error",
+            });
         });
     },
   },

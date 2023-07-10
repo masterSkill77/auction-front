@@ -58,6 +58,8 @@
   },
   "error": {
     "title": "An error was occured",
+    "VERIFY_YOUR_EMAIL": "Email verification",
+    "text-VERIFY_YOUR_EMAIL": "Please confirm your email",
     "max_nft_allowed": "You have reached the max nft creation allowed for default pack",
     "BID_TOO_LOW": "Bid below current bid or well below starting amount",
     "network": "",

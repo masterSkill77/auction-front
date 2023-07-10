@@ -58,6 +58,8 @@
   },
   "error": {
     "title": "Une erreur est survenue",
+    "VERIFY_YOUR_EMAIL": "Verification d'email",
+    "text-VERIFY_YOUR_EMAIL": "S'il vous plaît, veuillez confirmer votre email",
     "BID_TOO_LOW": "Offre en dessous de l'offre actuelle ou bien en dessous de montant de départ",
     "login": "Vos informations ne sont pas correctes",
     "network": "",
