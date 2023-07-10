@@ -175,5 +175,9 @@
     "title": "Subscribe to our newsletter",
     "button": "Subscribe",
     "text": "When you subscribe to our newsletter, you'll receive an email on news and offer from the plateforme"
+  },
+  "profile": {
+    "add_friend": "Add to friend list",
+    "chat_with": "Chat with this user"
   }
 }

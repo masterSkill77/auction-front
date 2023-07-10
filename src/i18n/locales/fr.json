@@ -176,5 +176,9 @@
     "title": "Inscrivez-vous à notre newsletter",
     "button": "S'inscrire",
     "text": "Quand vous vous inscrivez sur notre newsletter, vous recevriez automatiquement des mails pour les nouveautés sur le plateforme ou les évènements crypto"
+  },
+  "profile": {
+    "add_friend": "Ajouter en tant qu'ami",
+    "chat_with": "Discuter avec cette personne"
   }
 }

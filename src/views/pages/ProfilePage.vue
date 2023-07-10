@@ -17,8 +17,9 @@
                     <ul>
                       <li>{{ $t("personnalInfo.username") }} : {{ user.username }}</li>
                       <li>{{ $t("personnalInfo.email") }} : {{ user.email }}</li>
-                      <li>Ajouter en tant qu'ami</li>
                     </ul>
+                    <btn v-if="isMyFriend" @click="addToFriend" class="btn btn-md btn-success text-white">{{ $t("profile.add_friend") }}</btn>
+                    <router-link class="btn btn-md btn-primary" to="/profile/chat" v-else>{{ $t("profile.chat_with") }}</router-link>
                   </p>
           </div>
         </div>
@@ -28,8 +29,12 @@
 </template>
 <script setup>
 import axios from "@/src/axios";
-import { reactive } from "vue";
+import { storeToRefs } from "pinia";
+import { reactive,ref } from "vue";
 import { useRoute } from "vue-router";
+import { useAuthStore } from "../../stores/auth";
+const me = storeToRefs(useAuthStore);
+
 const userId = useRoute().params.id;
 
 let user = await axios
@@ -37,5 +42,21 @@ let user = await axios
   .then((res) => res.data)
   .catch((e) => console.log(e));
 
+
+  let friends = await axios
+      .get(import.meta.env.VITE_APP_BACKEND_URL + "/users/friends")
+      .then((res) => res.data);
+
+  const isMyFriend =ref(false)
+  friends.map((friend) => {
+    if(friend.id == user.id)
+    isMyFriend.value = true
+  })
+
 user = reactive(user);
+
+const addToFriend = async () => {
+  console.log(user);
+  await axios.post(import.meta.env.VITE_APP_BACKEND_URL + "/users/friends" , {friendId : user.id})
+}
 </script>
