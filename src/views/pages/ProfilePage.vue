@@ -18,7 +18,7 @@
                       <li>{{ $t("personnalInfo.username") }} : {{ user.username }}</li>
                       <li>{{ $t("personnalInfo.email") }} : {{ user.email }}</li>
                     </ul>
-                    <btn v-if="isMyFriend" @click="addToFriend" class="btn btn-md btn-success text-white">{{ $t("profile.add_friend") }}</btn>
+                    <btn v-if="!isMyFriend" @click="addToFriend" class="btn btn-md btn-success text-white">{{ $t("profile.add_friend") }}</btn>
                     <router-link class="btn btn-md btn-primary" to="/profile/chat" v-else>{{ $t("profile.chat_with") }}</router-link>
                   </p>
           </div>
@@ -57,6 +57,8 @@ user = reactive(user);
 
 const addToFriend = async () => {
   console.log(user);
-  await axios.post(import.meta.env.VITE_APP_BACKEND_URL + "/users/friends" , {friendId : user.id})
+  await axios.post(import.meta.env.VITE_APP_BACKEND_URL + "/users/friends" , {friendId : user.id}).then(() => {
+    window.location.reload()
+  })
 }
 </script>
