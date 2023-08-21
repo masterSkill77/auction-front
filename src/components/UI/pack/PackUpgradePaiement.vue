@@ -125,7 +125,12 @@ export default defineComponent({
     async pay() {
       await axios
         .post("/paiement/upgrade-pack", { packId: this.packId })
-        .then((response) => console.log(response.data));
+        .then(async (response) => {
+          this.$notify({
+            title: this.$t("success.title"),
+          });
+          await axios.get("/user").then(({ data }) => {});
+        });
     },
     async payAnother() {},
   },
