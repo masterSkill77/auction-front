@@ -30,7 +30,7 @@
 <script setup>
 import axios from "@/src/axios";
 import { storeToRefs } from "pinia";
-import { reactive,ref } from "vue";
+import { onActivated, reactive,ref } from "vue";
 import { useRoute } from "vue-router";
 import { useAuthStore } from "../../stores/auth";
 const me = storeToRefs(useAuthStore);
