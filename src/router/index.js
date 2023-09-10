@@ -25,6 +25,10 @@ import PackPage from '@/views/pages/PackPage.vue';
 import NftPage from '@/Model/nft/Nft.vue';
 import ContactPage from '@/views/pages/ContactPage.vue';
 
+import axios from '@/src/axios';
+const TOKEN_NAME = 'auction_token';
+const USER_TOKEN = 'auction_user';
+
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -197,7 +201,7 @@ const router = createRouter({
 	],
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
 	const authStore = useAuthStore();
 	const src = '/js/active.js';
 	var s = document.createElement('script');
@@ -208,6 +212,8 @@ router.beforeEach((to, from, next) => {
 			next({ name: 'login' });
 			return;
 		} else {
+			const data = await axios.get('/user').then((response) => response.data);
+			localStorage.setItem(USER_TOKEN, JSON.stringify(data));
 			next();
 			return;
 		}
