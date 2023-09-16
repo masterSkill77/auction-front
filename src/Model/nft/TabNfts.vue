@@ -31,14 +31,16 @@
 											></a>
 										</li>
 										<li>
-											<router-link :to="`/profile/nft/${nft.id}`"
-												><i class="fa fa-link"></i
-											></router-link>
+											<a :href="nft.image_uri"><i class="fa fa-link"></i></a>
 										</li>
 									</ul>
 								</div>
 							</div>
 						</div>
+						<ul class="p-2">
+							<li class="mb-10">Contrat : {{ contractAddress }}</li>
+							<li class="mb-10">TokenID : {{ nft.token_id }}</li>
+						</ul>
 					</div>
 				</li>
 			</ul>
@@ -77,9 +79,11 @@
 		async setup() {
 			let allNfts = ref({});
 			let myNfts = ref();
+			const contractAddress = '0x4CecC84d747bBEa3C1688a50B243B2868fa69bDe';
 			let linksOfPage = ref(allNfts.links);
 			return {
 				linksOfPage,
+				contractAddress,
 				allNfts,
 			};
 		},

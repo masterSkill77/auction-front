@@ -1,9 +1,14 @@
 <template>
-  <div>My NFT</div>
+	<div>My NFT</div>
 </template>
 
 <script>
-export default {};
+	export default {
+		data() {
+			return;
+		},
+		mounted() {},
+	};
 </script>
 
 <style></style>
