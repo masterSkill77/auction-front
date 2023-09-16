@@ -1,186 +1,188 @@
 {
-  "menu": {
-    "home": "Accueil",
-    "news": "Actualités",
-    "auctions": "Enchères",
-    "about": "Guide",
-    "goto": "Aller vers la boutique",
-    "profile": "Profil",
-    "mynft": "Mes NFTs",
-    "myauctions": "Mes enchères",
-    "contact": "Contact",
-    "settings": "Paramètres",
-    "create": "Création",
-    "logout": "Déconnexion",
-    "login": "Se connecter",
-    "register": "S'inscrcire"
-  },
-  "personnalInfo": {
-    "email": "Adresse mail",
-    "phone": "Téléphone",
-    "username": "Nom d'utilisateur",
-    "name": "Nom",
-    "user": "Utilisateur"
-  },
-  "timer": {
-    "remaining": "Temps restant",
-    "day": "jour(s)",
-    "hour": "heure(s)",
-    "minute": "minute(s)",
-    "second": "seconde(s)"
-  },
-  "bid": {
-    "start_price": "Prix de départ",
-    "amount": "Montant",
-    "title": "Offre",
-    "button": "Placer une offre",
-    "current_bid": "Montant actuel",
-    "date": "Date",
-    "start_date": "Date de mise aux enchères",
-    "end_date": "Date butoir",
-    "live": "Participer",
-    "make_bid": "Placer une offre"
-  },
-  "auction": {
-    "owner": "Possesseur",
-    "details": "Détails",
-    "win_auction_title": "Mes enchères gagnées",
-    "own_auction_title": "Mes enchères initiées",
-    "done": "Fini",
-    "in_progress": "En cours"
-  },
-  "form": {
-    "button": {
-      "submit": "Enregistrer",
-      "close": "Fermer",
-      "cancel": "Fermer"
-    }
-  },
-  "error": {
-    "title": "Une erreur est survenue",
-    "VERIFY_YOUR_EMAIL": "Verification d'email",
-    "text-VERIFY_YOUR_EMAIL": "S'il vous plaît, veuillez confirmer votre email",
-    "BID_TOO_LOW": "Offre en dessous de l'offre actuelle ou bien en dessous de montant de départ",
-    "login": "Vos informations ne sont pas correctes",
-    "network": "",
-    "max_nft_allowed": "Vous avez atteint le nombre maximum de création de nft autorisé par le pack default",
-    "CONFIG_NOT_FOUND": "Votre carte de crédit n'est pas configuré correctement. S'il vous plaît, reconfigurez-la",
-    "contact-us": "Une erreur est survenue, veuillez contacter le support technique s'il vous plaît",
-    "inputs": {
-      "email_existe": "Cet email est déjà utilisé. Veuillez en choisir un autre.",
-      "username_existe": "Ce nom d'utilisateur est déjà utilisé. Veuillez en choisir un autre."
-    }
-  },
-  "success": {
-    "title": "Succès",
-    "bid": "Offre deposée",
-    "nft": "NFT créé et déployé",
-    "auction": "Enchère créée avec succès",
-    "register": "Vous êtes inscrit sur la plateforme, veuillez vérifier votre email pour le confirmer et commencer à collecter NFT",
-    "message": "Enregistrement validé avec succès"
-  },
-  "creation": {
-    "type_auction": {
-      "title": "Type de l'enchère",
-      "chrono": "Chronometrée",
-      "direct": "En direct"
-    },
-    "nft": {
-      "title": "NFT",
-      "description": "La création de NFT (Non-Fungible Token) est une pratique en plein essor dans l'univers de la blockchain et de la crypto-monnaie. Les NFT permettent de représenter des actifs numériques uniques tels que des œuvres d'art, des vidéos, des musiques, des jeux vidéo, etc. Chaque NFT possède un code unique inscrit sur la blockchain, ce qui garantit l'authenticité et la propriété de l'actif représenté."
-    },
-    "auction": {
-      "title": "Enchère",
-      "description": "Les enchères de NFT sont un moyen populaire pour acheter et vendre des NFTs uniques et de collection. Les enchères fonctionnent comme des enchères traditionnelles, où les acheteurs enchérissent sur un NFT, et l'offre la plus élevée remporte l'enchère. Les enchères de NFT peuvent durer de quelques heures à plusieurs jours, et les vendeurs ont souvent la possibilité de fixer un prix de réserve minimum pour leur NFT."
-    }
-  },
-  "guide": {
-    "home_guide": {
-      "fast_easy": {
-        "title": "Rapide et facile",
-        "description": "A la fin de l'enchère, le gagnant va immédiatement proceder aux paiements."
-      },
-      "commisions": {
-        "title": "0 Commission",
-        "description": "Nous ne prenons pas de commision. Mais comme on utilise d'autre plateforme pour certaines tâches, il se peut que des frais supplementaire peuvent être pris en compte."
-      },
-      "secure": {
-        "title": "Securisé",
-        "description": "Avec notre smart contract et les autres systçmes utilisés, vous êtes en securité"
-      }
-    },
-    "crypto_about_area": {
-      "title": "Qu'est-ce qu'un NFT",
-      "description_1": "NFT signifie jeton non fongible. Commençons par le début : que signifie non fongible ? L’adjectif « fongible » est un terme économique qui fait référence à un bien ou à un actif pouvant être échangé contre un autre bien ou un autre actif de même valeur. Par exemple, un billet d’un dollar est fongible, car il peut facilement être échangé contre un autre billet d’un dollar de même valeur.",
-      "description_2": "Un élément « non fongible » ne peut pas être échangé contre quelque chose de valeur égale. Une parcelle de terrain est non fongible, puisque chaque terrain a ses propres caractéristiques, et trouver une autre parcelle dont la valeur est strictement identique est difficile, voire impossible. L’art est un autre exemple d’actif non fongible, étant donné que sa valeur est très subjective. C’est là qu’interviennent les NFT.",
-      "description_3": "Un NFT garantit la propriété exclusive d’un actif numérique (par exemple, celle d’une œuvre d’art, un achat dans un jeu vidéo ou un tweet - oui, un tweet !). Vous pouvez acheter un NFT à un certain prix, mais le fait qu’il soit non fongible permet à sa valeur marchande de fluctuer."
-    },
-    "plateforme_area": {
-      "title": "Comment utiliser le plateforme ?",
-      "description": "Sur le plateforme, vous pouvez créer, déployer, mettre aux enchères ainsi qu'acquerir des NFT.",
-      "action_1": {
-        "title": "Créer un compte",
-        "description": "Créer votre compte pour pouvoir lier votre adresse Etherum et configurer votre Wallet."
-      },
-      "action_2": {
-        "title": "Choisir un pack",
-        "description": "Par défaut, le pack est configuré sur DEFAULT, mais vous pouvez vous soucrire sur d'autre pack ( à vie ) pour accèder à d'autre fonctionnalités."
-      },
+	"menu": {
+		"home": "Accueil",
+		"news": "Actualités",
+		"auctions": "Enchères",
+		"about": "Guide",
+		"goto": "Aller vers la boutique",
+		"profile": "Profil",
+		"mynft": "Mes NFTs",
+		"myauctions": "Mes enchères",
+		"contact": "Contact",
+		"settings": "Paramètres",
+		"create": "Création",
+		"logout": "Déconnexion",
+		"login": "Se connecter",
+		"register": "S'inscrcire"
+	},
+	"personnalInfo": {
+		"email": "Adresse mail",
+		"phone": "Téléphone",
+		"username": "Nom d'utilisateur",
+		"name": "Nom",
+		"user": "Utilisateur"
+	},
+	"timer": {
+		"remaining": "Temps restant",
+		"day": "jour(s)",
+		"hour": "heure(s)",
+		"minute": "minute(s)",
+		"second": "seconde(s)"
+	},
+	"readmore": "Voir plus",
+	"bid": {
+		"start_price": "Prix de départ",
+		"amount": "Montant",
+		"title": "Offre",
+		"button": "Placer une offre",
+		"current_bid": "Montant actuel",
+		"date": "Date",
+		"start_date": "Date de mise aux enchères",
+		"end_date": "Date butoir",
+		"live": "Participer",
+		"make_bid": "Placer une offre",
+		"paid": "Payé"
+	},
+	"auction": {
+		"owner": "Possesseur",
+		"details": "Détails",
+		"win_auction_title": "Mes enchères gagnées",
+		"own_auction_title": "Mes enchères initiées",
+		"done": "Fini",
+		"in_progress": "En cours"
+	},
+	"form": {
+		"button": {
+			"submit": "Enregistrer",
+			"close": "Fermer",
+			"cancel": "Fermer"
+		}
+	},
+	"error": {
+		"title": "Une erreur est survenue",
+		"VERIFY_YOUR_EMAIL": "Verification d'email",
+		"text-VERIFY_YOUR_EMAIL": "S'il vous plaît, veuillez confirmer votre email",
+		"BID_TOO_LOW": "Offre en dessous de l'offre actuelle ou bien en dessous de montant de départ",
+		"login": "Vos informations ne sont pas correctes",
+		"network": "",
+		"max_nft_allowed": "Vous avez atteint le nombre maximum de création de nft autorisé par le pack default",
+		"CONFIG_NOT_FOUND": "Votre carte de crédit n'est pas configuré correctement. S'il vous plaît, reconfigurez-la",
+		"contact-us": "Une erreur est survenue, veuillez contacter le support technique s'il vous plaît",
+		"inputs": {
+			"email_existe": "Cet email est déjà utilisé. Veuillez en choisir un autre.",
+			"username_existe": "Ce nom d'utilisateur est déjà utilisé. Veuillez en choisir un autre."
+		}
+	},
+	"success": {
+		"title": "Succès",
+		"bid": "Offre deposée",
+		"nft": "NFT créé et déployé",
+		"auction": "Enchère créée avec succès",
+		"register": "Vous êtes inscrit sur la plateforme, veuillez vérifier votre email pour le confirmer et commencer à collecter NFT",
+		"message": "Enregistrement validé avec succès"
+	},
+	"creation": {
+		"type_auction": {
+			"title": "Type de l'enchère",
+			"chrono": "Chronometrée",
+			"direct": "En direct"
+		},
+		"nft": {
+			"title": "NFT",
+			"description": "La création de NFT (Non-Fungible Token) est une pratique en plein essor dans l'univers de la blockchain et de la crypto-monnaie. Les NFT permettent de représenter des actifs numériques uniques tels que des œuvres d'art, des vidéos, des musiques, des jeux vidéo, etc. Chaque NFT possède un code unique inscrit sur la blockchain, ce qui garantit l'authenticité et la propriété de l'actif représenté."
+		},
+		"auction": {
+			"title": "Enchère",
+			"description": "Les enchères de NFT sont un moyen populaire pour acheter et vendre des NFTs uniques et de collection. Les enchères fonctionnent comme des enchères traditionnelles, où les acheteurs enchérissent sur un NFT, et l'offre la plus élevée remporte l'enchère. Les enchères de NFT peuvent durer de quelques heures à plusieurs jours, et les vendeurs ont souvent la possibilité de fixer un prix de réserve minimum pour leur NFT."
+		}
+	},
+	"guide": {
+		"home_guide": {
+			"fast_easy": {
+				"title": "Rapide et facile",
+				"description": "A la fin de l'enchère, le gagnant va immédiatement proceder aux paiements."
+			},
+			"commisions": {
+				"title": "0 Commission",
+				"description": "Nous ne prenons pas de commision. Mais comme on utilise d'autre plateforme pour certaines tâches, il se peut que des frais supplementaire peuvent être pris en compte."
+			},
+			"secure": {
+				"title": "Securisé",
+				"description": "Avec notre smart contract et les autres systçmes utilisés, vous êtes en securité"
+			}
+		},
+		"crypto_about_area": {
+			"title": "Qu'est-ce qu'un NFT",
+			"description_1": "NFT signifie jeton non fongible. Commençons par le début : que signifie non fongible ? L’adjectif « fongible » est un terme économique qui fait référence à un bien ou à un actif pouvant être échangé contre un autre bien ou un autre actif de même valeur. Par exemple, un billet d’un dollar est fongible, car il peut facilement être échangé contre un autre billet d’un dollar de même valeur.",
+			"description_2": "Un élément « non fongible » ne peut pas être échangé contre quelque chose de valeur égale. Une parcelle de terrain est non fongible, puisque chaque terrain a ses propres caractéristiques, et trouver une autre parcelle dont la valeur est strictement identique est difficile, voire impossible. L’art est un autre exemple d’actif non fongible, étant donné que sa valeur est très subjective. C’est là qu’interviennent les NFT.",
+			"description_3": "Un NFT garantit la propriété exclusive d’un actif numérique (par exemple, celle d’une œuvre d’art, un achat dans un jeu vidéo ou un tweet - oui, un tweet !). Vous pouvez acheter un NFT à un certain prix, mais le fait qu’il soit non fongible permet à sa valeur marchande de fluctuer."
+		},
+		"plateforme_area": {
+			"title": "Comment utiliser le plateforme ?",
+			"description": "Sur le plateforme, vous pouvez créer, déployer, mettre aux enchères ainsi qu'acquerir des NFT.",
+			"action_1": {
+				"title": "Créer un compte",
+				"description": "Créer votre compte pour pouvoir lier votre adresse Etherum et configurer votre Wallet."
+			},
+			"action_2": {
+				"title": "Choisir un pack",
+				"description": "Par défaut, le pack est configuré sur DEFAULT, mais vous pouvez vous soucrire sur d'autre pack ( à vie ) pour accèder à d'autre fonctionnalités."
+			},
 
-      "action_3": {
-        "title": "Créer votre NFT et mettez-le aux enchères ou participez",
-        "description": "A partir de maintenant, vous pouvez créer des NFTs, les mettre aux enchères ou bien participer aux enchères des autres utilisateurs."
-      }
-    },
-    "about_start_area": {
-      "title": "Choisissez notre plateforme",
-      "description": "Les utilisateurs nos font confiance pour la sécurité, la flexibilité ainsi que la mise en place des solutions marketing de notre plateforme, Vous aussi, qu'attendez-vous pour nous rejoindre ?"
-    }
-  },
-  "slider": {
-    "slider_1": {
-      "title": "Découvrez les NFTs",
-      "description": "Quoi de mieux que les ' Non Fongible Tokens ' pour vous intriger aujourd'hui ? Inscrivez-vous sur notre plateforme.Un jeton non fongible est une donnée cryptographique représentant la propriété d'un objet numérique. L’objet représenté peut être une photo, une vidéo, un objet, un dessin numérisé, un fichier digital, ou encore un son."
-    },
-    "slider_2": {
-      "title": "Les NFTs sont créés et échangés sur une blockchain",
-      "description": "Sur internet, la valeur numérique n’est pas nouvelle. Dans certains jeux vidéo, ou dans une application par exemple, il est possible d’acheter une monnaie virtuelle, des bonus spéciaux, des crédits, ou bien des points de vie. Mais tous ces « objets » et ces récompenses peuvent être dupliqués, copiés et vendus à l’infini par leurs concepteurs sans aucun effort."
-    },
-    "slider_3": {
-      "title": "Smart Contract basé sur Etherum où vous êtes libres",
-      "description": "La popularité de cette technologie innovante dans la finance traditionnelle et le marché de l’art est un vrai sujet juridique. Les montants astronomiques de cryptomonnaies (converties en euro ou en dollars) échangés ont forcément attiré les régulateurs, qui font aujourd’hui face à un défi."
-    }
-  },
-  "pack": {
-    "price": "Prix",
-    "licence": "Prix à vie",
-    "nft_creation": "Max de création de NFT",
-    "auction_creation": "Max d'initier une enchère",
-    "max_bid": "Max d'offre autorisé",
-    "remain_nft": "Création de NFT restant",
-    "remain_auction": "Initiation d'enchère restante",
-    "remain_bid": "Placement d'un offre restante"
-  },
-  "message": {
-    "title": "Message",
-    "success": "Message envoyé avec succès",
-    "received": "Vous avez reçu un message de la part de l'utilisateur "
-  },
-  "banner": {
-    "0": "Allons changer le monde ensemble",
-    "1": "Integrer le monde du crypto",
-    "2": "Les NFT n'attendent que vous",
-    "text-banner-2": "Les NFTs sont disponible directement sur notre Smart Contract une fois que vous les avez uploadés, donc des minutes après vous pouvez directement les mettre aux enchères",
-    "text-banner-4": "Nous vous offrons des marqeurs de cryptomonnaies pour vous aider à prendre des decisions sur vos bitcoins.",
-    "text-banner-5": "Notre plateforme est donc multi fonction, qui est en plus d'être une plateforme d'enchère, on offre des bonus pour nos utilisateurs."
-  },
-  "newsletter": {
-    "title": "Inscrivez-vous à notre newsletter",
-    "button": "S'inscrire",
-    "text": "Quand vous vous inscrivez sur notre newsletter, vous recevriez automatiquement des mails pour les nouveautés sur le plateforme ou les évènements crypto"
-  },
-  "profile": {
-    "add_friend": "Ajouter en tant qu'ami",
-    "chat_with": "Discuter avec cette personne"
-  }
+			"action_3": {
+				"title": "Créer votre NFT et mettez-le aux enchères ou participez",
+				"description": "A partir de maintenant, vous pouvez créer des NFTs, les mettre aux enchères ou bien participer aux enchères des autres utilisateurs."
+			}
+		},
+		"about_start_area": {
+			"title": "Choisissez notre plateforme",
+			"description": "Les utilisateurs nos font confiance pour la sécurité, la flexibilité ainsi que la mise en place des solutions marketing de notre plateforme, Vous aussi, qu'attendez-vous pour nous rejoindre ?"
+		}
+	},
+	"slider": {
+		"slider_1": {
+			"title": "Découvrez les NFTs",
+			"description": "Quoi de mieux que les ' Non Fongible Tokens ' pour vous intriger aujourd'hui ? Inscrivez-vous sur notre plateforme.Un jeton non fongible est une donnée cryptographique représentant la propriété d'un objet numérique. L’objet représenté peut être une photo, une vidéo, un objet, un dessin numérisé, un fichier digital, ou encore un son."
+		},
+		"slider_2": {
+			"title": "Les NFTs sont créés et échangés sur une blockchain",
+			"description": "Sur internet, la valeur numérique n’est pas nouvelle. Dans certains jeux vidéo, ou dans une application par exemple, il est possible d’acheter une monnaie virtuelle, des bonus spéciaux, des crédits, ou bien des points de vie. Mais tous ces « objets » et ces récompenses peuvent être dupliqués, copiés et vendus à l’infini par leurs concepteurs sans aucun effort."
+		},
+		"slider_3": {
+			"title": "Smart Contract basé sur Etherum où vous êtes libres",
+			"description": "La popularité de cette technologie innovante dans la finance traditionnelle et le marché de l’art est un vrai sujet juridique. Les montants astronomiques de cryptomonnaies (converties en euro ou en dollars) échangés ont forcément attiré les régulateurs, qui font aujourd’hui face à un défi."
+		}
+	},
+	"pack": {
+		"price": "Prix",
+		"licence": "Prix à vie",
+		"nft_creation": "Max de création de NFT",
+		"auction_creation": "Max d'initier une enchère",
+		"max_bid": "Max d'offre autorisé",
+		"remain_nft": "Création de NFT restant",
+		"remain_auction": "Initiation d'enchère restante",
+		"remain_bid": "Placement d'un offre restante"
+	},
+	"message": {
+		"title": "Message",
+		"success": "Message envoyé avec succès",
+		"received": "Vous avez reçu un message de la part de l'utilisateur "
+	},
+	"banner": {
+		"0": "Allons changer le monde ensemble",
+		"1": "Integrer le monde du crypto",
+		"2": "Les NFT n'attendent que vous",
+		"text-banner-2": "Les NFTs sont disponible directement sur notre Smart Contract une fois que vous les avez uploadés, donc des minutes après vous pouvez directement les mettre aux enchères",
+		"text-banner-4": "Nous vous offrons des marqeurs de cryptomonnaies pour vous aider à prendre des decisions sur vos bitcoins.",
+		"text-banner-5": "Notre plateforme est donc multi fonction, qui est en plus d'être une plateforme d'enchère, on offre des bonus pour nos utilisateurs."
+	},
+	"newsletter": {
+		"title": "Inscrivez-vous à notre newsletter",
+		"button": "S'inscrire",
+		"text": "Quand vous vous inscrivez sur notre newsletter, vous recevriez automatiquement des mails pour les nouveautés sur le plateforme ou les évènements crypto"
+	},
+	"profile": {
+		"add_friend": "Ajouter en tant qu'ami",
+		"chat_with": "Discuter avec cette personne"
+	}
 }

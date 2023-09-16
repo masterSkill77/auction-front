@@ -38,7 +38,9 @@
 							</div>
 						</div>
 						<ul class="p-2">
-							<li class="mb-10">Contrat : {{ contractAddress }}</li>
+							<li class="mb-10" style="word-break: break-all">
+								Contrat : {{ contractAddress }}
+							</li>
 							<li class="mb-10">TokenID : {{ nft.token_id }}</li>
 						</ul>
 					</div>
@@ -115,4 +117,9 @@
 	});
 </script>
 
-<style></style>
+<style scoped>
+	.da-card-photo img {
+		height: 350px;
+		object-fit: cover;
+	}
+</style>

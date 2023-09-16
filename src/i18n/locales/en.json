@@ -1,185 +1,187 @@
 {
-  "menu": {
-    "home": "Home",
-    "news": "News",
-    "auctions": "Auctions",
-    "about": "About",
-    "goto": "Go to shop",
-    "profile": "Profile",
-    "mynft": "My NFTs",
-    "myauctions": "My auctions",
-    "contact": "Contact",
-    "settings": "Settings",
-    "create": "Create",
-    "logout": "Logout",
-    "login": "Login",
-    "register": "Register"
-  },
-  "personnalInfo": {
-    "email": "Email Address",
-    "phone": "Phone Number",
-    "username": "Username",
-    "name": "Name",
-    "user": "User"
-  },
-  "timer": {
-    "remaining": "Time remaining",
-    "day": "day(s)",
-    "hour": "hour(s)",
-    "minute": "minute(s)",
-    "second": "second(s)"
-  },
-  "bid": {
-    "start_price": "Start price",
-    "title": "Bid",
-    "button": "Make a bid",
-    "amount": "Amount",
-    "date": "Date",
-    "current_bid": "Current bid",
-    "start_date": "Start date",
-    "end_date": "End date",
-    "live": "Take place",
-    "make_bid": "Make a bid"
-  },
-  "auction": {
-    "owner": "Owner",
-    "details": "Details",
-    "win_auction_title": "Auctions won",
-    "own_auction_title": "My initiated auctions",
-    "done": "Done",
-    "in_progress": "In progress"
-  },
-  "form": {
-    "button": {
-      "submit": "Save",
-      "close": "Close",
-      "cancel": "Cancel"
-    }
-  },
-  "error": {
-    "title": "An error was occured",
-    "VERIFY_YOUR_EMAIL": "Email verification",
-    "text-VERIFY_YOUR_EMAIL": "Please confirm your email",
-    "max_nft_allowed": "You have reached the max nft creation allowed for default pack",
-    "BID_TOO_LOW": "Bid below current bid or well below starting amount",
-    "network": "",
-    "login": "Your information are not correct",
-    "CONFIG_NOT_FOUND": "Your card configuration is not found. Please, reconfigure it",
-    "contact-us": "An error has occurred, please contact technical support",
-    "inputs": {
-      "email_existe": "This email already exists",
-      "username_existe": "This username is already taken"
-    }
-  },
-  "success": {
-    "title": "Successfuly",
-    "bid": "Bid submitted",
-    "nft": "NFT created and deployed",
-    "auction": "Auction created successfuly",
-    "register": "You are registered on the plateforme, please check your email to confirm it and start collecting NFT",
-    "message": "Operation successfuly done"
-  },
-  "creation": {
-    "type_auction": {
-      "title": "Auction type",
-      "chrono": "Stopwatch",
-      "direct": "Live"
-    },
-    "nft": {
-      "title": "NFT",
-      "description": "The creation of NFT (Non-Fungible Token) is a growing practice in the world of blockchain and cryptocurrency. NFTs make it possible to represent unique digital assets such as works of art, videos, music, video games, etc. Each NFT has a unique code written on the blockchain, which guarantees the authenticity and ownership of the asset represented."
-    },
-    "auction": {
-      "title": "Auction",
-      "description": "NFT auctions are a popular way to buy and sell unique and collectible NFTs. Auctions work like traditional auctions, where buyers bid on an NFT, and the highest bid wins the auction. NFT auctions can last from a few hours to several days, and sellers often have the option of setting a minimum reserve price for their NFT."
-    }
-  },
-  "guide": {
-    "crypto_about_area": {
-      "title": "What is an NFT",
-      "description_1": "NFT stands for Non-Fungible Token. Let's start with the basics: what does non-fungible mean? The adjective 'fungible' is an economic term that refers to a good or asset that can be exchanged for another good or asset of the same value. For example, a one-dollar bill is fungible because it can easily be exchanged for another one-dollar bill of equal value.",
-      "description_2": "A 'non-fungible' item cannot be exchanged for something of equal value. A piece of land is non-fungible, as each piece of land has its own unique characteristics, and finding another piece of land with strictly identical value is difficult, if not impossible. Art is another example of a non-fungible asset, as its value is highly subjective. This is where NFTs come in.",
-      "description_3": "An NFT guarantees exclusive ownership of a digital asset (e.g., artwork, an in-game purchase, or even a tweet!). You can purchase an NFT at a certain price, but its non-fungible nature allows its market value to fluctuate."
-    },
-    "plateforme_area": {
-      "title": "How to use the platform ?",
-      "description": "On the platform, you can create, deploy, auction, and acquire NFTs.",
-      "action_1": {
-        "title": "Create an account",
-        "description": "Create your account to link your Ethereum address and configure your wallet."
-      },
-      "action_2": {
-        "title": "Choose a pack",
-        "description": "By default, the pack is set to DEFAULT, but you can subscribe to other packs (lifetime) to access additional features."
-      },
-      "action_3": {
-        "title": "Create your NFT and auction it or participate",
-        "description": "From now on, you can create NFTs, auction them, or participate in auctions by other users."
-      }
-    },
-    "about_start_area": {
-      "title": "Choose our platform",
-      "description": "Users trust us for the security, flexibility, and implementation of marketing solutions on our platform. What are you waiting for? Join us now!"
-    },
-    "home_guide": {
-      "fast_easy": {
-        "title": "Fast & Easy",
-        "description": "Wait the end of the auction, and directly get your money from the winner"
-      },
-      "commisions": {
-        "title": "0 Commission",
-        "description": "We don't take any commision on the auction, you are free on what you do, but remember that when we use another plateforme for payment gateway, there can be a commision on these plateforme that are not related to us."
-      },
-      "secure": {
-        "title": "Secure",
-        "description": "With our smart contract and third party of payment, our system is secured"
-      }
-    }
-  },
-  "slider": {
-    "slider_1": {
-      "title": "Discover NFTs",
-      "description": "What better way to intrigue you today than with 'Non-Fungible Tokens'? Sign up on our platform. A non-fungible token is a cryptographic data representing ownership of a digital object. The represented object can be a photo, a video, an item, a digitized drawing, a digital file, or even a sound."
-    },
-    "slider_2": {
-      "title": "NFTs are created and traded on a blockchain",
-      "description": "On the internet, digital value is not new. In certain video games or applications, it's possible to purchase virtual currency, special bonuses, credits, or even health points. But all these 'objects' and rewards can be duplicated, copied, and sold infinitely by their creators without any effort."
-    },
-    "slider_3": {
-      "title": "Smart Contract based on Ethereum where you are free",
-      "description": "The popularity of this innovative technology in traditional finance and the art market poses a real legal challenge. The astronomical amounts of cryptocurrencies (converted to euros or dollars) being exchanged have inevitably attracted regulators, who are now facing a challenge."
-    }
-  },
-  "pack": {
-    "price": "Price",
-    "licence": "Lifetime Price",
-    "nft_creation": "Max NFT creation",
-    "auction_creation": "Max auction creation",
-    "max_bid": "Max of bid allowed",
-    "remain_nft": "Remaining NFT creation allowed",
-    "remain_auction": "Remaining auction creation allowed",
-    "remain_bid": "Remaining bid allowed"
-  },
-  "message": {
-    "title": "Message",
-    "success": "Message sent successfully",
-    "received": "You've got a message from "
-  },
-  "banner": {
-    "0": "Let’s change the world together",
-    "1": "Integrate the cryptos world",
-    "2": "NFTs just waiting you",
-    "text-banner-2": "NFTs are available directly on our Smart Contract once you upload them, so minutes later you can directly auction them",
-    "text-banner-4": "We offer you cryptocurrency markers to help you make decisions about your bitcoins.",
-    "text-banner-5": "Our platform is therefore multi-function, which is in addition to being an auction platform, we offer bonuses for our users"
-  },
-  "newsletter": {
-    "title": "Subscribe to our newsletter",
-    "button": "Subscribe",
-    "text": "When you subscribe to our newsletter, you'll receive an email on news and offer from the plateforme"
-  },
-  "profile": {
-    "add_friend": "Add to friend list",
-    "chat_with": "Chat with this user"
-  }
+	"menu": {
+		"home": "Home",
+		"news": "News",
+		"auctions": "Auctions",
+		"about": "About",
+		"goto": "Go to shop",
+		"profile": "Profile",
+		"mynft": "My NFTs",
+		"myauctions": "My auctions",
+		"contact": "Contact",
+		"settings": "Settings",
+		"create": "Create",
+		"logout": "Logout",
+		"login": "Login",
+		"register": "Register"
+	},
+	"personnalInfo": {
+		"email": "Email Address",
+		"phone": "Phone Number",
+		"username": "Username",
+		"name": "Name",
+		"user": "User"
+	},
+	"timer": {
+		"remaining": "Time remaining",
+		"day": "day(s)",
+		"hour": "hour(s)",
+		"minute": "minute(s)",
+		"second": "second(s)"
+	},
+	"readmore": "Read more",
+	"bid": {
+		"start_price": "Start price",
+		"title": "Bid",
+		"button": "Make a bid",
+		"amount": "Amount",
+		"date": "Date",
+		"current_bid": "Current bid",
+		"start_date": "Start date",
+		"end_date": "End date",
+		"live": "Take place",
+		"make_bid": "Make a bid",
+		"paid": "Paid"
+	},
+	"auction": {
+		"owner": "Owner",
+		"details": "Details",
+		"win_auction_title": "Auctions won",
+		"own_auction_title": "My initiated auctions",
+		"done": "Done",
+		"in_progress": "In progress"
+	},
+	"form": {
+		"button": {
+			"submit": "Save",
+			"close": "Close",
+			"cancel": "Cancel"
+		}
+	},
+	"error": {
+		"title": "An error was occured",
+		"VERIFY_YOUR_EMAIL": "Email verification",
+		"text-VERIFY_YOUR_EMAIL": "Please confirm your email",
+		"max_nft_allowed": "You have reached the max nft creation allowed for default pack",
+		"BID_TOO_LOW": "Bid below current bid or well below starting amount",
+		"network": "",
+		"login": "Your information are not correct",
+		"CONFIG_NOT_FOUND": "Your card configuration is not found. Please, reconfigure it",
+		"contact-us": "An error has occurred, please contact technical support",
+		"inputs": {
+			"email_existe": "This email already exists",
+			"username_existe": "This username is already taken"
+		}
+	},
+	"success": {
+		"title": "Successfuly",
+		"bid": "Bid submitted",
+		"nft": "NFT created and deployed",
+		"auction": "Auction created successfuly",
+		"register": "You are registered on the plateforme, please check your email to confirm it and start collecting NFT",
+		"message": "Operation successfuly done"
+	},
+	"creation": {
+		"type_auction": {
+			"title": "Auction type",
+			"chrono": "Stopwatch",
+			"direct": "Live"
+		},
+		"nft": {
+			"title": "NFT",
+			"description": "The creation of NFT (Non-Fungible Token) is a growing practice in the world of blockchain and cryptocurrency. NFTs make it possible to represent unique digital assets such as works of art, videos, music, video games, etc. Each NFT has a unique code written on the blockchain, which guarantees the authenticity and ownership of the asset represented."
+		},
+		"auction": {
+			"title": "Auction",
+			"description": "NFT auctions are a popular way to buy and sell unique and collectible NFTs. Auctions work like traditional auctions, where buyers bid on an NFT, and the highest bid wins the auction. NFT auctions can last from a few hours to several days, and sellers often have the option of setting a minimum reserve price for their NFT."
+		}
+	},
+	"guide": {
+		"crypto_about_area": {
+			"title": "What is an NFT",
+			"description_1": "NFT stands for Non-Fungible Token. Let's start with the basics: what does non-fungible mean? The adjective 'fungible' is an economic term that refers to a good or asset that can be exchanged for another good or asset of the same value. For example, a one-dollar bill is fungible because it can easily be exchanged for another one-dollar bill of equal value.",
+			"description_2": "A 'non-fungible' item cannot be exchanged for something of equal value. A piece of land is non-fungible, as each piece of land has its own unique characteristics, and finding another piece of land with strictly identical value is difficult, if not impossible. Art is another example of a non-fungible asset, as its value is highly subjective. This is where NFTs come in.",
+			"description_3": "An NFT guarantees exclusive ownership of a digital asset (e.g., artwork, an in-game purchase, or even a tweet!). You can purchase an NFT at a certain price, but its non-fungible nature allows its market value to fluctuate."
+		},
+		"plateforme_area": {
+			"title": "How to use the platform ?",
+			"description": "On the platform, you can create, deploy, auction, and acquire NFTs.",
+			"action_1": {
+				"title": "Create an account",
+				"description": "Create your account to link your Ethereum address and configure your wallet."
+			},
+			"action_2": {
+				"title": "Choose a pack",
+				"description": "By default, the pack is set to DEFAULT, but you can subscribe to other packs (lifetime) to access additional features."
+			},
+			"action_3": {
+				"title": "Create your NFT and auction it or participate",
+				"description": "From now on, you can create NFTs, auction them, or participate in auctions by other users."
+			}
+		},
+		"about_start_area": {
+			"title": "Choose our platform",
+			"description": "Users trust us for the security, flexibility, and implementation of marketing solutions on our platform. What are you waiting for? Join us now!"
+		},
+		"home_guide": {
+			"fast_easy": {
+				"title": "Fast & Easy",
+				"description": "Wait the end of the auction, and directly get your money from the winner"
+			},
+			"commisions": {
+				"title": "0 Commission",
+				"description": "We don't take any commision on the auction, you are free on what you do, but remember that when we use another plateforme for payment gateway, there can be a commision on these plateforme that are not related to us."
+			},
+			"secure": {
+				"title": "Secure",
+				"description": "With our smart contract and third party of payment, our system is secured"
+			}
+		}
+	},
+	"slider": {
+		"slider_1": {
+			"title": "Discover NFTs",
+			"description": "What better way to intrigue you today than with 'Non-Fungible Tokens'? Sign up on our platform. A non-fungible token is a cryptographic data representing ownership of a digital object. The represented object can be a photo, a video, an item, a digitized drawing, a digital file, or even a sound."
+		},
+		"slider_2": {
+			"title": "NFTs are created and traded on a blockchain",
+			"description": "On the internet, digital value is not new. In certain video games or applications, it's possible to purchase virtual currency, special bonuses, credits, or even health points. But all these 'objects' and rewards can be duplicated, copied, and sold infinitely by their creators without any effort."
+		},
+		"slider_3": {
+			"title": "Smart Contract based on Ethereum where you are free",
+			"description": "The popularity of this innovative technology in traditional finance and the art market poses a real legal challenge. The astronomical amounts of cryptocurrencies (converted to euros or dollars) being exchanged have inevitably attracted regulators, who are now facing a challenge."
+		}
+	},
+	"pack": {
+		"price": "Price",
+		"licence": "Lifetime Price",
+		"nft_creation": "Max NFT creation",
+		"auction_creation": "Max auction creation",
+		"max_bid": "Max of bid allowed",
+		"remain_nft": "Remaining NFT creation allowed",
+		"remain_auction": "Remaining auction creation allowed",
+		"remain_bid": "Remaining bid allowed"
+	},
+	"message": {
+		"title": "Message",
+		"success": "Message sent successfully",
+		"received": "You've got a message from "
+	},
+	"banner": {
+		"0": "Let’s change the world together",
+		"1": "Integrate the cryptos world",
+		"2": "NFTs just waiting you",
+		"text-banner-2": "NFTs are available directly on our Smart Contract once you upload them, so minutes later you can directly auction them",
+		"text-banner-4": "We offer you cryptocurrency markers to help you make decisions about your bitcoins.",
+		"text-banner-5": "Our platform is therefore multi-function, which is in addition to being an auction platform, we offer bonuses for our users"
+	},
+	"newsletter": {
+		"title": "Subscribe to our newsletter",
+		"button": "Subscribe",
+		"text": "When you subscribe to our newsletter, you'll receive an email on news and offer from the plateforme"
+	},
+	"profile": {
+		"add_friend": "Add to friend list",
+		"chat_with": "Chat with this user"
+	}
 }

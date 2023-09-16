@@ -37,7 +37,7 @@
 											:href="primaryNew.link"
 											target="_blank"
 											class="btn cryptos-btn mt-50"
-											>Read More</a
+											>{{ $t('readmore') }}</a
 										>
 									</div>
 								</div>
