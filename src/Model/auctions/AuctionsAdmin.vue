@@ -26,7 +26,7 @@
 								</h4>
 								<div class="price w-100">
 									{{ $t('bid.current_bid') }} :<ins
-										>$
+										>{{ auction.payment == 'ETH' ? 'ETH' : '$' }}
 										{{
 											new Intl.NumberFormat('fr').format(auction.current_bid)
 										}}</ins
@@ -34,7 +34,7 @@
 								</div>
 								<div class="price w-100">
 									{{ $t('bid.start_price') }} :<ins
-										>$
+										>{{ auction.payment == 'ETH' ? 'ETH' : '$' }}
 										{{
 											new Intl.NumberFormat('fr').format(auction.start_price)
 										}}</ins
@@ -70,7 +70,7 @@
 							</h4>
 							<div class="price">
 								{{ $t('bid.current_bid') }} :<ins
-									>$
+									>{{ auction.payment == 'ETH' ? 'ETH' : '$' }}
 									{{
 										new Intl.NumberFormat('fr').format(auction.current_bid)
 									}}</ins
@@ -78,7 +78,7 @@
 							</div>
 							<div class="price">
 								{{ $t('bid.start_price') }} :<ins
-									>$
+									>{{ auction.payment == 'ETH' ? 'ETH' : '$' }}
 									{{
 										new Intl.NumberFormat('fr').format(auction.start_price)
 									}}</ins

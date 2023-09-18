@@ -49,6 +49,13 @@
 		"win_auction_title": "Mes enchères gagnées",
 		"own_auction_title": "Mes enchères initiées",
 		"done": "Fini",
+		"title": "Titre",
+		"description": "Description",
+		"url": "Lien",
+		"creation": "Créez votre enchère",
+		"paymentUsd": "Par USD (Dollard)",
+		"paymentEth": "Par ETH (Crypto)",
+		"paymentType": "Type de paiement",
 		"in_progress": "En cours"
 	},
 	"form": {

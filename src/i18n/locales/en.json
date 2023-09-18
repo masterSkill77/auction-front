@@ -46,9 +46,16 @@
 	"auction": {
 		"owner": "Owner",
 		"details": "Details",
+		"title": "Title",
+		"description": "Description",
+		"url": "Link",
 		"win_auction_title": "Auctions won",
 		"own_auction_title": "My initiated auctions",
 		"done": "Done",
+		"creation": "Create your auction",
+		"paymentUsd": "By USD (Dollard)",
+		"paymentEth": "By ETH (Crypto)",
+		"paymentType": "Payment type",
 		"in_progress": "In progress"
 	},
 	"form": {

@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<div class="form-group row">
-			<label class="col-sm-12 col-md-2 col-form-label">Text</label>
+			<label class="col-sm-12 col-md-2 col-form-label">{{
+				$t('auction.title')
+			}}</label>
 			<div class="col-sm-12 col-md-10">
 				<input
 					class="form-control"
@@ -11,13 +13,15 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-12 col-md-2 col-form-label">URL</label>
+			<label class="col-sm-12 col-md-2 col-form-label">{{
+				$t('auction.link')
+			}}</label>
 			<div class="col-sm-12 col-md-10">
 				<input v-model="image_uri" class="form-control" type="url" />
 			</div>
 		</div>
 		<div class="form-group">
-			<label>Textarea</label>
+			<label>{{ $t('auction.description') }}</label>
 			<textarea class="form-control" v-model="description"></textarea>
 		</div>
 		<div class="btn btn-primary mb-3" @click="uploadNft">

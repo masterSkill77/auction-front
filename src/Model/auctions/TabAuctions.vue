@@ -32,7 +32,8 @@
 						{{ auction.nft.description }}
 					</p>
 					<div>
-						{{ $t('bid.current_bid') }} : $
+						{{ $t('bid.current_bid') }} :
+						{{ auction.payment == 'ETH' ? 'ETH' : '$' }}
 						{{ new Intl.NumberFormat('fr').format(auction.current_bid) }}
 					</div>
 					<router-link

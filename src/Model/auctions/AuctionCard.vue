@@ -67,8 +67,8 @@
                 <div class="cryptos-tab-text">
                   <p>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">{{ $t('bid.start_price') }} : $ {{ auction.start_price }}</li>
-                      <li class="list-group-item">{{ $t('bid.current_bid') }} : $
+                      <li class="list-group-item">{{ $t('bid.start_price') }} : {{ auction.payment == 'ETH' ? 'ETH' : '$' }}{{ auction.start_price }}</li>
+                      <li class="list-group-item">{{ $t('bid.current_bid') }} : {{ auction.payment == 'ETH' ? 'ETH' : '$' }}
                         {{ new Intl.NumberFormat('fr').format(auction.current_bid) }}</li>
                       <li class="list-group-item">{{ $t('bid.start_date') }} : {{ auction.start_date }}</li>
                     </ul>
@@ -86,7 +86,7 @@
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">{{  $t('personnalInfo.user') }}</th>
-                          <th scope="col">{{ $t('bid.amount') }} ($)</th>
+                          <th scope="col">{{ $t('bid.amount') }} ({{ auction.payment == 'ETH' ? 'ETH' : '$' }})</th>
                           <th scope="col">{{ $t('bid.date')}}</th>
                         </tr>
                       </thead>
@@ -123,7 +123,7 @@
                 <div class="modal-body">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text">$</span>
+                      <span class="input-group-text">{{ auction.payment == 'ETH' ? 'ETH' : '$' }}</span>
                     </div>
                     <input type="text" class="form-control" v-model="bid" required min="0"
                       aria-label="Amount (to the nearest dollar)" >
