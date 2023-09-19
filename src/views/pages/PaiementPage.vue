@@ -144,14 +144,28 @@
 		},
 		methods: {
 			async pay() {
+				const $ = this;
 				await axios
 					.post('/paiement', { auction_id: this.auction.id })
-					.then((response) => console.log(response.data));
+					.then((response) => {
+						$.$notify({
+							title: this.$t('success.title'),
+							text: this.$t('success.payment'),
+							type: 'success',
+						});
+					});
 			},
 			async payWithCrypto() {
+				const $ = this;
 				await axios
 					.post('/paiement', { auction_id: this.auction.id })
-					.then((response) => console.log(response.data));
+					.then((response) => {
+						$.$notify({
+							title: this.$t('success.title'),
+							text: this.$t('success.payment'),
+							type: 'success',
+						});
+					});
 			},
 		},
 	});
