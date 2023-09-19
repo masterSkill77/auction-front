@@ -153,6 +153,7 @@
 							text: this.$t('success.payment'),
 							type: 'success',
 						});
+						$.$router.back();
 					});
 			},
 			async payWithCrypto() {
@@ -165,6 +166,7 @@
 							text: this.$t('success.payment'),
 							type: 'success',
 						});
+						$.$router.back();
 					});
 			},
 		},
