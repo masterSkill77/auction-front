@@ -13,46 +13,32 @@
 					<h2 class="text-center">Paiement</h2>
 					<div class="card mx-auto mt-5">
 						<div class="card-body">
-							<StripeElements
-								v-if="stripeLoaded && auction.payment == 'USDT'"
-								v-slot="{ elements, instance }"
-								ref="elms"
-								:stripe-key="stripeKey"
-								:instance-options="instanceOptions"
-								:elements-options="elementsOptions">
-								<div class="form-group">
-									<label for="card-element">Card Number</label>
-									<input
-										id="card-element"
-										type="tel"
-										inputmode="numeric"
-										pattern="[0-9\s]{16}"
-										autocomplete="cc-number"
-										maxlength="16"
-										minlength="16"
-										placeholder="xxxx xxxx xxxx xxxx"
-										v-model="card.cardNumber"
-										class="form-control" />
-								</div>
-								<div class="form-group">
-									<label for="card-expiry">Expiration Date</label>
-									<input
-										type="month"
-										id="card-expiry"
-										class="form-control"
-										v-model="card.expiryDate" />
-								</div>
-								<div class="form-group">
-									<label for="card-cvc">CVC</label>
-									<input
-										id="card-cvc"
-										class="form-control"
-										v-model="card.cvc" />
-								</div>
-							</StripeElements>
+							<div>
+								<ul>
+									<li>
+										{{ $t('auction.owner') }} :
+										<b>{{ auction.owner?.username }}</b>
+									</li>
+									<li>
+										{{ $t('auction.title') }} : <b>{{ auction.nft?.title }}</b>
+									</li>
+									<li>
+										{{ $t('auction.paymentType') }} :
+										<b>{{ auction.payment == 'USDT' ? 'Cash ($)' : 'ETH' }}</b>
+									</li>
+									<li>
+										{{ $t('bid.amount') }} :
+										<b
+											>{{ auction.payment == 'USDT' ? '$' : 'ETH' }}
+											{{ auction.current_bid }}</b
+										>
+									</li>
+								</ul>
+							</div>
 							<div class="text-center">
 								<button
 									type="button"
+									:disabled="isPaying"
 									class="btn btn-success mt-3 mr-2"
 									@click="payWithCrypto"
 									v-if="auction.payment == 'ETH'">
@@ -61,6 +47,7 @@
 								<button
 									v-else
 									type="button"
+									:disabled="isPaying"
 									class="btn btn-success mt-3"
 									@click="pay">
 									Pay with my configured card
@@ -135,6 +122,7 @@
 			return {
 				auction: {},
 				card: {},
+				isPaying: false,
 			};
 		},
 		async mounted() {
@@ -144,6 +132,7 @@
 		},
 		methods: {
 			async pay() {
+				this.isPaying = true;
 				const $ = this;
 				await axios
 					.post('/paiement', { auction_id: this.auction.id })
@@ -157,6 +146,7 @@
 					});
 			},
 			async payWithCrypto() {
+				this.isPaying = true;
 				const $ = this;
 				await axios
 					.post('/paiement', { auction_id: this.auction.id })
