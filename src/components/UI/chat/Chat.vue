@@ -72,6 +72,7 @@
   text-align: center;
   width: 100%;
   z-index: 20;
+  background-color: antiquewhite;
   position: absolute;
   display: flex;
   align-items: center;
@@ -119,6 +120,7 @@
 .messageContent {
   max-height: 30em;
   overflow-y: scroll;
+  min-height: 350px;
 }
 </style>
 <script>
