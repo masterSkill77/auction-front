@@ -68,7 +68,8 @@
 <style scoped>
 .spinner-container {
   transition: all 0.5;
-  height: 70%;
+  height: 75%;
+  max-height: 500px;
   text-align: center;
   width: 100%;
   z-index: 20;
@@ -95,6 +96,7 @@
   font-family: "sans-serif";
   font-size: 14px;
   background-color: #ecf0f4;
+  word-wrap: break-word;
 }
 .message span {
   font-family: "sans-serif";
@@ -120,7 +122,7 @@
 .messageContent {
   max-height: 30em;
   overflow-y: scroll;
-  min-height: 350px;
+  min-height: 450px;
 }
 </style>
 <script>
