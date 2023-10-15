@@ -60,6 +60,7 @@
 	import { defineComponent, ref, onMounted } from 'vue';
 	import { storeToRefs } from 'pinia';
 	import Pagination from '../../components/UI/items/Pagination.vue';
+	import { useLoadingStore } from '../../stores/loading';
 
 	export default defineComponent({
 		components: {
@@ -98,11 +99,13 @@
 			},
 		},
 		async mounted() {
+			useLoadingStore().setLoading(true);
 			await useAuctionStore().fetchAuctions();
 			const fetchData = this.fetchData;
 			const { auctions } = storeToRefs(useAuctionStore());
 			this.allAuctions = auctions.value;
 			this.linksOfPage = this.allAuctions.links;
+			setTimeout(() => useLoadingStore().setLoading(false), 1500);
 			window.Echo.channel('auction').listen(
 				'.auction-done',
 				async function (data) {

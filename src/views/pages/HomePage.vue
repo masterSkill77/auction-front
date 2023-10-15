@@ -2,7 +2,7 @@
 	<div class="hero-slides p-0 m-0">
 		<div class="container-fluid h-50">
 			<div class="row h-100 align-items-center">
-				<div class="col-12">
+				<div class="col-12" style="margin: 0; padding: 0; width: 100%">
 					<div
 						id="carouselExampleCaptions"
 						class="carousel slide"
@@ -232,7 +232,7 @@
 	<!-- ##### Blog Area Start ##### -->
 	<section class="cryptos-blog-area section-padding-100">
 		<div class="container-full">
-			<div class="row">
+			<div class="row" style="margin: 0">
 				<ListNews :home-page="true" />
 				<CurrencyArea />
 			</div>
@@ -267,4 +267,7 @@
 	import Millestone from '../../components/UI/items/Millestone.vue';
 	import CurrencyArea from '../../components/UI/items/CurrencyArea.vue';
 	import ListNews from '../../Model/news/ListNews.vue';
+	import { useLoadingStore } from '../../stores/loading';
+	import { storeToRefs } from 'pinia';
+	setTimeout(() => useLoadingStore().setLoading(false), 4000);
 </script>

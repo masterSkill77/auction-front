@@ -44,18 +44,7 @@
 <script setup>
 	import { onMounted } from 'vue';
 
-	onMounted(() => {
-		const gsap = window.gsap;
-		gsap.registerPlugin(window.ScrollTrigger);
-		const timeline = gsap.timeline();
-		timeline.from('.guide_home', {
-			x: -800,
-			duration: 5,
-			ease: 'back',
-			yoyo: true,
-			scrollTrigger: '.guide_home',
-		});
-	});
+	onMounted(() => {});
 </script>
 <style scoped>
 	/* .guide_home {

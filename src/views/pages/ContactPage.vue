@@ -1,5 +1,12 @@
 <script>
-	export default {};
+	import { useLoadingStore } from '../../stores/loading';
+
+	export default {
+		mounted() {
+			useLoadingStore().setLoading(true);
+			setTimeout(() => useLoadingStore().setLoading(false), 1500);
+		},
+	};
 </script>
 <template>
 	<section class="contact-area section-padding-100-0">

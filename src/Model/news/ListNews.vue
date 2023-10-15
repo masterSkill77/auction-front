@@ -147,6 +147,7 @@
 
 <script>
 	import axios from '@/src/axios';
+	import { useLoadingStore } from '../../stores/loading';
 
 	export default {
 		props: ['homePage'],
@@ -169,8 +170,10 @@
 			};
 		},
 		async mounted() {
+			useLoadingStore().setLoading(true);
 			this.news = await this.getNews();
 			this.primaryNew = this.news[Math.floor(Math.random() * 10)];
+			setTimeout(() => useLoadingStore().setLoading(false), 1500);
 		},
 	};
 </script>
