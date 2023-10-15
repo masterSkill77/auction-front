@@ -100,6 +100,8 @@
 <script>
 	import { storeToRefs } from 'pinia';
 	import { useAuthStore } from '../../stores/auth';
+	import { useLoadingStore } from '../../stores/loading';
+
 	export default {
 		props: ['auctions', 'title'],
 
@@ -109,8 +111,11 @@
 			};
 		},
 		mounted() {
+			useLoadingStore().setLoading(true);
 			const { me } = storeToRefs(useAuthStore());
 			this.user = me.value;
+
+			setTimeout(() => useLoadingStore().setLoading(false), 1_500);
 		},
 	};
 </script>

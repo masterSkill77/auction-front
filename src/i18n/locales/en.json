@@ -77,7 +77,8 @@
 		"contact-us": "An error has occurred, please contact technical support",
 		"inputs": {
 			"email_existe": "This email already exists",
-			"username_existe": "This username is already taken"
+			"username_existe": "This username is already taken",
+			"element_required": "element required"
 		}
 	},
 	"success": {

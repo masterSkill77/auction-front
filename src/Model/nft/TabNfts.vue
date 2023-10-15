@@ -63,6 +63,7 @@
 	import { defineComponent, ref, onMounted } from 'vue';
 	import { storeToRefs } from 'pinia';
 	import Pagination from '@/components/UI/items/Pagination.vue';
+	import { useLoadingStore } from '../../stores/loading';
 
 	export default defineComponent({
 		components: {
@@ -81,7 +82,7 @@
 		async setup() {
 			let allNfts = ref({});
 			let myNfts = ref();
-			const contractAddress = '0x4CecC84d747bBEa3C1688a50B243B2868fa69bDe';
+			const contractAddress = '0xffC2a55Ed8E1483a167DC91A695A11Eb91729DB5';
 			let linksOfPage = ref(allNfts.links);
 			return {
 				linksOfPage,
@@ -102,11 +103,13 @@
 			},
 		},
 		async mounted() {
+			useLoadingStore().setLoading(true);
 			this.fetchData();
 			await useNftStore().fetchMyNfts();
 			const { myNfts } = storeToRefs(useNftStore());
 			this.allNfts = myNfts.value;
 			this.linksOfPage = this.allNfts.links;
+			setTimeout(() => useLoadingStore().setLoading(false), 1500);
 			window.Echo.channel('auction').listen(
 				'.auction-done',
 				async function (data) {

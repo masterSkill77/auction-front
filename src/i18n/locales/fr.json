@@ -77,7 +77,8 @@
 		"contact-us": "Une erreur est survenue, veuillez contacter le support technique s'il vous plaît",
 		"inputs": {
 			"email_existe": "Cet email est déjà utilisé. Veuillez en choisir un autre.",
-			"username_existe": "Ce nom d'utilisateur est déjà utilisé. Veuillez en choisir un autre."
+			"username_existe": "Ce nom d'utilisateur est déjà utilisé. Veuillez en choisir un autre.",
+			"element_required": "element requis"
 		}
 	},
 	"success": {

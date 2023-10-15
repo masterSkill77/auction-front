@@ -137,9 +137,9 @@
                   <button type="submit" class="btn btn-primary" :disabled="loading">
                     <span  v-if="loading" class="spinner-border spinner-border-sm" role="status">
                   </span>
-                    <span v-else>{{  $t('bid.make_bid')  }}</span>  
+                    <span v-else>{{  $t('bid.make_bid')  }}</span>
                   </button>
-                  
+
                 </div>
               </form>
             </div>
@@ -174,9 +174,15 @@ import { useI18nStore } from "../../stores/i18n";
     useBidStore
   } from "../../stores/bid"
 
+  import {
+    useLoadingStore
+  } from "../../stores/loading"
+
+
   export default defineComponent({
     methods: {
       async makeBid() {
+        useLoadingStore().setLoading(true)
         this.loading = true
         const body = {
           bidder_id: this.me.id,
@@ -202,17 +208,20 @@ import { useI18nStore } from "../../stores/i18n";
 
         this.auction = await useAuctionStore().fetchAuction(this.auctionId);
         this.bid = this.auction.current_bid
+        useLoadingStore().setLoading(false)
         this.loading = false
       }
     },
     mounted() {
+        useLoadingStore().setLoading(true)
       const $ = this;
       window.Echo.channel("auction").listen(
         ".auction-done",
         async function (data) {
           this.auction = await useAuctionStore().fetchAuction(auctionId);
         }
-      );
+        );
+        setTimeout(() => useLoadingStore().setLoading(false), 1500)
     },
     setup() {
       const {

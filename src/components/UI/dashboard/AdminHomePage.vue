@@ -114,6 +114,7 @@
 <script setup>
 	import { onMounted, ref } from 'vue';
 	import axios from 'axios';
+	import { useLoadingStore } from '../../../stores/loading';
 
 	const USER_TOKEN = 'auction_user';
 	const me = ref({});
@@ -122,6 +123,7 @@
 	const check = () => {
 		console.log(key.value);
 	};
+	useLoadingStore().setLoading(true);
 	const user = JSON.parse(localStorage.getItem(USER_TOKEN));
 	key.value = Math.floor(Math.random() * 1000);
 	me.value = user;
@@ -129,7 +131,7 @@
 		.get(import.meta.env.VITE_APP_NFT_URL + '/me/' + me.value.etherum_adress)
 		.then((res) => {
 			available.value = res.data;
-			console.log(available.value);
+			setTimeout(() => useLoadingStore().setLoading(false), 1500);
 		})
 		.catch((e) => console.log(e));
 </script>

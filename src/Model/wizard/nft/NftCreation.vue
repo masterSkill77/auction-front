@@ -13,9 +13,7 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-12 col-md-2 col-form-label">{{
-				$t('auction.link')
-			}}</label>
+			<label class="col-sm-12 col-md-2 col-form-label">{{ $t('URL') }}</label>
 			<div class="col-sm-12 col-md-10">
 				<input v-model="image_uri" class="form-control" type="url" />
 			</div>
@@ -32,6 +30,7 @@
 <script>
 	import { defineComponent, ref } from 'vue';
 	import { useNftStore } from '@/stores/nft';
+	import { useLoadingStore } from '@/stores/loading';
 
 	export default defineComponent({
 		setup() {
@@ -49,12 +48,26 @@
 		},
 		methods: {
 			async uploadNft() {
+				useLoadingStore().setLoading(true);
 				const body = {
 					title: this.title,
 					description: this.description,
 					image_uri: this.image_uri,
 					category_id: this.category_id,
 				};
+
+				Object.keys(body).forEach((element) => {
+					if (!body[element]) {
+						this.$notify({
+							title: this.$t('error.title'),
+							text: `${element} ` + this.$t('error.inputs.element_required'),
+							type: 'error',
+						});
+						useLoadingStore().setLoading(false);
+						throw new Error();
+					}
+				});
+
 				await useNftStore()
 					.createNft(body)
 					.then((data) => {
@@ -82,6 +95,10 @@
 							});
 						}
 					});
+
+				setTimeout(() => {
+					useLoadingStore().setLoading(false);
+				}, 1500);
 			},
 		},
 	});
