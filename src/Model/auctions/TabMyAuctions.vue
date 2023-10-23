@@ -15,7 +15,7 @@
           />
         </div>
         <div class="col-12 col-lg-12">
-          <AuctionsAdmin
+          <TabBids
             :auctions="allAuctions.win_auctions"
             :title="$t('auction.bids_made')"
           />
@@ -31,9 +31,10 @@ import { useAuctionStore } from "../../stores/auction";
 import { defineComponent, ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import AuctionsAdmin from "./AuctionsAdmin.vue";
+import TabBids from "./TabBids.vue";
 
 export default defineComponent({
-  components: { AuctionsAdmin },
+  components: { AuctionsAdmin,TabBids },
   async setup() {
     let allAuctions = ref({});
     return {
