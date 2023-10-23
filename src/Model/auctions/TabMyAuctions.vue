@@ -14,6 +14,12 @@
             :title="$t('auction.win_auction_title')"
           />
         </div>
+        <div class="col-12 col-lg-12">
+          <AuctionsAdmin
+            :auctions="allAuctions.win_auctions"
+            :title="$t('auction.bids_made')"
+          />
+        </div>
       </div>
     </div>
   </section>

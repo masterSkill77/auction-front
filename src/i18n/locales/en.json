@@ -20,7 +20,8 @@
 		"phone": "Phone Number",
 		"username": "Username",
 		"name": "Name",
-		"user": "User"
+		"user": "User",
+		"adress": "Blockchain address"
 	},
 	"timer": {
 		"remaining": "Time remaining",
@@ -50,6 +51,7 @@
 		"description": "Description",
 		"url": "Link",
 		"win_auction_title": "Auctions won",
+		"bids_made": "Bids made",
 		"own_auction_title": "My initiated auctions",
 		"done": "Done",
 		"creation": "Create your auction",

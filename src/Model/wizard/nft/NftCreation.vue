@@ -9,7 +9,7 @@
 					class="form-control"
 					v-model="title"
 					type="text"
-					placeholder="Johnny Brown" />
+					placeholder="" />
 			</div>
 		</div>
 		<div class="form-group row">

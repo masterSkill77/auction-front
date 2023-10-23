@@ -49,8 +49,8 @@
         {{ me.email }}
       </li>
       <li>
-        <span>{{ $t("personnalInfo.phone") }}:</span>
-        619-229-0054
+        <span>{{ $t("personnalInfo.adress") }}:</span>
+        {{me.etherum_adress}}
       </li>
     </ul>
   </div>
