@@ -14,12 +14,20 @@
 					<tr>
 						<th>Auction</th>
 						<th>Offre</th>
+						<th>Paiement</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr v-for="bid in allMyBids" :key="bid.id">
-						<td></td>
-						<td></td>
+						<td>
+							<router-link
+								class="btn btn-outline-primary btn-sm"
+								:to="`/auction/${bid.auction.auction_uuid}`"
+								>{{ bid.auction.auction_uuid }}</router-link
+							>
+						</td>
+						<td>{{ new Intl.NumberFormat().format(bid.bid_amount) }}</td>
+						<td>{{ bid.auction.payment }}</td>
 					</tr>
 				</tbody>
 			</table>
