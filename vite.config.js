@@ -9,6 +9,7 @@ export default defineConfig({
   isCustomElement: (tagName) => {
     return tagName === "vue-advanced-chat" || tagName === "emoji-picker";
   },
+  external: ['vue'],
   plugins: [
     vue(),
     VueI18nPlugin({
