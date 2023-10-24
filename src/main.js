@@ -1,5 +1,5 @@
-import "survey-core/defaultV2.min.css";
-import "survey-creator-core/survey-creator-core.min.css";
+import "https://cdn.jsdelivr.net/npm/survey-core@1.9.113/defaultV2.min.css";
+import "/public/css/survey.css";
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
