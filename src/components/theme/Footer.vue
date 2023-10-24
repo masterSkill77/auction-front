@@ -4,14 +4,14 @@
 		<!-- Main Footer Area -->
 		<div
 			class="main-footer-area section-padding-100-0 bg-img bg-overlay"
-			style="background-image: url(/img/bg-img/bg-1.jpg)">
+			style="background-image: url('/public//bg-img/bg-1.jpg')">
 			<div class="container">
 				<div class="row">
 					<!-- Footer Widget Area -->
 					<div class="col-12 col-sm-6 col-lg-4">
 						<div class="footer-widget mb-100">
 							<div class="widget-title">
-								<a href="#"><img src="./img/core-img/logo2.png" alt="" /></a>
+								<a href="#"><img src="/public/img/core-img/logo2.png" alt="" /></a>
 							</div>
 							<p>
 								Morbi vel arcu gravida, iaculis lacus vel, posuere ipsum. Sed

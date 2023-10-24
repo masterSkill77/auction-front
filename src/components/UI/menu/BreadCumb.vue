@@ -15,7 +15,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="breadcumb-thumb">
-							<img src="./img/bg-img/breadcumb.png" alt="" />
+							<img src="/public/img/bg-img/breadcumb.png" alt="" />
 						</div>
 					</div>
 				</div>

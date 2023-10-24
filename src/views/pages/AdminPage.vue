@@ -3,7 +3,7 @@
 	<div :class="{ 'left-side-bar': true, open: sidebar }">
 		<div class="brand-logo">
 			<router-link to="/">
-				<img src="./img/core-img/logo.png" alt="" />
+				<img src="/public/img/core-img/logo.png" alt="" />
 			</router-link>
 			<div
 				class="close-sidebar"

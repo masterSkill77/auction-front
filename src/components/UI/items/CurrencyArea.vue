@@ -8,7 +8,7 @@
 				class="single-price-table d-flex align-items-center justify-content-between">
 				<div class="p-content d-flex align-items-center">
 					<span></span>
-					<img src="./img/bg-img/bitcoin.png" alt="" />
+					<img src="/public/img/bg-img/bitcoin.png" alt="" />
 					<p>{{ crypto.symbol }}</p>
 				</div>
 				<div class="p-content d-flex align-items-center">
@@ -35,7 +35,7 @@
 				class="single-price-table d-flex align-items-center justify-content-between">
 				<div class="p-content d-flex align-items-center">
 					<span></span>
-					<img src="./img/bg-img/bitcoin.png" alt="" />
+					<img src="/public/img/bg-img/bitcoin.png" alt="" />
 					<p>{{ crypto.symbol }}</p>
 				</div>
 				<div class="p-content mx-2">

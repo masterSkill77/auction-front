@@ -14,7 +14,7 @@
 											:src="
 												primaryNew.image_url
 													? primaryNew.image_url
-													: './img/blog-img/blog1.jpg'
+													: 'img/blog-img/blog1.jpg'
 											"
 											alt="" />
 									</div>
@@ -61,7 +61,7 @@
 											:src="
 												actu.image_url
 													? actu.image_url
-													: './img/blog-img/blog1.jpg'
+													: 'img/blog-img/blog1.jpg'
 											"
 											alt="" />
 									</div>
@@ -123,7 +123,7 @@
 				<div class="blog-thumbnail">
 					<img
 						:src="
-							nouvel.image_url ? nouvel.image_url : './img/blog-img/blog1.jpg'
+							nouvel.image_url ? nouvel.image_url : 'img/blog-img/blog1.jpg'
 						"
 						alt="" />
 				</div>

@@ -9,7 +9,7 @@
 				<nav class="classy-navbar justify-content-between" id="cryptosNav">
 					<!-- Logo -->
 					<a class="nav-brand" href="/"
-						><img src="./img/core-img/logo.png" alt=""
+						><img src="/public/img/core-img/logo.png" alt=""
 					/></a>
 
 					<!-- Navbar Toggler -->

@@ -5,7 +5,7 @@
 				<div class="col-lg-6 col-xl-6 col-md-6">
 					<div class="w-100">
 						<img
-							src="./img/concept-nft-futuriste-plat_23-2148936480.jpg"
+							src="/public/img/concept-nft-futuriste-plat_23-2148936480.jpg"
 							alt="" />
 					</div>
 				</div>
