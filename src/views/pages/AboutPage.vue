@@ -21,7 +21,7 @@
 				</div>
 				<div class="col-12 col-md-4">
 					<div class="about-thumbnail mb-100">
-						<img src="img/bg-img/about.png" alt="" />
+						<img src="/img/bg-img/about.png" alt="" />
 					</div>
 				</div>
 				<div class="col-12 col-md-4">
@@ -99,7 +99,7 @@
 				</div>
 				<div class="col-12 col-md-6">
 					<div class="guideline-thumb">
-						<img src="img/bg-img/device.png" alt="" />
+						<img src="/img/bg-img/device.png" alt="" />
 					</div>
 				</div>
 			</div>
@@ -124,12 +124,12 @@
 				</div>
 				<div class="col-12 col-md-6">
 					<div class="video-area mb-100">
-						<img src="img/bg-img/bg-4.jpg" alt="" />
+						<img src="/img/bg-img/bg-4.jpg" alt="" />
 						<div class="video-btn">
 							<a
 								href="https://www.youtube.com/watch?v=f5BBJ4ySgpo"
 								class="videobtn"
-								><img src="img/bg-img/video-btn.png" alt=""
+								><img src="/img/bg-img/video-btn.png" alt=""
 							/></a>
 						</div>
 					</div>

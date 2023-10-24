@@ -52,7 +52,7 @@
 													data-animation="fadeInUp"
 													data-delay="1000ms"
 													style="animation-delay: 1000ms; opacity: 1">
-													<img src="img/bg-img/bg-2.png" alt="" />
+													<img src="/img/bg-img/bg-2.png" alt="" />
 												</div>
 											</div>
 										</div>
@@ -95,7 +95,7 @@
 													data-animation="fadeInUp"
 													data-delay="1000ms"
 													style="animation-delay: 1000ms; opacity: 1">
-													<img src="img/bg-img/bg-2.png" alt="" />
+													<img src="/img/bg-img/bg-2.png" alt="" />
 												</div>
 											</div>
 										</div>
@@ -140,7 +140,7 @@
 													data-animation="fadeInUp"
 													data-delay="1000ms"
 													style="animation-delay: 1000ms; opacity: 1">
-													<img src="img/bg-img/bg-2.png" alt="" />
+													<img src="/img/bg-img/bg-2.png" alt="" />
 												</div>
 											</div>
 										</div>
@@ -185,7 +185,7 @@
 			<div class="row align-items-center">
 				<div class="col-12 col-md-6">
 					<div class="about-thumbnail mb-100">
-						<img src="img/bg-img/about.png" alt="" />
+						<img src="/img/bg-img/about.png" alt="" />
 					</div>
 				</div>
 				<div class="col-12 col-md-6">
