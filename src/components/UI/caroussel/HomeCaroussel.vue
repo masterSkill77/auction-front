@@ -29,7 +29,7 @@
 								class="hero-slides-thumb"
 								data-animation="fadeInUp"
 								data-delay="1000ms">
-								<img src="/img/bg-img/bg-2.png" alt="" />
+								<img src="./img/bg-img/bg-2.png" alt="" />
 							</div>
 						</div>
 					</div>
@@ -64,7 +64,7 @@
 								class="hero-slides-thumb"
 								data-animation="fadeInUp"
 								data-delay="1000ms">
-								<img src="/img/bg-img/bg-2.png" alt="" />
+								<img src="./img/bg-img/bg-2.png" alt="" />
 							</div>
 						</div>
 					</div>
