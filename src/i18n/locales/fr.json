@@ -195,6 +195,7 @@
 		"ticker_label": "Cours 24 h"
 	},
 	"create_page": {
+		"pick_end_date": "Choisir la date et l'heure de fin",
 		"title": "Créer",
 		"subtitle": "Donnez vie à une œuvre ou remettez un NFT aux enchères.",
 		"back": "Retour à la création",

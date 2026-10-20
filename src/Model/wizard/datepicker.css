@@ -1,0 +1,109 @@
+/* Sélecteur de date du wizard : mêmes couleurs, rayons et focus que les champs wz-field */
+
+:root {
+	--dp-font-family: inherit;
+	--dp-background-color: #ffffff;
+	--dp-text-color: #0d104d;
+	--dp-hover-color: #f3f5fb;
+	--dp-hover-text-color: #0d104d;
+	--dp-hover-icon-color: #0d104d;
+	--dp-primary-color: #0d104d;
+	--dp-primary-text-color: #ffffff;
+	--dp-secondary-color: #c0c5d6;
+	--dp-border-color: #dfe2ee;
+	--dp-border-color-hover: #ffaf02;
+	--dp-menu-border-color: #e6e8f2;
+	--dp-disabled-color: #f5f6fa;
+	--dp-disabled-color-text: #b5bacb;
+	--dp-icon-color: #7a7f96;
+	--dp-scroll-bar-background: #f3f5fb;
+	--dp-scroll-bar-color: #c0c5d6;
+	--dp-border-radius: 12px;
+	--dp-cell-border-radius: 10px;
+	--dp-cell-size: 40px;
+	--dp-font-size: 14px;
+	--dp-animation-duration: 0.2s;
+}
+
+/* Champ : même hauteur et même focus que les autres champs du wizard */
+.wz-field .dp__input {
+	height: 48px;
+	padding: 0 16px 0 42px;
+	border: 1px solid #dfe2ee;
+	border-radius: 12px;
+	background: #fafbfd;
+	font-size: 15px;
+	color: #0d104d;
+	box-shadow: none;
+}
+
+.wz-field .dp__input:hover {
+	border-color: #c9cee0;
+}
+
+.wz-field .dp__input:focus {
+	border-color: #ffaf02;
+	background: #ffffff;
+	box-shadow: 0 0 0 4px rgba(255, 175, 2, 0.18);
+	outline: none;
+}
+
+.wz-field .dp__input::placeholder {
+	color: #9ea3b8;
+}
+
+.wz-field .dp__input_icon {
+	left: 14px;
+	color: #7a7f96;
+}
+
+/* Menu flottant */
+.dp__menu {
+	border: 1px solid #e6e8f2;
+	border-radius: 18px;
+	box-shadow: 0 24px 60px rgba(13, 16, 77, 0.16);
+	padding: 8px;
+}
+
+.dp__calendar_header_item {
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: #7a7f96;
+}
+
+.dp__month_year_select {
+	font-weight: 600;
+	color: #0d104d;
+}
+
+.dp__month_year_row {
+	padding: 4px 6px 10px;
+}
+
+/* Jour sélectionné : pastille navy, aujourd'hui : contour ambre */
+.dp__active_date {
+	background: #0d104d;
+	color: #ffffff;
+	font-weight: 600;
+	box-shadow: 0 6px 14px rgba(13, 16, 77, 0.25);
+}
+
+.dp__today {
+	border: 1px solid #ffaf02;
+	font-weight: 600;
+}
+
+.dp__cell_inner:hover {
+	box-shadow: none;
+}
+
+/* Heure */
+.dp__time_input {
+	font-weight: 600;
+	color: #0d104d;
+}
+
+.dp__time_display {
+	color: #0d104d;
+}

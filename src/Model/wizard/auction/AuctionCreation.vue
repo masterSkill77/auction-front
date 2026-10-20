@@ -61,7 +61,18 @@
 
 			<label class="wz-field" :class="{ 'is-invalid': errors.end_date }">
 				<span>{{ $t('bid.end_date') }}</span>
-				<input v-model="form.end_date" type="datetime-local" :min="minDate" />
+				<VueDatePicker
+					v-model="form.end_date"
+					:min-date="minDate"
+					:locale="locale"
+					:format="formatEndDate"
+					:is-24="true"
+					:minutes-increment="1"
+					:enable-time-picker="true"
+					:auto-apply="true"
+					:clearable="false"
+					:teleport="true"
+					:placeholder="$t('create_page.pick_end_date')" />
 				<small v-if="errors.end_date" class="wz-error">{{ errors.end_date }}</small>
 			</label>
 
@@ -104,6 +115,9 @@
 	import { useNftStore } from '@/stores/nft';
 	import { useAuctionStore } from '@/stores/auction';
 	import '@/Model/wizard/wizard.css';
+	import VueDatePicker from '@vuepic/vue-datepicker';
+	import '@vuepic/vue-datepicker/dist/main.css';
+	import '@/Model/wizard/datepicker.css';
 
 	const PAYMENTS = [
 		{ value: 'USDT', label: 'auction.paymentUsd' },
@@ -111,7 +125,7 @@
 	];
 
 	const router = useRouter();
-	const { t } = useI18n();
+	const { t, locale } = useI18n();
 
 	const nfts = ref([]);
 	const loading = ref(true);
@@ -123,16 +137,11 @@
 		nft_id: null,
 		payment: 'USDT',
 		start_price: '',
-		end_date: '',
+		end_date: null,
 	});
 
-	const toLocalInput = (date) => {
-		const pad = (n) => String(n).padStart(2, '0');
-		return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(
-			date.getHours()
-		)}:${pad(date.getMinutes())}`;
-	};
-	const minDate = toLocalInput(new Date());
+	// Pas de date antérieure à maintenant
+	const minDate = computed(() => new Date());
 
 	const selected = computed(() => nfts.value.find((nft) => nft.id === form.nft_id) ?? null);
 	const currency = computed(() => (form.payment === 'ETH' ? 'ETH' : '$'));
@@ -144,9 +153,10 @@
 		if (!form.start_price) return '—';
 		return form.payment === 'ETH' ? `${form.start_price} ETH` : `$${form.start_price}`;
 	});
-	const endText = computed(() =>
-		form.end_date ? new Date(form.end_date).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : '—'
-	);
+	// Même format dans le champ et dans le récapitulatif, selon la langue du site
+	const formatEndDate = (date) =>
+		date ? date.toLocaleString(locale.value === 'en' ? 'en-GB' : 'fr-FR', { dateStyle: 'medium', timeStyle: 'short' }) : '';
+	const endText = computed(() => formatEndDate(form.end_date) || '—');
 
 	const validate = () => {
 		Object.keys(errors).forEach((key) => delete errors[key]);
@@ -154,7 +164,7 @@
 		if (!form.nft_id) errors.nft_id = t('create_page.required');
 		if (!(Number(form.start_price) > 0)) errors.start_price = t('create_page.required');
 		if (!form.end_date) errors.end_date = t('create_page.required');
-		else if (new Date(form.end_date) <= new Date()) {
+		else if (form.end_date <= new Date()) {
 			errors.end_date = t('create_page.end_date_future');
 		}
 
@@ -170,7 +180,7 @@
 				nft_id: form.nft_id,
 				payment: form.payment,
 				start_price: Number(form.start_price),
-				end_date: form.end_date,
+				end_date: form.end_date.toISOString(),
 				start_date: new Date(),
 			});
 			notify({ title: t('success.title'), text: t('success.auction'), type: 'success' });
@@ -192,3 +202,4 @@
 		}
 	});
 </script>
+

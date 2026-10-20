@@ -195,6 +195,7 @@
 		"ticker_label": "24 h prices"
 	},
 	"create_page": {
+		"pick_end_date": "Choose the end date and time",
 		"title": "Create",
 		"subtitle": "Bring a work to life or put an NFT up for auction.",
 		"back": "Back to creation",
