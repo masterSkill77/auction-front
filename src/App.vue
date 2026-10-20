@@ -67,5 +67,5 @@ export default defineComponent({
     </Suspense>
     <notifications />
   </div>
-  <Footer />
+  <Footer v-if="!$route.path.startsWith('/app')" />
 </template>

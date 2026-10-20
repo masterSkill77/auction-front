@@ -339,37 +339,6 @@ textarea:focus {
   position: relative;
   z-index: 100;
   width: 100%; }
-  .header-area .top-header {
-    width: 100%;
-    height: 40px;
-    background-color: #292929; }
-    @media only screen and (max-width: 767px) {
-      .header-area .top-header {
-        height: 80px;
-        padding: 15px 0; } }
-    @media only screen and (max-width: 767px) {
-      .header-area .top-header .top-header-content {
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap; } }
-    .header-area .top-header .top-headline p {
-      margin-bottom: 0;
-      font-family: "Montserrat", sans-serif;
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: 400; }
-      .header-area .top-header .top-headline p span {
-        color: #ffaf02; }
-    .header-area .top-header .login-faq-earn-money a {
-      display: inline-block;
-      font-family: "Montserrat", sans-serif;
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: 400;
-      margin-right: 30px; }
-      .header-area .top-header .login-faq-earn-money a:last-child {
-        margin-right: 0; }
-      .header-area .top-header .login-faq-earn-money a:hover, .header-area .top-header .login-faq-earn-money a:focus, .header-area .top-header .login-faq-earn-money a.active {
-        color: #ffaf02; }
 .megamenu-slides .owl-prev,
 .megamenu-slides .owl-next {
   background: #0d104d;
@@ -886,81 +855,6 @@ textarea:focus {
       @media only screen and (min-width: 480px) and (max-width: 767px) {
         .newsletter-area form button {
           width: 130px; } }
-
-/* :: 11.0 Footer Area CSS */
-.main-footer-area {
-  background-color: #232323; }
-  .main-footer-area .footer-widget .widget-title {
-    margin-bottom: 45px; }
-    .main-footer-area .footer-widget .widget-title h6 {
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 0;
-      color: #ffffff;
-      margin-top: 10px;
-      text-transform: uppercase; }
-  .main-footer-area .footer-widget .footer-social-info {
-    margin-top: 30px;
-    display: block; }
-    .main-footer-area .footer-widget .footer-social-info a {
-      display: inline-block;
-      color: #8e8e8e;
-      margin-right: 25px; }
-      .main-footer-area .footer-widget .footer-social-info a:hover, .main-footer-area .footer-widget .footer-social-info a:focus {
-        color: #ffaf02; }
-  .main-footer-area .footer-widget .single--blog-post {
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 1; }
-    .main-footer-area .footer-widget .single--blog-post:last-child {
-      margin-bottom: 0; }
-    .main-footer-area .footer-widget .single--blog-post a {
-      display: block;
-      color: #8e8e8e;
-      font-family: "Open Sans", sans-serif;
-      margin-bottom: 5px; }
-      .main-footer-area .footer-widget .single--blog-post a:hover {
-        color: #ffaf02; }
-      .main-footer-area .footer-widget .single--blog-post a p {
-        margin-bottom: 0;
-        -webkit-transition-duration: 500ms;
-        transition-duration: 500ms; }
-        .main-footer-area .footer-widget .single--blog-post a p:hover {
-          color: #ffaf02; }
-    .main-footer-area .footer-widget .single--blog-post span {
-      margin-bottom: 0;
-      font-size: 14px;
-      color: #ffaf02; }
-  .main-footer-area .footer-widget .useful-links li {
-    display: inline-block;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-    width: 50%; }
-    .main-footer-area .footer-widget .useful-links li a {
-      font-size: 14px;
-      font-family: "Open Sans", sans-serif;
-      margin-bottom: 15px;
-      display: block;
-      color: #8e8e8e; }
-      .main-footer-area .footer-widget .useful-links li a:hover, .main-footer-area .footer-widget .useful-links li a:focus {
-        color: #ffaf02; }
-
-.bottom-footer-area {
-  background-color: #090f1a;
-  text-align: center;
-  height: 60px; }
-  .bottom-footer-area p {
-    font-size: 14px;
-    margin-bottom: 0;
-    font-family: "Open Sans", sans-serif; }
-    .bottom-footer-area p a {
-      color: #8e8e8e;
-      font-size: 14px;
-      font-family: "Open Sans", sans-serif; }
-      .bottom-footer-area p a:hover {
-        color: #ffaf02; }
 
 /* :: 12.0 Breadcumb Area CSS */
 .breadcumb-area {

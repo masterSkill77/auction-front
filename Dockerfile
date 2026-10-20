@@ -1,6 +1,6 @@
 FROM node:20-alpine
 
-WORKDIR /app
+WORKDIR /srv/front
 
 COPY package.json package-lock.json ./
 RUN npm ci && npm cache clean --force

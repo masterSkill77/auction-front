@@ -3,7 +3,7 @@
 	<div :class="{ 'left-side-bar': true, open: sidebar }">
 		<div class="brand-logo">
 			<router-link to="/">
-				<BrandLogo />
+				<BrandLogo inverse />
 			</router-link>
 			<div
 				class="close-sidebar"
@@ -31,3 +31,19 @@
 		sidebar.value = !sidebar.value;
 	};
 </script>
+
+<style>
+	/* Sidebar en colonne : logo, navigation qui défile, pied de page toujours visible */
+	.left-side-bar {
+		display: flex;
+		flex-direction: column;
+	}
+	.left-side-bar .brand-logo {
+		flex-shrink: 0;
+	}
+
+	/* Contenu remonté : la barre du dashboard est plus basse */
+	.main-container {
+		padding-top: 72px;
+	}
+</style>

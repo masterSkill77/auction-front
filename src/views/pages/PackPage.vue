@@ -49,7 +49,7 @@
 						<a
 							data-toggle="modal"
 							data-target="#updatePack"
-							href="/profile/upgrade-pack"
+							href="/app/upgrade-pack"
 							@click.prevent="
 								show = true;
 								packChosen = pack.id;

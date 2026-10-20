@@ -1,105 +1,127 @@
 <template>
-	<div>
-		<div class="form-group row">
-			<label class="col-sm-12 col-md-2 col-form-label">{{
-				$t('auction.title')
-			}}</label>
-			<div class="col-sm-12 col-md-10">
+	<form class="wz-card" novalidate @submit.prevent="submit">
+		<div class="wz-card__main">
+			<h2>{{ $t('create_page.nft_title') }}</h2>
+			<p class="wz-card__lead">{{ $t('create_page.nft_subtitle') }}</p>
+
+			<label class="wz-field" :class="{ 'is-invalid': errors.title }">
+				<span>{{ $t('auction.title') }}</span>
+				<input v-model="form.title" type="text" maxlength="120" autocomplete="off" />
+				<small v-if="errors.title" class="wz-error">{{ errors.title }}</small>
+			</label>
+
+			<label class="wz-field" :class="{ 'is-invalid': errors.image_uri }">
+				<span>{{ $t('create_page.image_url') }}</span>
 				<input
-					class="form-control"
-					v-model="title"
-					type="text"
-					placeholder="" />
+					v-model="form.image_uri"
+					type="url"
+					placeholder="https://…"
+					spellcheck="false"
+					autocomplete="off" />
+				<small class="wz-hint">{{ $t('create_page.image_hint') }}</small>
+				<small v-if="errors.image_uri" class="wz-error">{{ errors.image_uri }}</small>
+			</label>
+
+			<label class="wz-field" :class="{ 'is-invalid': errors.description }">
+				<span>{{ $t('auction.description') }}</span>
+				<textarea v-model="form.description" rows="5" maxlength="1000"></textarea>
+				<small class="wz-count">{{ form.description.length }} / 1000</small>
+				<small v-if="errors.description" class="wz-error">{{ errors.description }}</small>
+			</label>
+
+			<button type="submit" class="wz-submit" :disabled="submitting">
+				<span v-if="submitting" class="wz-spinner" aria-hidden="true"></span>
+				<span>{{ submitting ? $t('create_page.sending') : $t('create_page.submit_nft') }}</span>
+			</button>
+		</div>
+
+		<aside class="wz-card__preview" aria-live="polite">
+			<span class="wz-label">{{ $t('create_page.preview') }}</span>
+			<div class="wz-preview">
+				<img
+					v-if="previewOk"
+					:src="form.image_uri.trim()"
+					alt=""
+					referrerpolicy="no-referrer"
+					@error="previewFailed = true" />
+				<span v-else class="wz-preview__empty">
+					{{ previewFailed ? $t('create_page.preview_error') : $t('create_page.preview_empty') }}
+				</span>
 			</div>
-		</div>
-		<div class="form-group row">
-			<label class="col-sm-12 col-md-2 col-form-label">{{ $t('URL') }}</label>
-			<div class="col-sm-12 col-md-10">
-				<input v-model="image_uri" class="form-control" type="url" />
-			</div>
-		</div>
-		<div class="form-group">
-			<label>{{ $t('auction.description') }}</label>
-			<textarea class="form-control" v-model="description"></textarea>
-		</div>
-		<div class="btn btn-primary mb-3" @click="uploadNft">
-			{{ $t('form.button.submit') }}
-		</div>
-	</div>
+			<h3>{{ form.title.trim() || '—' }}</h3>
+			<p class="wz-preview-text">{{ shortDescription }}</p>
+		</aside>
+	</form>
 </template>
-<script>
-	import { defineComponent, ref } from 'vue';
+
+<script setup>
+	import { reactive, ref, computed, watch } from 'vue';
+	import { useRouter } from 'vue-router';
+	import { useI18n } from 'vue-i18n';
+	import { notify } from '@kyvg/vue3-notification';
 	import { useNftStore } from '@/stores/nft';
-	import { useLoadingStore } from '@/stores/loading';
+	import '@/Model/wizard/wizard.css';
 
-	export default defineComponent({
-		setup() {
-			let title = ref('');
-			let description = ref('');
-			let image_uri = ref('');
-			const category_id = 1;
-			return {
-				title,
-				description,
-				category_id,
-				image_uri,
-				description,
-			};
-		},
-		methods: {
-			async uploadNft() {
-				useLoadingStore().setLoading(true);
-				const body = {
-					title: this.title,
-					description: this.description,
-					image_uri: this.image_uri,
-					category_id: this.category_id,
-				};
+	const CATEGORY_ID = 1;
+	const URL_PATTERN = /^https?:\/\/\S+$/;
 
-				Object.keys(body).forEach((element) => {
-					if (!body[element]) {
-						this.$notify({
-							title: this.$t('error.title'),
-							text: `${element} ` + this.$t('error.inputs.element_required'),
-							type: 'error',
-						});
-						useLoadingStore().setLoading(false);
-						throw new Error();
-					}
-				});
+	const router = useRouter();
+	const { t } = useI18n();
 
-				await useNftStore()
-					.createNft(body)
-					.then((data) => {
-						this.$notify({
-							title: this.$t('success.title'),
-							text: this.$t('success.nft'),
-							type: 'success',
-						});
-						this.title = '';
-						this.description = '';
-						this.image_uri = '';
-					})
-					.catch(({ response }) => {
-						if (response.data.error)
-							this.$notify({
-								title: this.$t('error.title'),
-								text: this.$t('error.' + response.data.error),
-								type: 'error',
-							});
-						else {
-							this.$notify({
-								title: this.$t('error.title'),
-								text: this.$t('error.contact-us'),
-								type: 'error',
-							});
-						}
-					});
+	const form = reactive({ title: '', image_uri: '', description: '' });
+	const errors = reactive({});
+	const submitting = ref(false);
+	const previewFailed = ref(false);
 
-				setTimeout(() => {
-					useLoadingStore().setLoading(false);
-				}, 1500);
-			},
-		},
+	watch(
+		() => form.image_uri,
+		() => (previewFailed.value = false)
+	);
+
+	const previewOk = computed(
+		() => URL_PATTERN.test(form.image_uri.trim()) && !previewFailed.value
+	);
+
+	const shortDescription = computed(() => {
+		const text = form.description.trim();
+		return text.length > 140 ? `${text.slice(0, 140)}…` : text;
 	});
+
+	const validate = () => {
+		Object.keys(errors).forEach((key) => delete errors[key]);
+
+		if (!form.title.trim()) errors.title = t('create_page.required');
+		if (!form.image_uri.trim()) errors.image_uri = t('create_page.required');
+		else if (!URL_PATTERN.test(form.image_uri.trim())) {
+			errors.image_uri = t('create_page.invalid_url');
+		}
+		if (!form.description.trim()) errors.description = t('create_page.required');
+
+		return Object.keys(errors).length === 0;
+	};
+
+	const submit = async () => {
+		if (submitting.value || !validate()) return;
+		submitting.value = true;
+
+		try {
+			await useNftStore().createNft({
+				title: form.title.trim(),
+				description: form.description.trim(),
+				image_uri: form.image_uri.trim(),
+				category_id: CATEGORY_ID,
+			});
+			notify({ title: t('success.title'), text: t('success.nft'), type: 'success' });
+			router.push('/app/nfts');
+		} catch (error) {
+			const code = error.response?.data?.error;
+			notify({
+				title: t('error.title'),
+				text: code ? t(`error.${code}`) : t('error.contact-us'),
+				type: 'error',
+			});
+		} finally {
+			submitting.value = false;
+		}
+	};
 </script>

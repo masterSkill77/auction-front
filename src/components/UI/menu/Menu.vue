@@ -1,8 +1,8 @@
 <template>
 	<div class="site-nav" :class="{ 'is-open': open }">
-		<nav class="site-nav__bar container" aria-label="Navigation principale">
+		<nav class="site-nav__bar" aria-label="Navigation principale">
 			<router-link to="/" class="site-nav__brand" aria-label="Adebaka, accueil" @click="close">
-				<BrandLogo />
+				<BrandLogo inverse />
 			</router-link>
 
 			<ul id="site-nav-links" class="site-nav__links">
@@ -36,7 +36,6 @@
 		{ to: '/', key: 'menu.home' },
 		{ to: '/auctions', key: 'menu.auctions' },
 		{ to: '/about', key: 'menu.about' },
-		{ to: '/news', key: 'menu.news' },
 		{ to: '/contact', key: 'menu.contact' },
 	];
 
@@ -61,13 +60,14 @@
 </script>
 
 <style scoped>
+	/* Barre pleine largeur, plus sombre que le hero, avec un filet doré pour la détacher */
 	.site-nav {
 		position: sticky;
 		top: 0;
 		z-index: 100;
-		background: #ffffff;
-		border-bottom: 1px solid #eef0f6;
-		box-shadow: 0 6px 20px rgba(13, 16, 77, 0.04);
+		background: linear-gradient(90deg, #0a0c24 0%, #0d104d 100%);
+		border-bottom: 1px solid rgba(255, 175, 2, 0.35);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 	}
 
 	.site-nav__bar {
@@ -75,6 +75,7 @@
 		align-items: center;
 		justify-content: space-between;
 		height: 64px;
+		padding: 0 30px;
 	}
 
 	.site-nav__brand {
@@ -97,7 +98,8 @@
 		padding: 8px 0;
 		font-size: 15px;
 		font-weight: 500;
-		color: #4a4f6a;
+		letter-spacing: 0.01em;
+		color: rgba(255, 255, 255, 0.78);
 		text-decoration: none;
 		transition: color 0.2s ease;
 	}
@@ -120,7 +122,7 @@
 	.site-nav__link:hover,
 	.site-nav__link:focus-visible,
 	.site-nav__link.router-link-exact-active {
-		color: #0d104d;
+		color: #ffffff;
 		outline: none;
 	}
 
@@ -130,7 +132,7 @@
 		transform: scaleX(1);
 	}
 
-	/* Bouton mobile : trois traits qui deviennent une croix */
+	/* Bouton mobile : trois traits blancs qui deviennent une croix */
 	.site-nav__toggle {
 		display: none;
 		position: relative;
@@ -138,17 +140,23 @@
 		height: 44px;
 		padding: 0;
 		border: 0;
-		background: transparent;
+		border-radius: 10px;
+		background: rgba(255, 255, 255, 0.08);
 		cursor: pointer;
+		transition: background-color 0.2s ease;
+	}
+
+	.site-nav__toggle:hover {
+		background: rgba(255, 255, 255, 0.14);
 	}
 
 	.site-nav__toggle span {
 		position: absolute;
-		left: 11px;
-		right: 11px;
+		left: 12px;
+		right: 12px;
 		height: 2px;
 		border-radius: 2px;
-		background: #0d104d;
+		background: #ffffff;
 		transition: transform 0.3s ease, opacity 0.2s ease;
 	}
 
@@ -165,7 +173,6 @@
 	.site-nav__toggle:focus-visible {
 		outline: 2px solid #ffaf02;
 		outline-offset: 2px;
-		border-radius: 8px;
 	}
 
 	.site-nav.is-open .site-nav__toggle span:nth-child(1) {
@@ -179,11 +186,15 @@
 	}
 
 	@media (max-width: 991px) {
+		.site-nav__bar {
+			padding: 0 16px;
+		}
+
 		.site-nav__toggle {
 			display: block;
 		}
 
-		/* Panneau déroulant sous la barre */
+		/* Panneau déroulant sous la barre, dans la même couleur */
 		.site-nav__links {
 			position: absolute;
 			top: 100%;
@@ -193,9 +204,9 @@
 			align-items: stretch;
 			gap: 0;
 			padding: 8px 0;
-			background: #ffffff;
-			border-bottom: 1px solid #eef0f6;
-			box-shadow: 0 16px 30px rgba(13, 16, 77, 0.1);
+			background: #0d104d;
+			border-top: 1px solid rgba(255, 255, 255, 0.06);
+			box-shadow: 0 16px 30px rgba(13, 16, 77, 0.3);
 			opacity: 0;
 			visibility: hidden;
 			transform: translateY(-8px);
@@ -222,8 +233,8 @@
 		}
 
 		.site-nav__link.router-link-exact-active {
-			color: #0d104d;
-			background: #fff8e6;
+			color: #ffaf02;
+			background: rgba(255, 175, 2, 0.1);
 			box-shadow: inset 3px 0 0 #ffaf02;
 		}
 	}
@@ -231,6 +242,7 @@
 	@media (prefers-reduced-motion: reduce) {
 		.site-nav__link,
 		.site-nav__link::after,
+		.site-nav__toggle,
 		.site-nav__toggle span,
 		.site-nav__links {
 			transition: none;

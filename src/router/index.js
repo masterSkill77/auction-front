@@ -9,7 +9,7 @@ import AdminPage from '@/views/pages/AdminPage.vue';
 import ChatPage from '@/views/pages/ChatPage.vue';
 import AuctionPage from '@/Model/auctions/AuctionCard.vue';
 import LoginPage from '@/views/auth/LoginPage.vue';
-import RegisterPage from '@/views/auth/RegisterPage.vue';
+import SignupPage from '@/views/auth/SignupPage.vue';
 import NotFound from '@/views/404.vue';
 import AdminHomePage from '@/components/UI/dashboard/AdminHomePage.vue';
 import SettingsPage from '@/views/pages/SettingsPage.vue';
@@ -40,7 +40,7 @@ const router = createRouter({
 		{
 			path: '/register',
 			name: 'register',
-			component: RegisterPage,
+			component: SignupPage,
 		},
 		{
 			path: '/about',
@@ -77,7 +77,7 @@ const router = createRouter({
 			},
 		},
 		{
-			path: '/profile',
+			path: '/app',
 			name: 'Profile',
 			component: AdminPage,
 			meta: {

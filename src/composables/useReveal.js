@@ -1,12 +1,14 @@
-import { onMounted, onBeforeUnmount } from 'vue';
+import { onMounted, onBeforeUnmount, watch, nextTick } from 'vue';
 
 // Apparition au défilement : chaque élément marqué data-reveal dans le composant
 // reçoit la classe is-visible une seule fois, quand il entre dans l'écran.
-export function useReveal(rootRef) {
+// `ready` (optionnel) : quand il passe à true, les éléments rendus après coup sont aussi scannés.
+export function useReveal(rootRef, ready = null) {
 	let observer = null;
 
-	onMounted(() => {
-		const items = rootRef.value.querySelectorAll('[data-reveal]');
+	const scan = () => {
+		if (!rootRef.value) return;
+		const items = rootRef.value.querySelectorAll('[data-reveal]:not(.is-visible)');
 		const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 		if (!('IntersectionObserver' in window) || reduced) {
@@ -14,7 +16,7 @@ export function useReveal(rootRef) {
 			return;
 		}
 
-		observer = new IntersectionObserver(
+		observer ??= new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (!entry.isIntersecting) return;
@@ -25,7 +27,15 @@ export function useReveal(rootRef) {
 			{ threshold: 0.2 }
 		);
 		items.forEach((el) => observer.observe(el));
-	});
+	};
 
-	onBeforeUnmount(() => observer && observer.disconnect());
+	onMounted(scan);
+
+	if (ready) {
+		watch(ready, (value) => {
+			if (value) nextTick(scan);
+		});
+	}
+
+	onBeforeUnmount(() => observer?.disconnect());
 }
