@@ -9,7 +9,7 @@
 							class="top-header-content h-100 d-flex align-items-center justify-content-between">
 							<!-- Top Headline -->
 							<div class="top-headline">
-								<p>Welcome to <span>Cryptos</span></p>
+								<p>Welcome to <span>Adebaka</span></p>
 							</div>
 							<!-- Top Login & Faq & Earn Monery btn -->
 							<div class="login-faq-earn-money">
@@ -43,9 +43,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- Navbar Area -->
-		<Menu v-if="!$route.path.includes('profile')" />
 	</header>
+	<Menu v-if="!$route.path.includes('profile')" />
 </template>
 <script setup>
 	import { useAuthStore } from '@/stores/auth';

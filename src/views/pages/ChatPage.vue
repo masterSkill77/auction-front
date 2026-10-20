@@ -25,7 +25,9 @@
 		async setup() {
 			let Io = io != undefined ? io : () => {};
 
-			const socketIO = Io(import.meta.env.VITE_APP_SOCKET_URL);
+			const socketIO = Io(import.meta.env.VITE_APP_SOCKET_URL, {
+				auth: { token: localStorage.getItem("auction_token") },
+			});
 
 			const { me } = storeToRefs(useAuthStore());
 			let friends = await axios

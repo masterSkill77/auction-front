@@ -184,12 +184,26 @@
 		"1": "Integrer le monde du crypto",
 		"2": "Les NFT n'attendent que vous",
 		"text-banner-2": "Les NFTs sont disponible directement sur notre Smart Contract une fois que vous les avez uploadés, donc des minutes après vous pouvez directement les mettre aux enchères",
-		"text-banner-4": "Nous vous offrons des marqeurs de cryptomonnaies pour vous aider à prendre des decisions sur vos bitcoins.",
-		"text-banner-5": "Notre plateforme est donc multi fonction, qui est en plus d'être une plateforme d'enchère, on offre des bonus pour nos utilisateurs."
+		"text-banner-4": "Les cours des principales cryptomonnaies, en un coup d'œil, avant de miser ou d'acheter.",
+		"text-banner-5": "Adebaka ne se limite pas aux enchères : vous y retrouvez aussi les cours du marché et des avantages réservés à nos membres.",
+		"currency-title": "Suivez le marché en direct"
+	},
+	"market": {
+		"prices_title": "Cours du marché",
+		"range_24h": "24 h",
+		"range_7d": "7 jours",
+		"last": "Dernier prix",
+		"change": "Variation",
+		"high": "Plus haut",
+		"low": "Plus bas",
+		"note": "Cours et historique fournis par Binance, via le cache du serveur (5 min). Prix en dollars américains (USDT).",
+		"empty": "Aucun cours disponible pour le moment.",
+		"error": "Impossible de charger les cours pour le moment."
 	},
 	"newsletter": {
 		"title": "Inscrivez-vous à notre newsletter",
 		"button": "S'inscrire",
+		"placeholder": "Votre adresse e-mail",
 		"text": "Quand vous vous inscrivez sur notre newsletter, vous recevriez automatiquement des mails pour les nouveautés sur le plateforme ou les évènements crypto"
 	},
 	"profile": {

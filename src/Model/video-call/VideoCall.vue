@@ -187,7 +187,9 @@ export default {
       let Io = io != undefined ? io : () => {};
   
 
-      this.socket = Io(import.meta.env.VITE_APP_SOCKET_URL);
+      this.socket = Io(import.meta.env.VITE_APP_SOCKET_URL, {
+        auth: { token: localStorage.getItem("auction_token") },
+      });
 
       navigator.mediaDevices
         .getUserMedia({

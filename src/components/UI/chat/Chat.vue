@@ -130,7 +130,7 @@ import moment from "moment";
 import { useI18nStore } from "../../../stores/i18n";
 import { storeToRefs } from "pinia";
 import { useAuthStore } from "../../../stores/auth";
-import axios from "axios";
+import axios from "@/src/axios";
 
 export default {
   props: ["friends", "socketIo"],
@@ -272,7 +272,7 @@ export default {
       this.loading = true;
       this.selectUser = friend;
       await axios
-        .get(`${import.meta.env.VITE_CHAT_APP_URL}/${this.me.id}/${friend.id}`)
+        .get(`/chat/${this.me.id}/${friend.id}`)
         .then((res) => res.data)
         .then((data) => {
           this.messages = data.sort(

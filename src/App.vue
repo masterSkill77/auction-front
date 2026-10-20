@@ -20,7 +20,9 @@ export default defineComponent({
   mounted() {
     const { me } = storeToRefs(useAuthStore());
     let Io = io != undefined ? io : () => {};
-    const socket = Io(import.meta.env.VITE_APP_SOCKET_URL);
+    const socket = Io(import.meta.env.VITE_APP_SOCKET_URL, {
+      auth: { token: localStorage.getItem("auction_token") },
+    });
     socket.emit("client_join", me.value);
 
     socket.on("message_received", (data) => {

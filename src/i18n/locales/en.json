@@ -180,15 +180,29 @@
 	},
 	"banner": {
 		"0": "Let’s change the world together",
-		"1": "Integrate the cryptos world",
+		"1": "Integrate the crypto world",
 		"2": "NFTs just waiting you",
 		"text-banner-2": "NFTs are available directly on our Smart Contract once you upload them, so minutes later you can directly auction them",
-		"text-banner-4": "We offer you cryptocurrency markers to help you make decisions about your bitcoins.",
-		"text-banner-5": "Our platform is therefore multi-function, which is in addition to being an auction platform, we offer bonuses for our users"
+		"text-banner-4": "The prices of the main cryptocurrencies, at a glance, before you bid or buy.",
+		"text-banner-5": "Adebaka is not limited to auctions: you also find market prices and advantages reserved for our members.",
+		"currency-title": "Follow the market live"
+	},
+	"market": {
+		"prices_title": "Market prices",
+		"range_24h": "24 h",
+		"range_7d": "7 days",
+		"last": "Last price",
+		"change": "Change",
+		"high": "High",
+		"low": "Low",
+		"note": "Prices and history from Binance, served from the server cache (5 min). Prices in US dollars (USDT).",
+		"empty": "No prices available right now.",
+		"error": "Unable to load prices right now."
 	},
 	"newsletter": {
 		"title": "Subscribe to our newsletter",
 		"button": "Subscribe",
+		"placeholder": "Your email address",
 		"text": "When you subscribe to our newsletter, you'll receive an email on news and offer from the plateforme"
 	},
 	"profile": {

@@ -1,34 +1,6 @@
 <template>
-	<div class="col-12 col-lg-5 col-sm-12" v-if="!header">
-		<div class="cryptos-prices-table m-auto">
-			<!-- Single Price Table -->
-			<div
-				v-for="(crypto, index) in cryptos"
-				:key="index"
-				class="single-price-table d-flex align-items-center justify-content-between">
-				<div class="p-content d-flex align-items-center">
-					<span></span>
-					<img src="/public/img/bg-img/bitcoin.png" alt="" />
-					<p>{{ crypto.symbol }}</p>
-				</div>
-				<div class="p-content d-flex align-items-center">
-					<p>{{ crypto.lastPrice }} $</p>
-				</div>
-				<div class="p-content d-flex align-items-center">
-					<div
-						:class="{
-							price: true,
-							increase: crypto.priceChange > 0,
-							decrease: crypto.priceChange < 0,
-						}">
-						<p>{{ crypto.priceChangePercent }} %</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="w-100 cursor-pointer">
-		<Vue3Marquee :duration="50" v-if="header">
+	<div class="w-100 cursor-pointer" v-if="header">
+		<Vue3Marquee :duration="50">
 			<div
 				v-for="(crypto, index) in cryptos"
 				:key="index"
@@ -105,3 +77,4 @@
 		cursor: pointer;
 	}
 </style>
+

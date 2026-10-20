@@ -113,7 +113,7 @@
 
 <script setup>
 	import { onMounted, ref } from 'vue';
-	import axios from 'axios';
+	import axios from '@/src/axios';
 	import { useLoadingStore } from '../../../stores/loading';
 
 	const USER_TOKEN = 'auction_user';
@@ -128,7 +128,7 @@
 	key.value = Math.floor(Math.random() * 1000);
 	me.value = user;
 	await axios
-		.get(import.meta.env.VITE_APP_NFT_URL + '/me/' + me.value.etherum_adress)
+		.get('/blockchain/me/' + me.value.etherum_adress)
 		.then((res) => {
 			available.value = res.data;
 			setTimeout(() => useLoadingStore().setLoading(false), 1500);

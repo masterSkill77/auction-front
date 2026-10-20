@@ -3,7 +3,7 @@
 	<div :class="{ 'left-side-bar': true, open: sidebar }">
 		<div class="brand-logo">
 			<router-link to="/">
-				<img src="/public/img/core-img/logo.png" alt="" />
+				<BrandLogo />
 			</router-link>
 			<div
 				class="close-sidebar"
@@ -21,6 +21,7 @@
 	</div>
 </template>
 <script setup>
+	import BrandLogo from '@/components/theme/BrandLogo.vue';
 	import { ref } from 'vue';
 	import HeaderDashboard from '../../components/UI/dashboard/HeaderDashboard.vue';
 	import Menu from '../../components/UI/dashboard/menu/Menu.vue';

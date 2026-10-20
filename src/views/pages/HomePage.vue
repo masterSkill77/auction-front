@@ -1,273 +1,123 @@
 <template>
-	<div class="hero-slides p-0 m-0">
-		<div class="container-fluid h-50">
-			<div class="row h-100 align-items-center">
-				<div class="col-12" style="margin: 0; padding: 0; width: 100%">
-					<div
-						id="carouselExampleCaptions"
-						class="carousel slide"
-						data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li
-								data-target="#carouselExampleCaptions"
-								data-slide-to="0"
-								class="active"></li>
-							<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-							<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<div class="single-hero-slide">
-									<div class="container h-100">
-										<div class="row h-100 align-items-center">
-											<div class="col-12 col-md-7">
-												<div class="hero-slides-content">
-													<h2
-														data-animation="fadeInUp"
-														data-delay="100ms"
-														style="animation-delay: 100ms; opacity: 1"
-														class="animated fadeInUp">
-														<span>{{ $t('slider.slider_1.title') }}</span>
-													</h2>
-													<h6
-														data-animation="fadeInUp"
-														data-delay="400ms"
-														style="animation-delay: 400ms; opacity: 1"
-														class="animated fadeInUp">
-														{{ $t('slider.slider_1.description') }}
-													</h6>
-													<a
-														href="#"
-														class="btn cryptos-btn animated fadeInUp"
-														data-animation="fadeInUp"
-														data-delay="700ms"
-														style="animation-delay: 700ms; opacity: 1"
-														>{{ $t('readmore') }}</a
-													>
-												</div>
-											</div>
-											<div class="col-12 col-md-5">
-												<div
-													class="hero-slides-thumb animated fadeInUp"
-													data-animation="fadeInUp"
-													data-delay="1000ms"
-													style="animation-delay: 1000ms; opacity: 1">
-													<img src="/public/img/bg-img/bg-2.png" alt="" />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<div class="single-hero-slide">
-									<div class="container h-100">
-										<div class="row h-100 align-items-center">
-											<div class="col-12 col-md-7">
-												<div class="hero-slides-content">
-													<h2
-														data-animation="fadeInUp"
-														data-delay="100ms"
-														style="animation-delay: 100ms; opacity: 1"
-														class="animated fadeInUp">
-														{{ $t('slider.slider_2.title') }}
-													</h2>
-													<h6
-														data-animation="fadeInUp"
-														data-delay="400ms"
-														style="animation-delay: 400ms; opacity: 1"
-														class="animated fadeInUp">
-														{{ $t('slider.slider_2.description') }}
-													</h6>
-													<a
-														href="#"
-														class="btn cryptos-btn animated fadeInUp"
-														data-animation="fadeInUp"
-														data-delay="700ms"
-														style="animation-delay: 700ms; opacity: 1"
-														>{{ $t('readmore') }}</a
-													>
-												</div>
-											</div>
-											<div class="col-12 col-md-5">
-												<div
-													class="hero-slides-thumb animated fadeInUp"
-													data-animation="fadeInUp"
-													data-delay="1000ms"
-													style="animation-delay: 1000ms; opacity: 1">
-													<img src="/public/img/bg-img/bg-2.png" alt="" />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<div class="single-hero-slide">
-									<div class="container h-100">
-										<div class="row h-100 align-items-center">
-											<div class="col-12 col-md-7">
-												<div class="hero-slides-content">
-													<h2
-														data-animation="fadeInUp"
-														data-delay="100ms"
-														style="animation-delay: 100ms; opacity: 1"
-														class="animated fadeInUp">
-														<span>
-															{{ $t('slider.slider_3.title') }}
-														</span>
-													</h2>
-													<h6
-														data-animation="fadeInUp"
-														data-delay="400ms"
-														style="animation-delay: 400ms; opacity: 1"
-														class="animated fadeInUp">
-														{{ $t('slider.slider_3.description') }}
-													</h6>
-													<a
-														href="#"
-														class="btn cryptos-btn animated fadeInUp"
-														data-animation="fadeInUp"
-														data-delay="700ms"
-														style="animation-delay: 700ms; opacity: 1"
-														>{{ $t('readmore') }}</a
-													>
-												</div>
-											</div>
-											<div class="col-12 col-md-5">
-												<div
-													class="hero-slides-thumb animated fadeInUp"
-													data-animation="fadeInUp"
-													data-delay="1000ms"
-													style="animation-delay: 1000ms; opacity: 1">
-													<img src="/public/img/bg-img/bg-2.png" alt="" />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<a
-							class="carousel-control-prev"
-							href="#carouselExampleCaptions"
-							role="button"
-							data-slide="prev">
-							<span
-								class="carousel-control-prev-icon"
-								aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a
-							class="carousel-control-next"
-							href="#carouselExampleCaptions"
-							role="button"
-							data-slide="next">
-							<span
-								class="carousel-control-next-icon"
-								aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<HomeCaroussel />
 
-	<!-- ##### Course Area Start ##### -->
-	<Explaination />
-	<!-- ##### Course Area End ##### -->
-	<Millestone />
-
-	<!-- ##### About Area Start ##### -->
-	<section class="cryptos-about-area">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-12 col-md-6">
-					<div class="about-thumbnail mb-100">
-						<img src="/public/img/bg-img/about.png" alt="" />
-					</div>
-				</div>
-				<div class="col-12 col-md-6">
-					<div class="about-content mb-100">
-						<div class="section-heading hvr-grow">
-							<h3><span v-html="$t('banner.2')"></span></h3>
-							<h5>
-								{{ $t('banner.text-banner-2') }}
-							</h5>
-
-							<router-link to="/login" class="btn cryptos-btn mt-30">{{
-								$t('readmore')
-							}}</router-link>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- ##### About Area End ##### -->
+	<AboutBlock />
 
 	<!-- ##### Currency Area Start ##### -->
-	<section
-		class="currency-calculator-area section-padding-100 bg-img bg-overlay"
-		style="background-image: url(img/bg-img/bg-2.jpg)">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="section-heading text-center white mx-auto">
-						<h3 class="mb-4">Cryptocurrency</h3>
-						<h5 class="mb-2">
-							{{ $t('banner.text-banner-4') }}
-						</h5>
-						<p>
-							{{ $t('banner.text-banner-5') }}
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<CurrencyIntro />
 	<!-- ##### Currency Area End ##### -->
 
 	<!-- ##### Blog Area Start ##### -->
-	<section class="cryptos-blog-area section-padding-100">
-		<div class="container-full">
-			<div class="row" style="margin: 0">
-				<ListNews :home-page="true" />
-				<CurrencyArea />
-			</div>
-		</div>
+	<MarketPrices />
 
-		<!-- Newsletter Area -->
+	<section class="newsletter-section">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="newsletter-area mt-100">
-						<div class="section-heading text-center mx-auto">
-							<h3 v-html="$t('newsletter.title')"></h3>
-							<h6>
-								{{ $t('newsletter.text') }}
-							</h6>
-						</div>
-						<form action="#" method="post">
-							<input
-								type="email"
-								name="email"
-								placeholder="Subscribe to newsletter" />
-							<button type="submit">{{ $t('newsletter.button') }}</button>
-						</form>
-					</div>
+			<div class="newsletter-card">
+				<div class="newsletter-card__text">
+					<h3 v-html="$t('newsletter.title')"></h3>
+					<p>{{ $t('newsletter.text') }}</p>
 				</div>
+				<form class="newsletter-card__form" action="#" method="post">
+					<input
+						type="email"
+						name="email"
+						:placeholder="$t('newsletter.placeholder')" />
+					<button type="submit">{{ $t('newsletter.button') }}</button>
+				</form>
 			</div>
 		</div>
 	</section>
 </template>
 <script setup>
+	import HomeCaroussel from '../../components/UI/caroussel/HomeCaroussel.vue';
+	import AboutBlock from '../../components/UI/items/AboutBlock.vue';
+	import CurrencyIntro from '../../components/UI/items/CurrencyIntro.vue';
 	import Explaination from '../../components/UI/items/Explaination.vue';
 	import Millestone from '../../components/UI/items/Millestone.vue';
-	import CurrencyArea from '../../components/UI/items/CurrencyArea.vue';
-	import ListNews from '../../Model/news/ListNews.vue';
+	import MarketPrices from '../../components/UI/items/MarketPrices.vue';
 	import { useLoadingStore } from '../../stores/loading';
 	import { storeToRefs } from 'pinia';
-	setTimeout(() => useLoadingStore().setLoading(false), 4000);
+	setTimeout(() => useLoadingStore().setLoading(false), 1700);
 </script>
+
+<style scoped>
+	.newsletter-section {
+		padding: 0 0 110px;
+		background: #f6f7fb;
+	}
+	.newsletter-card {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 40px;
+		padding: 48px 52px;
+		border-radius: 20px;
+		background: linear-gradient(120deg, #0d104d, #28408b);
+		box-shadow: 0 24px 50px rgba(13, 16, 77, 0.25);
+	}
+	.newsletter-card__text h3 {
+		font-size: 28px;
+		font-weight: 600;
+		color: #ffffff;
+		margin-bottom: 10px;
+	}
+	.newsletter-card__text p {
+		margin: 0;
+		max-width: 520px;
+		font-size: 15px;
+		line-height: 1.7;
+		color: rgba(255, 255, 255, 0.8);
+	}
+	.newsletter-card__form {
+		display: flex;
+		flex: 0 0 auto;
+		gap: 10px;
+		padding: 6px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+	}
+	.newsletter-card__form input {
+		width: 300px;
+		max-width: 100%;
+		padding: 12px 20px;
+		border: 0;
+		border-radius: 999px;
+		background: transparent;
+		color: #ffffff;
+		outline: none;
+	}
+	.newsletter-card__form input::placeholder {
+		color: rgba(255, 255, 255, 0.6);
+	}
+	.newsletter-card__form button {
+		padding: 12px 28px;
+		border: 0;
+		border-radius: 999px;
+		background: #ffaf02;
+		color: #0d104d;
+		font-weight: 600;
+		cursor: pointer;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+	.newsletter-card__form button:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 8px 20px rgba(255, 175, 2, 0.35);
+	}
+	@media (max-width: 991px) {
+		.newsletter-card {
+			flex-direction: column;
+			align-items: stretch;
+			padding: 36px 28px;
+		}
+	}
+	@media (max-width: 575px) {
+		.newsletter-card__form {
+			flex-direction: column;
+			border-radius: 16px;
+		}
+		.newsletter-card__form input {
+			width: 100%;
+		}
+	}
+</style>
