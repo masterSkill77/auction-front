@@ -60,10 +60,12 @@ import { loadStripe } from "@stripe/stripe-js";
 import { defineComponent, ref, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 import axios from "@/src/axios";
+import { useAuthStore } from "@/stores/auth";
 
 export default defineComponent({
   name: "CardOnly",
   props: ["packId"],
+  emits: ["upgraded"],
   components: {
     StripeElements,
     StripeElement,
@@ -129,7 +131,8 @@ export default defineComponent({
           this.$notify({
             title: this.$t("success.title"),
           });
-          await axios.get("/user").then(({ data }) => {});
+          await useAuthStore().refreshUser();
+          this.$emit("upgraded");
         });
     },
     async payAnother() {},

@@ -41,6 +41,15 @@
 					</template>
 					<template v-else>
 						<span v-if="isFriend" class="tag">{{ $t('profile_view.friends') }}</span>
+						<span v-else-if="user.friendship === 'outgoing'" class="tag">{{ $t('profile_view.request_sent') }}</span>
+						<button
+							v-else-if="user.friendship === 'incoming'"
+							type="button"
+							class="btn-pill"
+							:disabled="addingFriend"
+							@click="acceptFriend">
+							{{ $t('profile_view.accept_request') }}
+						</button>
 						<button
 							v-else
 							type="button"
@@ -121,7 +130,6 @@
 	const user = ref({});
 	const nfts = ref([]);
 	const auctions = ref([]);
-	const friendIds = ref([]);
 	const loading = ref(true);
 	const loadError = ref(false);
 	const sessionExpired = ref(false);
@@ -133,7 +141,8 @@
 	useReveal(root, computed(() => !loading.value));
 
 	const isMe = computed(() => user.value.id === me.value?.id);
-	const isFriend = computed(() => friendIds.value.includes(user.value.id));
+	// Statut fourni par l'API : friends, outgoing, incoming ou none
+	const isFriend = computed(() => user.value.friendship === 'friends');
 	const fullName = computed(() => [user.value.name, user.value.lastname].filter(Boolean).join(' '));
 	const initial = computed(() => (user.value.name ?? '?').charAt(0).toUpperCase());
 	const shortWallet = computed(() => {
@@ -165,9 +174,8 @@
 		loadError.value = false;
 		notFound.value = false;
 		try {
-			const [info, friends, allAuctions, allNfts] = await Promise.allSettled([
+			const [info, allAuctions, allNfts] = await Promise.allSettled([
 				axios.get(`/users/info/${id}`),
-				axios.get('/users/friends'),
 				axios.get('/auction'),
 				axios.get('/nft', { params: { perPage: 100 } }),
 			]);
@@ -179,7 +187,6 @@
 			}
 			user.value = info.value.data;
 
-			friendIds.value = friends.status === 'fulfilled' ? friends.value.data.map((f) => f.id) : [];
 
 			// Listes filtrées côté client sur le propriétaire
 			const ownerId = user.value.id;
@@ -203,12 +210,27 @@
 		}
 	};
 
+	// Envoie une demande d'ami ; si l'autre personne en avait déjà envoyé une, elle est acceptée directement
 	const addFriend = async () => {
 		addingFriend.value = true;
 		try {
-			await axios.post('/users/friends', { friendId: user.value.id });
-			friendIds.value = [...friendIds.value, user.value.id];
-			notify({ title: t('success.title'), text: t('profile_view.friend_added'), type: 'success' });
+			const { data } = await axios.post('/users/friends', { friendId: user.value.id });
+			user.value.friendship = data.status === 'accepted' ? 'friends' : 'outgoing';
+			const text = data.status === 'accepted' ? t('profile_view.friend_added') : t('profile_view.request_sent');
+			notify({ title: t('success.title'), text, type: 'success' });
+		} catch (e) {
+			notify({ title: t('error.title'), text: t('error.contact-us'), type: 'error' });
+		} finally {
+			addingFriend.value = false;
+		}
+	};
+
+	const acceptFriend = async () => {
+		addingFriend.value = true;
+		try {
+			await axios.post(`/users/friends/${user.value.id}/accept`);
+			user.value.friendship = 'friends';
+			notify({ title: t('success.title'), text: t('profile_view.request_accepted'), type: 'success' });
 		} catch (e) {
 			notify({ title: t('error.title'), text: t('error.contact-us'), type: 'error' });
 		} finally {
