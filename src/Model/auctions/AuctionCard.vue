@@ -167,7 +167,7 @@
 	const canBid = computed(() => isActive.value && isLogged.value && !isOwner.value);
 
 	const stateKey = computed(() => (isActive.value ? 'active' : 'ended'));
-	const currency = computed(() => (DOLLAR_PAYMENTS.includes(auction.value.payment) || !auction.value.payment ? '$' : auction.value.payment));
+	const currency = computed(() => (DOLLAR_PAYMENTS.includes(auction.value.payment) || !auction.value.payment ? 'CAD' : auction.value.payment));
 	const displayPrice = computed(() =>
 		auction.value.current_bid > 0 ? auction.value.current_bid : auction.value.start_price
 	);
@@ -202,7 +202,7 @@
 
 	const formatAmount = (value) => {
 		const number = new Intl.NumberFormat(undefined, { maximumFractionDigits: 4 }).format(Number(value) || 0);
-		return currency.value === 'ETH' ? `${number} ETH` : `$${number}`;
+		return currency.value === 'ETH' ? `${number} ETH` : `${number} CAD`;
 	};
 
 	const formatDate = (value) =>
@@ -266,6 +266,17 @@
 		if (!bidAmount.value) bidAmount.value = value || '';
 	});
 
+	let pollTimer = null;
+	// Rafraîchit les offres sans toucher au montant en cours de saisie
+	const refreshQuietly = async () => {
+		if (hasEnded.value) return;
+		try {
+			auction.value = await useAuctionStore().fetchAuction(auctionId);
+		} catch (error) {
+			// On garde l'affichage actuel ; la prochaine tentative réessaiera
+		}
+	};
+
 	onMounted(async () => {
 		// Le store démarre avec le loader actif : cette page le retire elle-même
 		useLoadingStore().setLoading(false);
@@ -280,12 +291,15 @@
 			loading.value = false;
 		}
 
+		pollTimer = setInterval(refreshQuietly, 15000);
+
 		// Mise à jour en direct quand l'enchère se termine (si le temps réel est disponible)
 		window.Echo?.channel('auction').listen('.auction-done', () => refresh());
 	});
 
 	onBeforeUnmount(() => {
 		clearInterval(ticker);
+		clearInterval(pollTimer);
 		window.Echo?.leave?.('auction');
 	});
 </script>

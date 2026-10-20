@@ -144,7 +144,7 @@
 	const minDate = computed(() => new Date());
 
 	const selected = computed(() => nfts.value.find((nft) => nft.id === form.nft_id) ?? null);
-	const currency = computed(() => (form.payment === 'ETH' ? 'ETH' : '$'));
+	const currency = computed(() => (form.payment === 'ETH' ? 'ETH' : 'CAD'));
 	const paymentLabel = computed(() => {
 		const option = PAYMENTS.find((item) => item.value === form.payment);
 		return option ? t(option.label) : '';

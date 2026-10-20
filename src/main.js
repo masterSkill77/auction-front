@@ -10,6 +10,19 @@ import i18n from './i18n';
 import 'hover.css';
 
 import App from './App.vue';
+
+// Image cassée : un visuel de remplacement à la place du cadre vide (une seule tentative)
+document.addEventListener(
+  'error',
+  (event) => {
+    const img = event.target;
+    if (img instanceof HTMLImageElement && !img.dataset.fallback) {
+      img.dataset.fallback = '1';
+      img.src = '/public/img/placeholders/nft.svg';
+    }
+  },
+  true
+);
 import router from './router';
 
 import Echo from 'laravel-echo';

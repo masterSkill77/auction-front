@@ -426,3 +426,37 @@
 		animation: none;
 	}
 }
+
+/* Import de fichier : même cadre que les champs, bouton navy en pilule */
+.wz-field input[type='file'] {
+	width: 100%;
+	padding: 10px 12px;
+	border: 1px dashed #c9cee0;
+	border-radius: 12px;
+	background: #fafbfd;
+	font-family: inherit;
+	font-size: 14px;
+	color: #4a4f6a;
+	cursor: pointer;
+}
+
+.wz-field input[type='file']::file-selector-button {
+	margin-right: 14px;
+	padding: 8px 18px;
+	border: 0;
+	border-radius: 999px;
+	background: #0d104d;
+	color: #ffffff;
+	font-family: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.wz-field input[type='file']:hover::file-selector-button {
+	background: #28408b;
+}
+
+.wz-field input[type='file']:disabled {
+	opacity: 0.6;
+	cursor: wait;
+}

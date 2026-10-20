@@ -10,6 +10,7 @@
 					class="side-nav__link">
 					<span class="side-nav__icon dw" :class="item.icon" aria-hidden="true"></span>
 					<span>{{ $t(item.label) }}</span>
+					<span v-if="badgeOf(item)" class="side-nav__badge">{{ badgeOf(item) }}</span>
 				</router-link>
 			</li>
 		</ul>
@@ -20,6 +21,7 @@
 				<router-link :to="item.to" active-class="is-active" class="side-nav__link">
 					<span class="side-nav__icon dw" :class="item.icon" aria-hidden="true"></span>
 					<span>{{ $t(item.label) }}</span>
+					<span v-if="badgeOf(item)" class="side-nav__badge">{{ badgeOf(item) }}</span>
 				</router-link>
 			</li>
 				<li>
@@ -52,7 +54,9 @@
 	import { useI18n } from 'vue-i18n';
 	import { useAuthStore } from '@/stores/auth';
 	import { useI18nStore } from '@/stores/i18n';
+	import { onBeforeUnmount } from 'vue';
 	import { useLoadingStore } from '@/stores/loading';
+	import { useNotificationsStore } from '@/stores/notifications';
 
 	const LANGUAGES = ['fr', 'en'];
 
@@ -65,15 +69,22 @@
 	const mainLinks = [
 		{ to: '/app', label: 'menu.home', icon: 'dw-house-1', exact: true },
 		{ to: '/app/nfts', label: 'menu.mynft', icon: 'dw-folder-2' },
-		{ to: '/app/auctions', label: 'menu.myauctions', icon: 'dw-shopping-basket-1' },
+		{ to: '/app/auctions', label: 'menu.myauctions', icon: 'dw-shopping-basket-1', badge: 'wonUnpaid' },
 	];
 
 	const manageLinks = [
-		{ to: '/app/chat', label: 'menu.chat', icon: 'dw-chat3' },
+		{ to: '/app/chat', label: 'menu.chat', icon: 'dw-chat3', badge: 'friendRequests' },
 		{ to: '/app/create', label: 'menu.create', icon: 'dw-diagram' },
 		{ to: '/app/packs', label: 'menu.pack', icon: 'dw-shopping-cart2' },
 		{ to: '/app/settings', label: 'menu.settings', icon: 'dw-settings' },
 	];
+
+	const notifications = useNotificationsStore();
+	notifications.start();
+	onBeforeUnmount(() => notifications.stop());
+
+	// Badge affiché seulement quand il y a quelque chose à traiter
+	const badgeOf = (item) => (item.badge && notifications[item.badge] > 0 ? notifications[item.badge] : null);
 
 	const logout = () => {
 		useLoadingStore().setLoading(true);
@@ -227,5 +238,20 @@
 		.side-nav__lang button {
 			transition: none;
 		}
+	}
+	/* Compteur à droite du lien */
+	.side-nav__badge {
+		margin-left: auto;
+		min-width: 22px;
+		height: 22px;
+		padding: 0 7px;
+		border-radius: 999px;
+		background: #ffaf02;
+		color: #0a0c24;
+		font-size: 12px;
+		font-weight: 700;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

@@ -59,7 +59,7 @@
 		"description": "Description",
 		"url": "Lien",
 		"creation": "Créez votre enchère",
-		"paymentUsd": "Par USD (Dollard)",
+		"paymentUsd": "Par carte bancaire (CAD)",
 		"paymentEth": "Par ETH (Crypto)",
 		"paymentType": "Type de paiement",
 		"in_progress": "En cours"
@@ -195,6 +195,11 @@
 		"ticker_label": "Cours 24 h"
 	},
 	"create_page": {
+		"image_file": "Importer une image",
+		"image_file_hint": "JPG, PNG, WebP ou GIF, 2 Mo maximum. Ou indiquez une URL ci-dessous.",
+		"image_uploading": "Envoi de l'image…",
+		"image_too_big": "L'image dépasse 2 Mo.",
+		"image_failed": "Envoi de l'image impossible. Réessayez.",
 		"pick_end_date": "Choisir la date et l'heure de fin",
 		"title": "Créer",
 		"subtitle": "Donnez vie à une œuvre ou remettez un NFT aux enchères.",
@@ -310,6 +315,13 @@
 		"read_article": "Lire l'article"
 	},
 	"settings_page": {
+		"avatar_title": "Photo de profil",
+		"avatar_lead": "JPG, PNG ou WebP, 1 Mo maximum.",
+		"avatar_choose": "Choisir une photo",
+		"avatar_saved": "Photo mise à jour.",
+		"avatar_too_big": "Le fichier dépasse 1 Mo.",
+		"avatar_invalid": "Format non accepté (JPG, PNG ou WebP).",
+		"avatar_failed": "Envoi impossible. Réessayez.",
 		"title": "Paramètres",
 		"lead": "Gérez les informations de votre compte.",
 		"profile_title": "Informations personnelles",
@@ -477,7 +489,7 @@
 		"close": "Fermer",
 		"empty": "Aucun pack disponible pour le moment.",
 		"error": "Impossible de charger les packs. Réessayez plus tard.",
-		"currency": "$"
+		"currency": "CAD"
 	},
 	"message": {
 		"title": "Message",

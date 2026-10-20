@@ -6,6 +6,21 @@
 		</header>
 
 		<div class="settings__grid">
+			<!-- Photo de profil -->
+			<section class="block" data-reveal>
+				<h2>{{ $t('settings_page.avatar_title') }}</h2>
+				<p class="lead">{{ $t('settings_page.avatar_lead') }}</p>
+				<div class="avatar">
+					<img v-if="avatarUrl" :src="avatarUrl" alt="" class="avatar__img" />
+					<span v-else class="avatar__initial" aria-hidden="true">{{ initial }}</span>
+					<label class="btn-pill avatar__button">
+						{{ $t('settings_page.avatar_choose') }}
+						<input type="file" accept="image/jpeg,image/png,image/webp" @change="uploadAvatar" />
+					</label>
+				</div>
+				<p v-if="avatarStatus" class="status" :class="`status--${avatarStatus.type}`" role="status">{{ avatarStatus.text }}</p>
+			</section>
+
 			<!-- Informations personnelles -->
 			<section class="block" data-reveal>
 				<h2>{{ $t('settings_page.profile_title') }}</h2>
@@ -97,7 +112,8 @@
 </template>
 
 <script setup>
-	import { reactive, ref } from 'vue';
+	import { computed, reactive, ref } from 'vue';
+	import axiosInstance from '@/src/axios';
 	import { useI18n } from 'vue-i18n';
 	import { useAuthStore } from '@/stores/auth';
 	import { useI18nStore } from '@/stores/i18n';
@@ -109,6 +125,41 @@
 
 	const root = ref(null);
 	useReveal(root);
+
+	const avatarStatus = ref(null);
+	const initial = computed(() => (auth.me.name ?? '?').charAt(0).toUpperCase());
+	const avatarUrl = computed(() => {
+		try {
+			const images = JSON.parse(auth.me.configuration?.profile_image ?? 'null');
+			return images?.[0]?.content ?? null;
+		} catch (error) {
+			return null;
+		}
+	});
+
+	// Photo : JPG, PNG ou WebP, 1 Mo maximum (contrôlé aussi côté serveur)
+	const uploadAvatar = async (event) => {
+		const file = event.target.files?.[0];
+		event.target.value = '';
+		if (!file) return;
+		if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
+			avatarStatus.value = { type: 'error', text: t('settings_page.avatar_invalid') };
+			return;
+		}
+		if (file.size > 1024 * 1024) {
+			avatarStatus.value = { type: 'error', text: t('settings_page.avatar_too_big') };
+			return;
+		}
+		const body = new FormData();
+		body.append('avatar', file);
+		try {
+			await axiosInstance.post('/settings/avatar', body);
+			await auth.refreshUser();
+			avatarStatus.value = { type: 'success', text: t('settings_page.avatar_saved') };
+		} catch (error) {
+			avatarStatus.value = { type: 'error', text: t('settings_page.avatar_failed') };
+		}
+	};
 
 	const auth = useAuthStore();
 	const { t, locale } = useI18n();
@@ -380,5 +431,45 @@
 		.settings__grid {
 			grid-template-columns: 1fr;
 		}
+	}
+	.avatar {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		flex-wrap: wrap;
+	}
+
+	.avatar__img,
+	.avatar__initial {
+		width: 88px;
+		height: 88px;
+		border-radius: 50%;
+		flex-shrink: 0;
+	}
+
+	.avatar__img {
+		object-fit: cover;
+	}
+
+	.avatar__initial {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: #ffaf02;
+		color: #0d104d;
+		font-size: 30px;
+		font-weight: 700;
+	}
+
+	.avatar__button {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.avatar__button input[type='file'] {
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+		cursor: pointer;
 	}
 </style>

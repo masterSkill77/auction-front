@@ -11,6 +11,12 @@
 			</label>
 
 			<label class="wz-field" :class="{ 'is-invalid': errors.image_uri }">
+				<span>{{ $t('create_page.image_file') }}</span>
+				<input type="file" accept="image/jpeg,image/png,image/webp,image/gif" :disabled="uploading" @change="uploadImage" />
+				<small class="wz-hint">{{ uploading ? $t('create_page.image_uploading') : $t('create_page.image_file_hint') }}</small>
+			</label>
+
+			<label class="wz-field" :class="{ 'is-invalid': errors.image_uri }">
 				<span>{{ $t('create_page.image_url') }}</span>
 				<input
 					v-model="form.image_uri"
@@ -59,6 +65,7 @@
 	import { useRouter } from 'vue-router';
 	import { useI18n } from 'vue-i18n';
 	import { notify } from '@kyvg/vue3-notification';
+	import axiosInstance from '@/src/axios';
 	import { useNftStore } from '@/stores/nft';
 	import '@/Model/wizard/wizard.css';
 
@@ -67,6 +74,30 @@
 
 	const router = useRouter();
 	const { t } = useI18n();
+	const uploading = ref(false);
+
+	// Image importée sur le serveur : son URL remplace celle saisie à la main
+	const uploadImage = async (event) => {
+		const file = event.target.files?.[0];
+		if (!file) return;
+		if (file.size > 2 * 1024 * 1024) {
+			notify({ title: t('error.title'), text: t('create_page.image_too_big'), type: 'error' });
+			event.target.value = '';
+			return;
+		}
+		const body = new FormData();
+		body.append('image', file);
+		uploading.value = true;
+		try {
+			const { data } = await axiosInstance.post('/upload/nft-image', body);
+			form.image_uri = data.url;
+		} catch (error) {
+			notify({ title: t('error.title'), text: t('create_page.image_failed'), type: 'error' });
+		} finally {
+			uploading.value = false;
+			event.target.value = '';
+		}
+	};
 
 	const form = reactive({ title: '', image_uri: '', description: '' });
 	const errors = reactive({});

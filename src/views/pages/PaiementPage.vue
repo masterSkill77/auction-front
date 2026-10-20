@@ -29,7 +29,7 @@
 									<li>
 										{{ $t('bid.amount') }} :
 										<b
-											>{{ auction.payment == 'USDT' ? '$' : 'ETH' }}
+											>{{ auction.payment == 'USDT' ? 'CAD' : 'ETH' }}
 											{{ auction.current_bid }}</b
 										>
 									</li>

@@ -59,7 +59,7 @@
 		"own_auction_title": "My initiated auctions",
 		"done": "Done",
 		"creation": "Create your auction",
-		"paymentUsd": "By USD (Dollard)",
+		"paymentUsd": "By bank card (CAD)",
 		"paymentEth": "By ETH (Crypto)",
 		"paymentType": "Payment type",
 		"in_progress": "In progress"
@@ -195,6 +195,11 @@
 		"ticker_label": "24 h prices"
 	},
 	"create_page": {
+		"image_file": "Upload an image",
+		"image_file_hint": "JPG, PNG, WebP or GIF, 2 MB maximum. Or enter a URL below.",
+		"image_uploading": "Uploading image…",
+		"image_too_big": "The image is larger than 2 MB.",
+		"image_failed": "Image upload failed. Please try again.",
 		"pick_end_date": "Choose the end date and time",
 		"title": "Create",
 		"subtitle": "Bring a work to life or put an NFT up for auction.",
@@ -310,6 +315,13 @@
 		"read_article": "Read the article"
 	},
 	"settings_page": {
+		"avatar_title": "Profile photo",
+		"avatar_lead": "JPG, PNG or WebP, 1 MB maximum.",
+		"avatar_choose": "Choose a photo",
+		"avatar_saved": "Photo updated.",
+		"avatar_too_big": "The file is larger than 1 MB.",
+		"avatar_invalid": "Unsupported format (JPG, PNG or WebP).",
+		"avatar_failed": "Upload failed. Please try again.",
 		"title": "Settings",
 		"lead": "Manage your account information.",
 		"profile_title": "Personal information",
@@ -476,7 +488,7 @@
 		"close": "Close",
 		"empty": "No pack available at the moment.",
 		"error": "Could not load the packs. Please try again later.",
-		"currency": "$"
+		"currency": "CAD"
 	},
 	"message": {
 		"title": "Message",
