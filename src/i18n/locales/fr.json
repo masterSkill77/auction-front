@@ -1,5 +1,6 @@
 {
 	"menu": {
+		"admin_packs": "Packs (admin)",
 		"section_main": "Principal",
 		"section_manage": "Gestion",
 		"chat": "Chat",
@@ -467,6 +468,46 @@
 			"title": "Smart Contract basé sur Etherum où vous êtes libres",
 			"description": "La popularité de cette technologie innovante dans la finance traditionnelle et le marché de l’art est un vrai sujet juridique. Les montants astronomiques de cryptomonnaies (converties en euro ou en dollars) échangés ont forcément attiré les régulateurs, qui font aujourd’hui face à un défi."
 		}
+	},
+	"admin_packs": {
+		"title": "Gestion des packs",
+		"lead": "Créez, modifiez et désactivez les packs. Un pack désactivé disparaît du site mais reste dans l'historique.",
+		"new": "Nouveau pack",
+		"form_new": "Nouveau pack",
+		"form_edit": "Modifier le pack",
+		"name": "Nom",
+		"price": "Prix",
+		"nft": "Création de NFT",
+		"auction": "Enchères",
+		"bid": "Offres",
+		"status": "Statut",
+		"active": "Actif",
+		"inactive": "Désactivé",
+		"is_active": "Pack actif (visible sur le site)",
+		"edit": "Modifier",
+		"save": "Enregistrer",
+		"saving": "Enregistrement…",
+		"cancel": "Annuler",
+		"saved": "Pack enregistré.",
+		"failed": "Enregistrement impossible. Réessayez.",
+		"loading": "Chargement…",
+		"empty": "Aucun pack pour le moment.",
+		"forbidden": "Cette page est réservée aux administrateurs.",
+		"error": "Impossible de charger les packs.",
+		"hint": "Modifier un prix ou des quotas ne change que les futurs achats : les quotas déjà accordés aux comptes restent inchangés."
+	},
+	"packs_public": {
+		"title": "Nos packs",
+		"lead": "Un pack vous donne accès à la création de NFT, aux enchères et aux offres. Paiement unique, quotas à vie.",
+		"teaser_title": "Nos packs",
+		"teaser_lead": "Choisissez le pack adapté à votre activité : création de NFT, mises en vente et offres.",
+		"see_all": "Voir tous les packs",
+		"create_account": "Créer mon compte",
+		"manage": "Gérer mes packs",
+		"featured": "Recommandé",
+		"note": "Les prix sont en dollars canadiens (CAD). Le paiement est unique et les quotas du pack sont ajoutés à votre compte.",
+		"error": "Impossible de charger les packs pour le moment.",
+		"empty": "Aucun pack disponible pour le moment."
 	},
 	"pack": {
 		"price": "Prix",

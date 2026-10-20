@@ -10,6 +10,8 @@ import ChatPage from '@/views/pages/ChatPage.vue';
 import AuctionPage from '@/Model/auctions/AuctionCard.vue';
 import LoginPage from '@/views/auth/LoginPage.vue';
 import SignupPage from '@/views/auth/SignupPage.vue';
+import PacksPage from '@/views/pages/PacksPage.vue';
+import AdminPacksPage from '@/views/pages/AdminPacksPage.vue';
 import NotFound from '@/views/404.vue';
 import AdminHomePage from '@/components/UI/dashboard/AdminHomePage.vue';
 import SettingsPage from '@/views/pages/SettingsPage.vue';
@@ -46,6 +48,11 @@ const router = createRouter({
 			path: '/about',
 			name: 'about',
 			component: AboutPage,
+		},
+		{
+			path: '/packs',
+			name: 'packs',
+			component: PacksPage,
 		},
 		{
 			path: '/news',
@@ -187,6 +194,11 @@ const router = createRouter({
 					name: 'Pack',
 					path: 'packs',
 					component: PackPage,
+				},
+				{
+					name: 'AdminPacks',
+					path: 'admin/packs',
+					component: AdminPacksPage,
 				},
 			],
 		},

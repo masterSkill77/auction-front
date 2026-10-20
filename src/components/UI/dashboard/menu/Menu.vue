@@ -17,7 +17,7 @@
 
 		<p class="side-nav__section">{{ $t('menu.section_manage') }}</p>
 		<ul class="side-nav__list">
-			<li v-for="item in manageLinks" :key="item.to">
+			<li v-for="item in visibleManageLinks" :key="item.to">
 				<router-link :to="item.to" active-class="is-active" class="side-nav__link">
 					<span class="side-nav__icon dw" :class="item.icon" aria-hidden="true"></span>
 					<span>{{ $t(item.label) }}</span>
@@ -54,7 +54,7 @@
 	import { useI18n } from 'vue-i18n';
 	import { useAuthStore } from '@/stores/auth';
 	import { useI18nStore } from '@/stores/i18n';
-	import { onBeforeUnmount } from 'vue';
+	import { computed, onBeforeUnmount } from 'vue';
 	import { useLoadingStore } from '@/stores/loading';
 	import { useNotificationsStore } from '@/stores/notifications';
 
@@ -85,6 +85,16 @@
 
 	// Badge affiché seulement quand il y a quelque chose à traiter
 	const badgeOf = (item) => (item.badge && notifications[item.badge] > 0 ? notifications[item.badge] : null);
+
+	// Lien d'administration : affiché seulement aux comptes administrateurs (l'API contrôle aussi)
+	const auth = useAuthStore();
+	// Profil en cache possiblement ancien (sans le rôle) : on le recharge
+	auth.refreshUser().catch(() => {});
+	const visibleManageLinks = computed(() =>
+		auth.me?.is_admin
+			? [...manageLinks, { to: '/app/admin/packs', label: 'menu.admin_packs', icon: 'dw-settings' }]
+			: manageLinks
+	);
 
 	const logout = () => {
 		useLoadingStore().setLoading(true);

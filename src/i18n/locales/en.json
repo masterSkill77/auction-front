@@ -1,5 +1,6 @@
 {
 	"menu": {
+		"admin_packs": "Packs (admin)",
 		"section_main": "Main",
 		"section_manage": "Manage",
 		"chat": "Chat",
@@ -466,6 +467,46 @@
 			"title": "Smart Contract based on Ethereum where you are free",
 			"description": "The popularity of this innovative technology in traditional finance and the art market poses a real legal challenge. The astronomical amounts of cryptocurrencies (converted to euros or dollars) being exchanged have inevitably attracted regulators, who are now facing a challenge."
 		}
+	},
+	"admin_packs": {
+		"title": "Pack management",
+		"lead": "Create, edit and deactivate packs. A deactivated pack disappears from the site but stays in the history.",
+		"new": "New pack",
+		"form_new": "New pack",
+		"form_edit": "Edit pack",
+		"name": "Name",
+		"price": "Price",
+		"nft": "NFT creation",
+		"auction": "Auctions",
+		"bid": "Bids",
+		"status": "Status",
+		"active": "Active",
+		"inactive": "Deactivated",
+		"is_active": "Active pack (visible on the site)",
+		"edit": "Edit",
+		"save": "Save",
+		"saving": "Saving…",
+		"cancel": "Cancel",
+		"saved": "Pack saved.",
+		"failed": "Could not save. Please try again.",
+		"loading": "Loading…",
+		"empty": "No pack yet.",
+		"forbidden": "This page is reserved for administrators.",
+		"error": "Could not load the packs.",
+		"hint": "Changing a price or quotas only affects future purchases: quotas already granted to accounts stay unchanged."
+	},
+	"packs_public": {
+		"title": "Our packs",
+		"lead": "A pack gives you access to NFT creation, auctions and bids. One-off payment, lifetime quotas.",
+		"teaser_title": "Our packs",
+		"teaser_lead": "Choose the pack that fits your activity: NFT creation, listings and bids.",
+		"see_all": "See all packs",
+		"create_account": "Create my account",
+		"manage": "Manage my packs",
+		"featured": "Recommended",
+		"note": "Prices are in Canadian dollars (CAD). The payment is one-off and the pack quotas are added to your account.",
+		"error": "Could not load the packs right now.",
+		"empty": "No pack available at the moment."
 	},
 	"pack": {
 		"price": "Price",

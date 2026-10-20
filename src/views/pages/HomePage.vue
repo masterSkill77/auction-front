@@ -3,6 +3,8 @@
 
 	<AboutBlock />
 
+	<PacksTeaser />
+
 	<!-- ##### Currency Area Start ##### -->
 	<CurrencyIntro />
 	<!-- ##### Currency Area End ##### -->
@@ -31,6 +33,7 @@
 <script setup>
 	import HomeCaroussel from '../../components/UI/caroussel/HomeCaroussel.vue';
 	import AboutBlock from '../../components/UI/items/AboutBlock.vue';
+	import PacksTeaser from '../../components/UI/items/PacksTeaser.vue';
 	import CurrencyIntro from '../../components/UI/items/CurrencyIntro.vue';
 	import Explaination from '../../components/UI/items/Explaination.vue';
 	import Millestone from '../../components/UI/items/Millestone.vue';
