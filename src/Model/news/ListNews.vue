@@ -36,8 +36,10 @@
 										<a
 											:href="primaryNew.link"
 											target="_blank"
-											class="btn cryptos-btn mt-50"
-											>{{ $t('readmore') }}</a
+											rel="noopener noreferrer"
+											class="cta-btn mt-50"
+											:aria-label="`${$t('cta.read_article')} : ${primaryNew.title}`"
+											>{{ $t('cta.read_article') }}</a
 										>
 									</div>
 								</div>

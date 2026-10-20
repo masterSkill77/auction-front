@@ -1,5 +1,6 @@
 import '/public/css/defaultV2.min.css';
 import '/public/css/survey.css';
+import './assets/buttons.css';
 
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';

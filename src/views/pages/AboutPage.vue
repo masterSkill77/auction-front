@@ -57,7 +57,7 @@
 						<div class="guide-cta__text" data-reveal>
 							<h2>{{ $t('guide.about_start_area.title') }}</h2>
 							<p>{{ $t('guide.about_start_area.description') }}</p>
-							<router-link to="/register" class="btn cryptos-btn">
+							<router-link to="/register" class="cta-btn">
 								{{ $t('guide.join') }}
 							</router-link>
 						</div>

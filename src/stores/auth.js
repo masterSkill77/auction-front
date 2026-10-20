@@ -82,6 +82,13 @@ export const useAuthStore = defineStore("auth", {
       this.user = await axiosInstance.get("/user");
       localStorage.setItem(USER_TOKEN, JSON.stringify(this.user));
     },
+    // Enregistre le profil et le mot de passe de l'utilisateur connecté
+    async updateSettings(data) {
+      const response = await axiosInstance.put("/settings", data);
+      this.user = response.data;
+      localStorage.setItem(USER_TOKEN, JSON.stringify(this.user));
+      return response;
+    },
     async updateProfile(data, userId) {
       [data.card_expires_year, data.card_expires_month] =
         data.card_expires.split("-");

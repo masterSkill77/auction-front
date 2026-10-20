@@ -303,6 +303,36 @@
 		"retry": "Réessayer",
 		"pagination": "Pagination des enchères"
 	},
+	"cta": {
+		"view_auctions": "Voir les enchères",
+		"learn_more": "En savoir plus",
+		"read_article": "Lire l'article"
+	},
+	"settings_page": {
+		"title": "Paramètres",
+		"lead": "Gérez les informations de votre compte.",
+		"profile_title": "Informations personnelles",
+		"name": "Prénom",
+		"lastname": "Nom",
+		"username": "Nom d'utilisateur",
+		"save": "Enregistrer",
+		"saving": "Enregistrement…",
+		"saved": "Informations enregistrées.",
+		"password_title": "Mot de passe",
+		"password_lead": "Saisissez votre mot de passe actuel, puis le nouveau (8 caractères minimum).",
+		"current_password": "Mot de passe actuel",
+		"new_password": "Nouveau mot de passe",
+		"confirm_password": "Confirmer le nouveau mot de passe",
+		"password_saved": "Mot de passe modifié.",
+		"language_title": "Langue",
+		"language_lead": "Langue de l'interface.",
+		"account_title": "Compte",
+		"account_note": "L'e-mail et l'adresse wallet ne peuvent pas être modifiés ici.",
+		"email": "E-mail",
+		"wallet": "Adresse wallet",
+		"error": "Impossible d'enregistrer. Réessayez.",
+		"fields_required": "Ce champ est requis."
+	},
 	"profile_view": {
 		"not_found": "Cet utilisateur n'existe pas.",
 		"back": "Retour au tableau de bord",

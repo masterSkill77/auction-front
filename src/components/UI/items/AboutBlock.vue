@@ -11,8 +11,8 @@
 					<div class="about-block__content" data-reveal>
 						<h3 class="about-block__title" v-html="$t('banner.2')"></h3>
 						<p class="about-block__text">{{ $t('banner.text-banner-2') }}</p>
-						<router-link to="/login" class="btn cryptos-btn about-block__cta">
-							{{ $t('readmore') }}
+						<router-link to="/about" class="cta-btn about-block__cta">
+							{{ $t('cta.learn_more') }}
 							<span aria-hidden="true">&rarr;</span>
 						</router-link>
 					</div>

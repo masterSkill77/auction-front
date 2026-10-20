@@ -29,7 +29,7 @@
 							<div class="hero-slider__content">
 								<h2>{{ $t(`slider.slider_${slide}.title`) }}</h2>
 								<p>{{ $t(`slider.slider_${slide}.description`) }}</p>
-								<a href="#" class="btn cryptos-btn">{{ $t('readmore') }}</a>
+								<router-link :to="ctas[slide].to" class="cta-btn">{{ $t(ctas[slide].label) }}</router-link>
 							</div>
 						</div>
 						<div class="col-12 col-md-5">
@@ -83,6 +83,13 @@
 
 	const INTERVAL = 6000;
 	const slides = [1, 2, 3];
+
+	// Lien de chaque diapositive : chacune mène à la page qui développe son sujet
+	const ctas = {
+		1: { to: '/auctions', label: 'cta.view_auctions' },
+		2: { to: '/about', label: 'cta.learn_more' },
+		3: { to: '/about', label: 'cta.learn_more' },
+	};
 
 	// Une image par diapositive, recadrée en carré
 	const images = {

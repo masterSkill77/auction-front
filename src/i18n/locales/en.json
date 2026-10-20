@@ -303,6 +303,36 @@
 		"retry": "Retry",
 		"pagination": "Auction pages"
 	},
+	"cta": {
+		"view_auctions": "View auctions",
+		"learn_more": "Learn more",
+		"read_article": "Read the article"
+	},
+	"settings_page": {
+		"title": "Settings",
+		"lead": "Manage your account information.",
+		"profile_title": "Personal information",
+		"name": "First name",
+		"lastname": "Last name",
+		"username": "Username",
+		"save": "Save",
+		"saving": "Saving…",
+		"saved": "Information saved.",
+		"password_title": "Password",
+		"password_lead": "Enter your current password, then the new one (8 characters minimum).",
+		"current_password": "Current password",
+		"new_password": "New password",
+		"confirm_password": "Confirm the new password",
+		"password_saved": "Password changed.",
+		"language_title": "Language",
+		"language_lead": "Interface language.",
+		"account_title": "Account",
+		"account_note": "Email and wallet address cannot be changed here.",
+		"email": "Email",
+		"wallet": "Wallet address",
+		"error": "Could not save. Please try again.",
+		"fields_required": "This field is required."
+	},
 	"profile_view": {
 		"not_found": "This user does not exist.",
 		"back": "Back to the dashboard",
