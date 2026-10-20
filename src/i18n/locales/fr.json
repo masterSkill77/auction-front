@@ -1,8 +1,9 @@
 {
 	"menu": {
-		"admin_packs": "Packs (admin)",
+		"admin_packs": "Gestion des packs",
 		"section_main": "Principal",
 		"section_manage": "Gestion",
+		"section_admin": "Administration",
 		"chat": "Chat",
 		"pack": "Pack",
 		"home": "Accueil",
